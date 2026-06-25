@@ -1,20 +1,21 @@
 ---
 import { gameName } from "@zoggy/branding";
 import DarkFantasyLayout from "../layouts/DarkFantasyLayout.astro";
-
-const title = `Page Not Found | ${gameName}`;
+const title = `Lost Beyond | ${gameName}`;
 const description = `The requested ${gameName} page was not found.`;
 ---
-
 <DarkFantasyLayout title={title} description={description}>
-  <section class="hero" aria-labelledby="not-found-title">
-    <div class="hero-inner">
-      <p class="eyebrow">404</p>
+  <section class="df-hero" aria-labelledby="not-found-title">
+    <div class="df-hero-bg" aria-hidden="true">
+      <div class="df-glow" style="width:24rem;height:24rem;background:radial-gradient(circle,rgba(114,80,142,0.15),transparent 70%);position:absolute;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%)"></div>
+    </div>
+    <div class="df-hero-body" style="text-align:center">
+      <p class="df-eyebrow">404</p>
       <h1 id="not-found-title">Lost beyond the veil</h1>
-      <p class="lead">This public path is not open yet.</p>
-      <p class="supporting">The Phase 1 placeholder includes only the homepage and this custom error page.</p>
-      <div class="actions">
-        <a class="button button-primary" href="/">Return home</a>
+      <p class="df-subtitle">This path does not exist in the known world.</p>
+      <p class="df-description" style="margin:0.75rem auto 0">The public {gameName} site currently includes only the homepage and this error page. More content will arrive as the world expands.</p>
+      <div class="actions" style="justify-content:center">
+        <a class="df-btn df-btn-primary" href="/">Return home</a>
       </div>
     </div>
   </section>

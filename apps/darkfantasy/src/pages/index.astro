@@ -5,35 +5,178 @@ import DarkFantasyLayout from "../layouts/DarkFantasyLayout.astro";
 const title = `${gameName} | ${gameStatus}`;
 const description = `${gameName} is an old-school-inspired dark fantasy MMORPG currently in ${gameStatus.toLowerCase()} development.`;
 ---
-
 <DarkFantasyLayout title={title} description={description}>
-  <section class="hero" aria-labelledby="game-title">
-    <div class="hero-inner">
-      <p class="eyebrow">{gameStatus} development</p>
+  <section class="df-hero" aria-labelledby="game-title">
+    <div class="df-hero-bg" aria-hidden="true">
+      <div class="df-glow g1"></div>
+      <div class="df-glow g2"></div>
+      <div class="df-glow g3"></div>
+    </div>
+    <div class="df-hero-body">
+      <p class="df-eyebrow">{gameStatus} development</p>
       <h1 id="game-title">{gameName}</h1>
-      <p class="lead">An old-school-inspired dark fantasy MMORPG.</p>
-      <p class="supporting">Currently in {gameStatus.toLowerCase()} development. This public placeholder does not expose private game systems or account services.</p>
-      <div class="actions" aria-label="Primary links">
-        <a class="button button-primary" href="https://games.herzogit.com/">Visit {studioName}</a>
-        <a class="button button-secondary" href="mailto:hello@games.herzogit.com">Contact the studio</a>
+      <p class="df-subtitle">An old-school-inspired dark fantasy MMORPG.</p>
+      <p class="df-description">Dangerous exploration, meaningful character development, deeply authored creatures, and a persistent server-controlled world. A full-stack multiplayer project built with Godot, Go, and structured content pipelines.</p>
+      <div class="actions">
+        <a class="df-btn df-btn-primary" href="#about">Learn more</a>
+        <a class="df-btn df-btn-secondary" href="https://games.herzogit.com/">Visit {studioName}</a>
       </div>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="signals-title">
-    <div class="card-grid">
-      <article class="card">
-        <h2 id="signals-title">Ancient</h2>
-        <p>A ruined, mythic tone without publishing private lore or unreleased content.</p>
-      </article>
-      <article class="card">
-        <h2>Corrupted</h2>
-        <p>Dark atmosphere, vibrant accents, and grungy edges balanced with accessible contrast.</p>
-      </article>
-      <article class="card">
-        <h2>Cosmic</h2>
-        <p>A separate visual identity from the broader Zoggy Studios umbrella site.</p>
-      </article>
+  <section id="about" class="df-section" aria-labelledby="about-title">
+    <div class="df-section-body">
+      <div class="df-section-head">
+        <p class="df-eyebrow">About the game</p>
+        <h2 id="about-title">A world of iron, blood, and cosmic corruption.</h2>
+        <p>{gameName} is an old-school-inspired MMORPG focused on dangerous exploration, deep character systems, and a living world where every creature has a place in the ecology.</p>
+      </div>
+      <div class="df-pillars">
+        <article class="df-pillar">
+          <span class="df-pillar-icon" style="color: var(--df-blood)">&#9670;</span>
+          <h3>Old-school progression</h3>
+          <p>Leveling, stats, classes, and equipment that respect traditional role-playing depth while being accessible.</p>
+        </article>
+        <article class="df-pillar">
+          <span class="df-pillar-icon" style="color: var(--df-gold)">&#9670;</span>
+          <h3>Server-authoritative</h3>
+          <p>The Go server owns all gameplay decisions. The client is a window into a persistent, trusted world state.</p>
+        </article>
+        <article class="df-pillar">
+          <span class="df-pillar-icon" style="color: var(--df-cosmic)">&#9670;</span>
+          <h3>Deep monster ecology</h3>
+          <p>Hundreds of structured creatures connecting lore, combat, loot, AI, and world placement.</p>
+        </article>
+        <article class="df-pillar">
+          <span class="df-pillar-icon" style="color: var(--df-witchfire)">&#9670;</span>
+          <h3>Data-driven content</h3>
+          <p>Monsters, items, zones, and quests defined in structured data that feeds server, client, and wiki.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="df-section df-section-alt" aria-label="Development">
+    <div class="df-section-body">
+      <div class="df-section-head">
+        <p class="df-eyebrow">Development</p>
+        <h2>Full-stack infrastructure</h2>
+        <p>Built from the ground up with modern tooling and traditional MMORPG design principles.</p>
+      </div>
+      <div class="df-tech">
+        <span class="df-tech-badge" style="border-color: var(--df-blood); color: var(--df-blood-bright)">Godot 4.7</span>
+        <span class="df-tech-badge" style="border-color: var(--df-gold); color: var(--df-gold-bright)">Go WebSocket</span>
+        <span class="df-tech-badge" style="border-color: var(--df-cosmic); color: var(--df-cosmic-bright)">Protobuf</span>
+        <span class="df-tech-badge" style="border-color: var(--df-witchfire); color: var(--df-witchfire-bright)">Persistent DB</span>
+        <span class="df-tech-badge" style="border-color: var(--df-energy-moonlight); color: var(--df-energy-moonlight)">Content Pipeline</span>
+        <span class="df-tech-badge" style="border-color: var(--df-text-muted); color: var(--df-text-secondary)">AI-Assisted</span>
+      </div>
+      <p class="df-tech-note">Architecture and infrastructure details remain private during development. This public placeholder does not expose private game systems or account services.</p>
+    </div>
+  </section>
+
+  <section class="df-section" aria-label="Classes">
+    <div class="df-section-body">
+      <div class="df-section-head">
+        <p class="df-eyebrow">Classes</p>
+        <h2>Four paths into the world</h2>
+        <p>Each class carries a distinct identity, stat priority, and visual language rooted in traditional archetypes.</p>
+      </div>
+      <div class="df-classes">
+        <article class="df-class-card">
+          <h3 style="color: #68737d">Knight</h3>
+          <p>Blackened steel, deep crimson, worn leather. A grounded martial protector.</p>
+        </article>
+        <article class="df-class-card">
+          <h3 style="color: #74a4b0">Elf</h3>
+          <p>Midnight blue, moon cyan, ancient silver. Cool, natural, moonlit hunters.</p>
+        </article>
+        <article class="df-class-card">
+          <h3 style="color: #536d91">Mage</h3>
+          <p>Aged ivory, arcane blue, faded gold. Ancient scholars of restrained celestial power.</p>
+        </article>
+        <article class="df-class-card">
+          <h3 style="color: #9573a7">Prince</h3>
+          <p>Imperial purple, dark plum, ritual magenta. Mysterious leaders touched by cosmic forces.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="df-section df-section-alt" aria-label="Monster codex">
+    <div class="df-section-body">
+      <div class="df-section-head">
+        <p class="df-eyebrow">Monster Codex</p>
+        <h2>Hundreds of authored creatures</h2>
+        <p>Every monster in the game is a structured data record connecting visual direction, combat stats, AI, spawning, loot, quests, and lore — all feeding the same pipeline.</p>
+      </div>
+      <div class="df-monster-families">
+        <span class="df-family-badge" style="background: rgba(129,44,50,0.2); border-color: var(--df-blood); color: var(--df-blood-bright)">Aberrations</span>
+        <span class="df-family-badge" style="background: rgba(114,80,142,0.2); border-color: var(--df-cosmic); color: var(--df-cosmic-bright)">Cosmic</span>
+        <span class="df-family-badge" style="background: rgba(37,40,42,0.4); border-color: #777a70; color: #c1b9a5">Undead</span>
+        <span class="df-family-badge" style="background: rgba(48,58,39,0.3); border-color: #68753b; color: #9b8b48">Rot &amp; Swamp</span>
+        <span class="df-family-badge" style="background: rgba(33,24,23,0.3); border-color: #bb4931; color: #df7537">Infernal</span>
+        <span class="df-family-badge" style="background: rgba(24,36,45,0.3); border-color: #74a7b6; color: #b6d2d4">Frost</span>
+        <span class="df-family-badge" style="background: rgba(41,45,46,0.3); border-color: #8b633b; color: #d27638">Constructs</span>
+        <span class="df-family-badge" style="background: rgba(23,25,40,0.3); border-color: #91a4c2; color: #72b2af">Moon-Touched</span>
+        <span class="df-family-badge" style="background: rgba(49,168,179,0.15); border-color: #c84e86; color: #31a8b3">Trick Monsters</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="df-section" aria-label="Stay updated">
+    <div class="df-section-body" style="text-align: center">
+      <div class="df-callout" style="border-color: var(--df-gold)">
+        <h2 style="color: var(--df-gold-bright)">The world is being forged.</h2>
+        <p style="max-width: 32rem; margin: 0 auto">Public information about the game will grow as systems, zones, creatures, and lore are ready to present safely. Until then, this site serves as a window into active development.</p>
+        <div class="actions" style="justify-content: center; margin-top: 1.5rem">
+          <a class="df-btn df-btn-primary" href="https://games.herzogit.com/">Visit {studioName}</a>
+          <a class="df-btn df-btn-secondary" href="mailto:hello@games.herzogit.com">Contact the studio</a>
+        </div>
+      </div>
     </div>
   </section>
 </DarkFantasyLayout>
+
+<style>
+  .df-hero { position: relative; overflow: hidden; min-height: min(620px, 74svh); display: grid; align-items: center; padding: clamp(3rem, 9vw, 7rem) clamp(1rem, 4vw, 4rem); }
+  .df-hero-bg { position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+  .df-glow { position: absolute; border-radius: 50%; }
+  .g1 { width: 36rem; height: 36rem; background: radial-gradient(circle, rgba(129,44,50,0.2), transparent 70%); top: -10rem; right: -6rem; }
+  .g2 { width: 28rem; height: 28rem; background: radial-gradient(circle, rgba(114,80,142,0.18), transparent 70%); bottom: -4rem; left: -6rem; }
+  .g3 { width: 18rem; height: 18rem; background: radial-gradient(circle, rgba(60,130,122,0.12), transparent 70%); top: 40%; left: 55%; }
+  .df-hero-body { position: relative; z-index: 1; width: min(100%, 64rem); margin: 0 auto; }
+  .df-eyebrow { font-size: clamp(0.78rem, 1.8vw, 0.92rem); font-weight: 900; letter-spacing: 0.16em; text-transform: uppercase; color: var(--df-blood-bright); margin: 0 0 1rem; }
+  .df-hero h1 { font-size: clamp(3rem, 16vw, 9rem); line-height: 0.82; letter-spacing: -0.08em; margin: 0; color: var(--df-text); text-shadow: 0 0 2.5rem rgba(129,44,50,0.2); max-width: 10ch; }
+  .df-subtitle { font-size: clamp(1.3rem, 3vw, 2.2rem); font-weight: 800; margin: clamp(1rem, 3vw, 1.5rem) 0 0; color: var(--df-gold-bright); }
+  .df-description { max-width: 38rem; font-size: clamp(1rem, 2vw, 1.2rem); margin: 0.75rem 0 0; color: var(--df-text-secondary); line-height: 1.5; }
+  .df-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 2.9rem; border-radius: 999px; padding: 0.75rem 1.1rem; font-weight: 850; line-height: 1; text-decoration: none; transition: transform 180ms ease, background 180ms ease; font-size: 0.95rem; }
+  .df-btn:active { transform: scale(0.97); }
+  .df-btn-primary { border: none; background: var(--df-blood); color: var(--df-text); }
+  .df-btn-primary:hover { background: var(--df-blood-bright); }
+  .df-btn-secondary { border: 1px solid var(--df-border); color: var(--df-text-secondary); background: transparent; }
+  .df-btn-secondary:hover { border-color: var(--df-gold); color: var(--df-gold-bright); }
+  .df-section { padding: clamp(4rem, 10vw, 7rem) clamp(1rem, 4vw, 4rem); }
+  .df-section-alt { background: var(--df-obsidian); border-top: 1px solid var(--df-border-subtle); border-bottom: 1px solid var(--df-border-subtle); }
+  .df-section-body { width: min(100%, 72rem); margin: 0 auto; }
+  .df-section-head { max-width: 48rem; margin-bottom: clamp(1.5rem, 4vw, 3rem); }
+  .df-section-head h2 { margin: 0; font-family: "Outfit", sans-serif; font-weight: 900; font-size: clamp(2.25rem, 7vw, 4.5rem); line-height: 0.95; letter-spacing: -0.06em; color: var(--df-text); }
+  .df-section-head p { margin: 0.75rem 0 0; font-size: clamp(1.05rem, 2vw, 1.35rem); line-height: 1.5; color: var(--df-text-secondary); }
+  .df-pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 1.25rem; }
+  .df-pillar { border-radius: 1.25rem; padding: 1.5rem; border: 1px solid var(--df-border); background: var(--df-iron); }
+  .df-pillar h3 { margin: 0.75rem 0 0.5rem; font-weight: 900; font-size: 1.2rem; color: var(--df-text); }
+  .df-pillar p { margin: 0; font-size: 0.92rem; line-height: 1.5; color: var(--df-text-secondary); }
+  .df-pillar-icon { font-size: 1.5rem; }
+  .df-tech { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.5rem; }
+  .df-tech-badge { display: inline-flex; border-radius: 999px; padding: 0.45rem 1rem; font-size: 0.85rem; font-weight: 800; border: 1px solid; background: rgba(255,255,255,0.04); }
+  .df-tech-note { font-size: 0.85rem; color: var(--df-text-muted); max-width: 36rem; }
+  .df-classes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 1.25rem; }
+  .df-class-card { border-radius: 1.25rem; padding: 1.5rem; border: 1px solid var(--df-border); background: var(--df-iron); }
+  .df-class-card h3 { margin: 0 0 0.5rem; font-weight: 900; font-size: 1.3rem; }
+  .df-class-card p { margin: 0; font-size: 0.9rem; line-height: 1.5; color: var(--df-text-secondary); }
+  .df-monster-families { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+  .df-family-badge { display: inline-flex; border-radius: 999px; padding: 0.4rem 0.9rem; font-size: 0.82rem; font-weight: 800; border: 1px solid; }
+  .df-callout { border-radius: 1.5rem; padding: clamp(1.5rem, 4vw, 2.5rem); border: 1px solid; background: var(--df-iron); }
+  .df-callout h2 { margin: 0 0 0.75rem; font-family: "Outfit", sans-serif; font-weight: 900; font-size: clamp(1.8rem, 5vw, 3rem); line-height: 0.95; letter-spacing: -0.04em; }
+  .df-callout p { font-size: clamp(1rem, 2vw, 1.2rem); line-height: 1.5; color: var(--df-text-secondary); }
+</style>
