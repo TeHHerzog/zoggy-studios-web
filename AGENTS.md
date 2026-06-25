@@ -657,3 +657,35 @@ Phase 0 and Phase 1 only
 After Phase 0 and Phase 1 are verified, recommend Phase 2 for approval.
 
 Do not begin Phase 2 automatically.
+
+---
+
+## Client Work / Portfolio Projects
+
+The `/work/` page at `apps/studio/src/pages/work.astro` lists client and commissioned projects.
+
+### Adding a client project
+
+Add a new `<article>` inside the `Delivered work` section's `wide-grid` div.
+
+Required fields:
+
+```astro
+<article class="card project-card">
+  <span class="status-pill">Live</span>
+  <h3>Client or Project Name</h3>
+  <p>What was built, the tech used, and what the project involved. Keep it professional and factual.</p>
+  <a class="button button-secondary" href="https://live-site-url.com">Visit site</a>
+</article>
+```
+
+Status pill options: `Live`, `In development`, `Launched`, `Maintained`, `Archived`.
+
+Rules:
+
+- Only list projects you actually built or substantially contributed to.
+- Link only to public, live sites or public repositories. Do not link to private admin panels.
+- Do not expose client credentials, API keys, database details, or private infrastructure.
+- If a client project is under NDA or not public, use a generic description without revealing the client identity.
+- Run `npm run build && npm run verify && npm run scan:public` after adding a project.
+- Run `npm run deploy:studio` to upload after build verification passes.
