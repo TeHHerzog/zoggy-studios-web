@@ -110,6 +110,31 @@ try {
   }
 
   Write-Host "Studio upload completed. Verify https://games.herzogit.com/ manually."
+
+  # Also deploy darkfantasy output to /games/darkfantasy/
+  $darkfantasyDist = Join-Path $repoRoot "dist\darkfantasy"
+  if (Test-Path $darkfantasyDist) {
+    Write-Host "Also uploading darkfantasy to /games/darkfantasy/..."
+    $dfBatch = New-TemporaryFile
+    $dfCommands = @(
+      "-mkdir /games/darkfantasy",
+      "cd /games/darkfantasy",
+      "lcd `"$darkfantasyDist`"",
+      "-mkdir _astro",
+      "put -r _astro",
+      "put .htaccess",
+      "put 404.html",
+      "put favicon.ico",
+      "put favicon.svg",
+      "put index.html",
+      "put robots.txt",
+      "bye"
+    )
+    Set-Content -Path $dfBatch -Value $dfCommands -Encoding ascii
+    & sftp.exe -i $keyPath -P $port -b $dfBatch "$user@$hostName"
+    Remove-Item $dfBatch -Force -ErrorAction SilentlyContinue
+    Write-Host "Darkfantasy upload completed. Verify at https://games.herzogit.com/darkfantasy/"
+  }
 }
 finally {
   Remove-Item $batchFile -Force -ErrorAction SilentlyContinue
