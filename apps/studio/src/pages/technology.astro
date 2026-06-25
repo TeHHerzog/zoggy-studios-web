@@ -1,0 +1,97 @@
+---
+import { studioName } from "@zoggy/branding";
+import StudioLayout from "../layouts/StudioLayout.astro";
+
+const title = `Technology | ${studioName}`;
+const description = `Technology notes, development tools, and engineering writing from ${studioName}.`;
+---
+
+<StudioLayout title={title} description={description}>
+  <section class="section" aria-labelledby="tech-title">
+    <div class="page-content text-stack">
+      <p class="eyebrow">Technology workshop</p>
+      <h1 id="tech-title" class="page-title">Engineering notes and development tools.</h1>
+      <p class="page-intro">Zoggy Studios builds tooling and infrastructure alongside its games. These are the systems, lessons, and practical engineering stories behind the projects.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Tools">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>Games and development tools</h2>
+        <p>Internal tools that support game development and server operations.</p>
+      </div>
+      <div class="wide-grid">
+        <article class="card project-card">
+          <h2>Development Supervisor</h2>
+          <p>Build, launch, and monitor the game server and supporting services from one dashboard.</p>
+          <a class="button button-secondary" href="/projects/development-supervisor/">View project</a>
+        </article>
+        <article class="card project-card">
+          <h2>Groundmaker</h2>
+          <p>Terrain and world authoring pipeline that produces neutral data for both Godot and Go.</p>
+          <a class="button button-secondary" href="/projects/groundmaker/">View project</a>
+        </article>
+        <article class="card project-card">
+          <h2>Monster Codex pipeline</h2>
+          <p>Structured content authoring that connects creature data to server, client, and wiki.</p>
+          <a class="button button-secondary" href="/projects/monster-codex/">View project</a>
+        </article>
+        <article class="card project-card">
+          <h2>Content administration tools</h2>
+          <p>Web-based tools for managing monsters, items, quests, and game content.</p>
+          <span class="status-pill">Part of MMO infrastructure</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Articles">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>Technology notes</h2>
+        <p>Public technical writing from ongoing development.</p>
+      </div>
+      <div class="wide-grid">
+        <article class="card text-stack">
+          <h3>Building live logging for a Go game server</h3>
+          <p>Structured logging, WebSocket streaming, and how the Development Supervisor displays real-time process output.</p>
+        </article>
+        <article class="card text-stack">
+          <h3>Understanding process startup and shutdown</h3>
+          <p>Graceful shutdown, signal handling, and service ordering in a multiplayer server environment.</p>
+        </article>
+        <article class="card text-stack">
+          <h3>Coordinating Godot and Go world measurements</h3>
+          <p>How server units, Godot units, tiles, elevation layers, and collision footprints stay consistent across two runtimes.</p>
+        </article>
+        <article class="card text-stack">
+          <h3>Designing server-authoritative movement</h3>
+          <p>Validating player position, speed, and actions on the server to prevent cheating and desync.</p>
+        </article>
+        <article class="card text-stack">
+          <h3>Creating content schemas for monsters and items</h3>
+          <p>YAML-driven content definitions that feed server logic, client display, database storage, and wiki generation.</p>
+        </article>
+        <article class="card text-stack">
+          <h3>Using AI agents without losing project consistency</h3>
+          <p>Managing multiple AI coding agents, shared conventions, repository boundaries, and quality review across a solo project.</p>
+        </article>
+        <article class="card text-stack">
+          <h3>Building useful internal dashboards</h3>
+          <p>What information a solo developer actually needs at a glance during active development sessions.</p>
+        </article>
+        <article class="card text-stack">
+          <h3>Designing a first playable MMO slice</h3>
+          <p>What goes into the first vertical slice of a persistent multiplayer world: login, movement, monsters, and a small playable zone.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</StudioLayout>
+
+<style>
+  .studio-theme .card h3 {
+    margin-bottom: 0.5rem;
+  }
+</style>

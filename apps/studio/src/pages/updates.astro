@@ -2,8 +2,8 @@
 import { studioName } from "@zoggy/branding";
 import StudioLayout from "../layouts/StudioLayout.astro";
 
-const title = `Updates | ${studioName}`;
-const description = `Studio updates and development notes from ${studioName}.`;
+const title = `Studio Log | ${studioName}`;
+const description = `Development notes and milestone updates from ${studioName}.`;
 ---
 
 <StudioLayout title={title} description={description}>
@@ -11,7 +11,7 @@ const description = `Studio updates and development notes from ${studioName}.`;
     <div class="page-content text-stack">
       <p class="eyebrow">Studio log</p>
       <h1 id="updates-title" class="page-title">Updates should be useful, not noisy.</h1>
-      <p class="page-intro">This page starts as a simple log. A full blog or newsletter should only be added if it can be maintained consistently.</p>
+      <p class="page-intro">Real milestones, screenshots, design decisions, and useful lessons. No weekly posting schedule — entries go up when there is something real to share.</p>
     </div>
   </section>
 
@@ -19,14 +19,64 @@ const description = `Studio updates and development notes from ${studioName}.`;
     <div class="section-inner">
       <ol class="timeline">
         <li class="text-stack">
-          <span class="status-pill">June 2026</span>
-          <h2>Zoggy Studios foundation begins</h2>
-          <p>The studio site is being shaped as a broad home for games, apps, books, scripts, technology work, and future creative projects.</p>
+          <span class="status-pill">Milestone</span>
+          <h2>Why Zoggy Studios Exists</h2>
+          <p>The studio was created as a public home for games, apps, tools, writing, and technology experiments under one consistent identity. It starts solo-led and honest about what is and is not ready.</p>
         </li>
         <li class="text-stack">
-          <span class="status-pill">Current boundary</span>
-          <h2>Dark Fantasy MMO remains private-first</h2>
-          <p>The MMO can be mentioned as an active project, but detailed public pages wait until safe public material is ready.</p>
+          <span class="status-pill">Infrastructure</span>
+          <h2>Building a Development Supervisor for a Go Game Server</h2>
+          <p>A practical dashboard for launching, monitoring, and troubleshooting the MMO server. Grew from the need to manage several services without enough visibility into failures and startup ordering.</p>
+        </li>
+        <li class="text-stack">
+          <span class="status-pill">Boundary</span>
+          <h2>Why the Dark Fantasy MMO Is Staying Private-First</h2>
+          <p>The game site remains intentionally minimal until screenshots, systems, lore, and alpha information are ready to present safely. Private game systems are not exposed through public pages.</p>
+        </li>
+        <li class="text-stack">
+          <span class="status-pill">Engineering</span>
+          <h2>Connecting Godot Terrain to an Authoritative Go Server</h2>
+          <p>Groundmaker produces neutral zone data that both the Godot client and Go server can read independently, keeping server-authoritative world logic separate from client rendering.</p>
+        </li>
+        <li class="text-stack">
+          <span class="status-pill">Content</span>
+          <h2>From Chonkroach Idea to Game-Ready Monster Data</h2>
+          <p>The Monster Codex pipeline takes a creature from concept art and lore through to structured YAML data that feeds combat, loot, AI, and in-game presentation.</p>
+        </li>
+        <li class="text-stack">
+          <span class="status-pill">Design</span>
+          <h2>Designing Character Creation Around Seven Core Stats</h2>
+          <p>Character progression begins with stat allocation across strength, agility, intelligence, and other core attributes that define class identity and play style.</p>
+        </li>
+        <li class="text-stack">
+          <span class="status-pill">Design</span>
+          <h2>Knight, Elf, Mage, and Prince: Establishing the Starting Classes</h2>
+          <p>Four distinct classes with unique stat priorities, ability trees, and equipment progression paths that form the foundation of character choice.</p>
+        </li>
+        <li class="text-stack">
+          <span class="status-pill">Infrastructure</span>
+          <h2>How the Monster Codex Connects Lore, Combat, Loot, and the Wiki</h2>
+          <p>One creature record feeds the server (combat stats, AI, loot), the client (visuals, animations), the database (persistence), and eventually the public wiki (lore, ecology).</p>
+        </li>
+        <li class="text-stack">
+          <span class="status-pill">Engineering</span>
+          <h2>What Groundmaker Needs to Export for an MMO Server</h2>
+          <p>Zone data must include terrain height, collision, walkability, spawn points, and metadata that the Go server can validate independently of Godot rendering.</p>
+        </li>
+        <li class="text-stack">
+          <span class="status-pill">Process</span>
+          <h2>Using Multiple AI Agents Without Losing Project Direction</h2>
+          <p>Managing several coding agents across a shared repository requires consistent AGENTS.md rules, security boundaries, build verification scripts, and per-session commit discipline.</p>
+        </li>
+        <li class="text-stack">
+          <span class="status-pill">Retrospective</span>
+          <h2>Empire of the Hill: Revisiting an Ant Colony RTS</h2>
+          <p>A colony strategy prototype exploring ant simulation, pheromone mechanics, and isometric RTS controls. Currently on hold while the MMO is the primary focus.</p>
+        </li>
+        <li class="text-stack">
+          <span class="status-pill">Milestone</span>
+          <h2>What Counts as Real Progress for a Solo Game Studio</h2>
+          <p>Progress is measured in working systems, structured content, practical tools, and honest public milestones — not in announcements, trailers, or launch promises.</p>
         </li>
       </ol>
     </div>

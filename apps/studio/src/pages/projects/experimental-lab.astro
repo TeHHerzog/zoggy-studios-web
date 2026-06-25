@@ -1,0 +1,64 @@
+---
+import { studioName } from "@zoggy/branding";
+import StudioLayout from "../../layouts/StudioLayout.astro";
+
+const title = `Experimental Lab | ${studioName}`;
+const description = `Smaller game concepts, character ideas, art experiments, and prototype ideas.`;
+---
+
+<StudioLayout title={title} description={description}>
+  <section class="section" aria-labelledby="lab-title">
+    <div class="page-content text-stack">
+      <p class="eyebrow">Exploring</p>
+      <h1 id="lab-title" class="page-title">Experimental Lab</h1>
+      <p class="page-intro">A single home for smaller game concepts, character ideas, art experiments, and prototype ideas. Each card here is a snapshot of something explored, not a commitment to ship.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Experiments">
+    <div class="section-inner">
+      <div class="wide-grid">
+        <article class="card project-card">
+          <span class="status-pill">Experiment</span>
+          <h2>Bub & Dub 3D</h2>
+          <p>Arcade bubble mechanics and cooperative platforming experiment. Last explored as a 3D prototype.</p>
+        </article>
+        <article class="card project-card">
+          <span class="status-pill">Concept</span>
+          <h2>Taternaught</h2>
+          <p>A potato astronaut character and possible adventure world concept.</p>
+        </article>
+        <article class="card project-card">
+          <span class="status-pill">Concept</span>
+          <h2>Shardfall: Echoes of the Abyss</h2>
+          <p>Fragmented-world roguelike concept exploring broken realities and procedural storytelling.</p>
+        </article>
+        <article class="card project-card">
+          <span class="status-pill">Experiment</span>
+          <h2>Wizard Fish</h2>
+          <p>Whimsical pixel character and animation experiments.</p>
+        </article>
+        <article class="card project-card">
+          <span class="status-pill">Exploring</span>
+          <h2>Creature Collector Concepts</h2>
+          <p>Early ideas for creature collection and taming mechanics.</p>
+        </article>
+        <article class="card project-card">
+          <span class="status-pill">Prototype</span>
+          <h2>Isometric Bigfoot</h2>
+          <p>An isometric adventure concept featuring a cryptid protagonist.</p>
+        </article>
+        <article class="card project-card">
+          <span class="status-pill">Concept</span>
+          <h2>Tower-Floor RPG</h2>
+          <p>A dungeon-crawling RPG built around tower-floor progression.</p>
+        </article>
+        <article class="card project-card">
+          <span class="status-pill">Experiment</span>
+          <h2>Pixel & Character Studies</h2>
+          <p>Ongoing pixel art, character design, and visual experiments.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</StudioLayout>

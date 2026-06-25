@@ -1,0 +1,40 @@
+---
+import { studioName } from "@zoggy/branding";
+import StudioLayout from "../../layouts/StudioLayout.astro";
+
+const title = `Empire of the Hill | ${studioName}`;
+const description = `A colony strategy and survival experiment centered on ants, pheromones, and RTS gameplay.`;
+---
+
+<StudioLayout title={title} description={description}>
+  <section class="section" aria-labelledby="empire-title">
+    <div class="page-content text-stack">
+      <p class="eyebrow">Prototype</p>
+      <h1 id="empire-title" class="page-title">Empire of the Hill</h1>
+      <p class="page-intro">A colony strategy and survival experiment centered on building and defending an ant colony. Explores worker behavior, pheromone trails, underground construction, resource collection, rival colonies, and environmental threats.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Details">
+    <div class="section-inner wide-grid">
+      <article class="card text-stack">
+        <h2>Design direction</h2>
+        <ul class="note-list">
+          <li>Ant colony simulation with worker roles and caste systems</li>
+          <li>Pheromone trail mechanics for navigation and communication</li>
+          <li>Tunnel digging and underground base construction</li>
+          <li>Resource collection and nest expansion</li>
+          <li>Rival colonies and environmental threats</li>
+          <li>Classic RTS controls in a 2D/2.5D isometric view</li>
+          <li>Weather and environmental effects</li>
+          <li>Windows and mobile compatibility</li>
+        </ul>
+      </article>
+      <article class="card text-stack">
+        <h2>Status</h2>
+        <p>This project is a prototype concept informed by colony simulation games and classic real-time strategy. It is on hold while the MMO and its supporting tools are the primary focus.</p>
+        <p>The design work and prototype experiments contribute ideas and systems that may inform future projects.</p>
+      </article>
+    </div>
+  </section>
+</StudioLayout>

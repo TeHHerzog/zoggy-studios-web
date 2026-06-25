@@ -1,0 +1,63 @@
+---
+import { studioName } from "@zoggy/branding";
+import StudioLayout from "../../layouts/StudioLayout.astro";
+
+const title = `Development Supervisor | ${studioName}`;
+const description = `A Go-based internal development tool for building, launching, monitoring, and troubleshooting the MMO server.`;
+---
+
+<StudioLayout title={title} description={description}>
+  <section class="section" aria-labelledby="supervisor-title">
+    <div class="page-content text-stack">
+      <p class="eyebrow">Internal tool</p>
+      <h1 id="supervisor-title" class="page-title">Development Supervisor & Control Suite</h1>
+      <p class="page-intro">An internal development application for building, launching, monitoring, and troubleshooting the game server and its supporting services.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-label="About the tool">
+    <div class="section-inner">
+      <div class="wide-grid">
+        <article class="card text-stack">
+          <h2>What it does</h2>
+          <p>The Control Suite provides live process output, health information, build visibility, crash reporting, and a central place to understand what the development environment is doing at any moment.</p>
+          <p>The tool grew from a practical problem: launching several development services without enough visibility into build failures, startup ordering, connection problems, or hanging processes.</p>
+        </article>
+        <article class="card text-stack">
+          <h2>Key features</h2>
+          <ul class="note-list">
+            <li>Live server console output streamed to a dashboard</li>
+            <li>Build and launch stage tracking</li>
+            <li>Process health states and restart behavior</li>
+            <li>Server connection status monitoring</li>
+            <li>Recent errors and warnings panel</li>
+            <li>Crash reporting and recovery workflows</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Architecture">
+    <div class="section-inner">
+      <div class="callout text-stack">
+        <h2>How it works</h2>
+        <p>A three-layer architecture: the dashboard frontend communicates with a supervisor process that manages game server instances, monitors their health, and reports status changes.</p>
+        <p>Control Suite <span aria-hidden="true">&rarr;</span> Supervisor <span aria-hidden="true">&rarr;</span> Game Server</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Why it matters">
+    <div class="section-inner wide-grid">
+      <article class="card text-stack">
+        <h2>Why it matters</h2>
+        <p>This project demonstrates that Zoggy Studios is not merely brainstorming a game. The studio creates supporting technology around its projects: practical tools that solve real engineering problems.</p>
+      </article>
+      <article class="card text-stack">
+        <h2>Tech</h2>
+        <p>Built in Go. Uses process management, WebSocket streaming, and structured logging. Designed for the development environment first, with potential server-administration use later.</p>
+      </article>
+    </div>
+  </section>
+</StudioLayout>

@@ -1,0 +1,72 @@
+---
+import { studioName } from "@zoggy/branding";
+import StudioLayout from "../layouts/StudioLayout.astro";
+
+const title = `Gallery | ${studioName}`;
+const description = `Creature artwork, monster collections, and visual development from ${studioName}.`;
+---
+
+<StudioLayout title={title} description={description}>
+  <section class="section" aria-labelledby="gallery-title">
+    <div class="page-content text-stack">
+      <p class="eyebrow">Creature gallery</p>
+      <h1 id="gallery-title" class="page-title">From the Monster Codex.</h1>
+      <p class="page-intro">Selected creatures from the Dark Fantasy MMO content pipeline. Each entry connects visual design with lore, combat data, and in-game behavior through the structured authoring system.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Gallery collections">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>Collections</h2>
+        <p>Browse creatures by category. Each collection shows 4-8 entries at a time.</p>
+      </div>
+      <div class="wide-grid">
+        <article class="card project-card">
+          <h2>Dark Fantasy Creatures</h2>
+          <p>The core monster population of the MMO world. Serious, dangerous, and lore-rich.</p>
+          <span class="status-pill">Coming soon</span>
+        </article>
+        <article class="card project-card">
+          <h2>Trick and Toon Monsters</h2>
+          <p>Unusual creatures that break the dark fantasy tone with humor or surprise.</p>
+          <span class="status-pill">Coming soon</span>
+        </article>
+        <article class="card project-card">
+          <h2>Clockwork Constructs</h2>
+          <p>Mechanical and animated creatures built from gears, magic, and strange materials.</p>
+          <span class="status-pill">Coming soon</span>
+        </article>
+        <article class="card project-card">
+          <h2>Frost Creatures</h2>
+          <p>Beasts adapted to frozen wastes and arctic zones.</p>
+          <span class="status-pill">Coming soon</span>
+        </article>
+        <article class="card project-card">
+          <h2>Moon-Touched Beasts</h2>
+          <p>Creatures altered by lunar influence, celestial events, or otherworldly exposure.</p>
+          <span class="status-pill">Coming soon</span>
+        </article>
+        <article class="card project-card">
+          <h2>Bosses and Mini-Bosses</h2>
+          <p>Named encounters with unique mechanics, loot tables, and arena designs.</p>
+          <span class="status-pill">Coming soon</span>
+        </article>
+        <article class="card project-card">
+          <h2>Pixel and Character Experiments</h2>
+          <p>Sprite work, character studies, and pixel art from across Zoggy projects.</p>
+          <span class="status-pill">Coming soon</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Note">
+    <div class="section-inner">
+      <div class="callout text-stack">
+        <h2>Visual content is being prepared</h2>
+        <p>The gallery will open with curated creature artwork, screenshots, and development images as material is cleared for public presentation. Check the <a href="/updates/">studio log</a> for new additions.</p>
+      </div>
+    </div>
+  </section>
+</StudioLayout>

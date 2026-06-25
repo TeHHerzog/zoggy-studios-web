@@ -1,0 +1,47 @@
+---
+import { studioName } from "@zoggy/branding";
+import StudioLayout from "../../layouts/StudioLayout.astro";
+
+const title = `Groundmaker | ${studioName}`;
+const description = `A world-authoring toolchain for creating terrain, zones, and server-compatible world data for the MMO.`;
+---
+
+<StudioLayout title={title} description={description}>
+  <section class="section" aria-labelledby="groundmaker-title">
+    <div class="page-content text-stack">
+      <p class="eyebrow">In development</p>
+      <h1 id="groundmaker-title" class="page-title">Groundmaker & World Pipeline</h1>
+      <p class="page-intro">A world-authoring toolchain for creating terrain, placing environments, defining walkability, and exporting neutral zone data understood by both the Godot client and the authoritative Go server.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-label="What it does">
+    <div class="section-inner wide-grid">
+      <article class="card text-stack">
+        <h2>Purpose</h2>
+        <p>Groundmaker creates terrain and neutral server-readable zone data. Terrain3D handles broad client visuals. The Go server consumes exported gameplay information rather than Godot-specific terrain resources.</p>
+        <p>This separation means the server can validate movement, spawning, and zone logic independently of the client rendering pipeline.</p>
+      </article>
+      <article class="card text-stack">
+        <h2>Pipeline stages</h2>
+        <ul class="note-list">
+          <li>Terrain height and elevation maps</li>
+          <li>Environment and object placement</li>
+          <li>Walkability and collision data</li>
+          <li>Zone boundary definitions</li>
+          <li>Server-unit coordinate translation</li>
+          <li>Neutral export format for both client and server</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Technical challenge">
+    <div class="section-inner">
+      <div class="callout text-stack">
+        <h2>Keeping a Godot World and Go Server on the Same Grid</h2>
+        <p>The world pipeline translates between server units, Godot units, logical tiles, elevation layers, entity origins, collision footprints, and area-of-interest cells. Getting these measurements consistent across two very different runtimes is the core engineering challenge.</p>
+      </div>
+    </div>
+  </section>
+</StudioLayout>

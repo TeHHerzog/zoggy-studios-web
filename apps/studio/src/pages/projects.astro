@@ -1,43 +1,60 @@
 ---
-import { gameName, gameStatus, studioName } from "@zoggy/branding";
+import { studioName } from "@zoggy/branding";
 import StudioLayout from "../layouts/StudioLayout.astro";
 
 const title = `Projects | ${studioName}`;
-const description = `Current and future project shelves for ${studioName}.`;
+const description = `Active projects and experiments from ${studioName}.`;
 ---
 
 <StudioLayout title={title} description={description}>
   <section class="section" aria-labelledby="projects-title">
     <div class="page-content text-stack">
       <p class="eyebrow">Project shelf</p>
-      <h1 id="projects-title" class="page-title">Work can start small here.</h1>
-      <p class="page-intro">This page separates active work from future shelves so the studio can grow without pretending every direction is ready at once.</p>
+      <h1 id="projects-title" class="page-title">What the studio is building.</h1>
+      <p class="page-intro">Each project here represents real work in progress, from game systems and server infrastructure to creature design and world-building tools.</p>
     </div>
   </section>
 
-  <section class="section" aria-label="Project list">
-    <div class="section-inner wide-grid">
-      <article id="dark-fantasy-mmo" class="card project-card">
-        <span class="status-pill">{gameStatus}</span>
-        <h2>{gameName}</h2>
-        <p>An old-school-inspired dark fantasy MMORPG currently being developed privately. The public game site remains shelved until screenshots, systems, lore, and alpha information are ready to present safely.</p>
-        <a class="button button-secondary" href="https://darkfantasy.herzogit.com/">Placeholder site</a>
-      </article>
-      <article class="card project-card">
-        <span class="status-pill">Exploring</span>
-        <h2>Apps and utilities</h2>
-        <p>A future place for useful tools, small apps, technical experiments, and software that can stand on its own outside a game release.</p>
-      </article>
-      <article class="card project-card">
-        <span class="status-pill">Future shelf</span>
-        <h2>Books and story worlds</h2>
-        <p>Long-form writing, worldbuilding, novels, guides, or companion material can be added when there is something real to share.</p>
-      </article>
-      <article class="card project-card">
-        <span class="status-pill">Future shelf</span>
-        <h2>Scripts and media</h2>
-        <p>Movie scripts, pilots, short-form media, and production ideas can live here later with clear request, contact, or availability paths.</p>
-      </article>
+  <section class="section" aria-label="Active projects">
+    <div class="section-inner">
+      <div class="wide-grid">
+        <article class="card project-card">
+          <span class="status-pill">Active development</span>
+          <h2>Dark Fantasy MMO</h2>
+          <p>An old-school-inspired dark fantasy MMORPG featuring a Godot 4.7 client, authoritative Go game server, persistent world, deep class identity, creature ecology, and server-authoritative gameplay.</p>
+          <a class="button button-secondary" href="/projects/dark-fantasy-mmo/">View project</a>
+        </article>
+        <article class="card project-card">
+          <span class="status-pill">Internal tool</span>
+          <h2>Development Supervisor & Control Suite</h2>
+          <p>A Go-based tool for building, launching, monitoring, and troubleshooting the game server and its supporting services with live process output and health tracking.</p>
+          <a class="button button-secondary" href="/projects/development-supervisor/">View project</a>
+        </article>
+        <article class="card project-card">
+          <span class="status-pill">In development</span>
+          <h2>Groundmaker & World Pipeline</h2>
+          <p>Terrain and zone-authoring tools that create world data readable by both the Godot client and the authoritative Go server for persistent multiplayer zones.</p>
+          <a class="button button-secondary" href="/projects/groundmaker/">View project</a>
+        </article>
+        <article class="card project-card">
+          <span class="status-pill">Active development</span>
+          <h2>Monster Codex & Content Pipeline</h2>
+          <p>A structured creature-authoring system connecting monster identity, visual direction, lore, ecology, combat stats, abilities, AI, spawning, loot, quests, and database records.</p>
+          <a class="button button-secondary" href="/projects/monster-codex/">View project</a>
+        </article>
+        <article class="card project-card">
+          <span class="status-pill">Prototype</span>
+          <h2>Empire of the Hill</h2>
+          <p>A 2D/2.5D ant-colony RTS and survival experiment inspired by colony simulation and classic strategy games.</p>
+          <a class="button button-secondary" href="/projects/empire-of-the-hill/">View project</a>
+        </article>
+        <article class="card project-card">
+          <span class="status-pill">Exploring</span>
+          <h2>Experimental Lab</h2>
+          <p>A single home for smaller game concepts, character ideas, art experiments, and prototype concepts.</p>
+          <a class="button button-secondary" href="/projects/experimental-lab/">Browse experiments</a>
+        </article>
+      </div>
     </div>
   </section>
 </StudioLayout>
