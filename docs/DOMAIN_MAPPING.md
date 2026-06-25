@@ -39,3 +39,15 @@ dist/darkfantasy/ -> /darkfantasy/darkfantasy/
 ## Unverified Remote Checks
 
 Local builds cannot prove DNS, HTTPS, IONOS directory mapping, remote directory listing behavior, or remote 404 behavior. Those checks must be performed manually after upload.
+
+## If The Site Appears Under `/games/`
+
+If `https://games.herzogit.com/games/` works but `https://games.herzogit.com/` returns 403 or does not show the site, the files uploaded correctly but the IONOS domain destination still points at the webspace root.
+
+Fix this in IONOS by setting:
+
+```text
+games.herzogit.com -> /games/
+```
+
+The Astro site uses root-relative links such as `/projects/` and `/about/`. Those links are correct only after the subdomain document root is mapped to `/games/`.

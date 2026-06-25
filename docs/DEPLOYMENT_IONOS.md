@@ -135,3 +135,5 @@ This prepares directory-listing protection where supported by IONOS Apache websp
 ## Manual Checks Still Required
 
 Local verification cannot prove live HTTPS, DNS, IONOS mapping, remote 404 behavior, or remote directory-listing behavior.
+
+After upload, if the site is reachable at `https://games.herzogit.com/games/` but not at `https://games.herzogit.com/`, update the IONOS domain destination for `games.herzogit.com` to `/games/`.
