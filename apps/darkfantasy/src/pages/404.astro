@@ -1,0 +1,21 @@
+---
+import { gameName } from "@zoggy/branding";
+import DarkFantasyLayout from "../layouts/DarkFantasyLayout.astro";
+
+const title = `Page Not Found | ${gameName}`;
+const description = `The requested ${gameName} page was not found.`;
+---
+
+<DarkFantasyLayout title={title} description={description}>
+  <section class="hero" aria-labelledby="not-found-title">
+    <div class="hero-inner">
+      <p class="eyebrow">404</p>
+      <h1 id="not-found-title">Lost beyond the veil</h1>
+      <p class="lead">This public path is not open yet.</p>
+      <p class="supporting">The Phase 1 placeholder includes only the homepage and this custom error page.</p>
+      <div class="actions">
+        <a class="button button-primary" href="/">Return home</a>
+      </div>
+    </div>
+  </section>
+</DarkFantasyLayout>

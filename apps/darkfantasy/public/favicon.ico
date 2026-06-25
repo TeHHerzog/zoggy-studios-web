@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Dark Fantasy MMO icon">
+  <rect width="64" height="64" rx="14" fill="#12070d" />
+  <path fill="#fde68a" d="M32 7 50 25 32 57 14 25z" />
+  <path fill="#4c1d95" d="M32 16 42 27 32 46 22 27z" />
+  <circle cx="32" cy="28" r="5" fill="#67e8f9" />
+</svg>

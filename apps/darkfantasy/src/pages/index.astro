@@ -1,0 +1,39 @@
+---
+import { gameName, gameStatus, studioName } from "@zoggy/branding";
+import DarkFantasyLayout from "../layouts/DarkFantasyLayout.astro";
+
+const title = `${gameName} | ${gameStatus}`;
+const description = `${gameName} is an old-school-inspired dark fantasy MMORPG currently in ${gameStatus.toLowerCase()} development.`;
+---
+
+<DarkFantasyLayout title={title} description={description}>
+  <section class="hero" aria-labelledby="game-title">
+    <div class="hero-inner">
+      <p class="eyebrow">{gameStatus} development</p>
+      <h1 id="game-title">{gameName}</h1>
+      <p class="lead">An old-school-inspired dark fantasy MMORPG.</p>
+      <p class="supporting">Currently in {gameStatus.toLowerCase()} development. This public placeholder does not expose private game systems or account services.</p>
+      <div class="actions" aria-label="Primary links">
+        <a class="button button-primary" href="https://games.herzogit.com/">Visit {studioName}</a>
+        <a class="button button-secondary" href="mailto:hello@games.herzogit.com">Contact the studio</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="signals-title">
+    <div class="card-grid">
+      <article class="card">
+        <h2 id="signals-title">Ancient</h2>
+        <p>A ruined, mythic tone without publishing private lore or unreleased content.</p>
+      </article>
+      <article class="card">
+        <h2>Corrupted</h2>
+        <p>Dark atmosphere, vibrant accents, and grungy edges balanced with accessible contrast.</p>
+      </article>
+      <article class="card">
+        <h2>Cosmic</h2>
+        <p>A separate visual identity from the broader Zoggy Studios umbrella site.</p>
+      </article>
+    </div>
+  </section>
+</DarkFantasyLayout>

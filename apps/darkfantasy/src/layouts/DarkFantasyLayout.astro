@@ -1,0 +1,121 @@
+---
+import "@zoggy/ui/styles.css";
+import { gameName, studioName } from "@zoggy/branding";
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{title}</title>
+  </head>
+  <body class="darkfantasy-theme">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="page-shell">
+      <header class="site-header" aria-label={`${gameName} site header`}>
+        <a class="brand-link" href="/" aria-label={`${gameName} home`}>
+          <span class="brand-mark" aria-hidden="true">DF</span>
+          <span>{gameName}</span>
+        </a>
+        <span class="header-note">A {studioName} project</span>
+      </header>
+      <main id="main-content" class="main-content">
+        <slot />
+      </main>
+      <footer class="site-footer">
+        <span>{gameName}</span>
+        <span>Public placeholder. No account, server, database, or private admin integration.</span>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style>
+  .darkfantasy-theme {
+    --focus-color: #67e8f9;
+    --skip-bg: #f8fafc;
+    --skip-text: #16080f;
+    background:
+      radial-gradient(circle at 18% 18%, rgba(139, 92, 246, 0.34), transparent 22rem),
+      radial-gradient(circle at 82% 18%, rgba(20, 184, 166, 0.24), transparent 20rem),
+      radial-gradient(circle at 55% 88%, rgba(248, 113, 113, 0.2), transparent 22rem),
+      linear-gradient(145deg, #12070d 0%, #1b0f2e 42%, #051015 100%);
+    color: #f8fafc;
+  }
+
+  .darkfantasy-theme::before {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 54px 54px;
+    content: "";
+    mask-image: linear-gradient(to bottom, black, transparent 82%);
+  }
+
+  .darkfantasy-theme .site-header {
+    border-bottom: 1px solid rgba(251, 191, 36, 0.2);
+  }
+
+  .darkfantasy-theme .site-footer {
+    border-top: 1px solid rgba(251, 191, 36, 0.2);
+  }
+
+  .darkfantasy-theme .brand-mark {
+    border: 1px solid rgba(251, 191, 36, 0.42);
+    background: linear-gradient(135deg, rgba(127, 29, 29, 0.95), rgba(49, 46, 129, 0.9));
+    color: #fde68a;
+  }
+
+  .header-note,
+  .darkfantasy-theme .supporting,
+  .darkfantasy-theme .site-footer {
+    color: #cbd5e1;
+  }
+
+  .darkfantasy-theme .eyebrow {
+    color: #67e8f9;
+    text-shadow: 0 0 1.2rem rgba(103, 232, 249, 0.45);
+  }
+
+  .darkfantasy-theme h1 {
+    max-width: 10ch;
+    color: #fff7ed;
+    text-shadow: 0 0 2.5rem rgba(217, 70, 239, 0.35);
+  }
+
+  .darkfantasy-theme .lead {
+    color: #fde68a;
+  }
+
+  .darkfantasy-theme .button-primary {
+    border-color: #fde68a;
+    background: #fde68a;
+    color: #1b0f2e;
+  }
+
+  .darkfantasy-theme .button-secondary {
+    border-color: rgba(103, 232, 249, 0.78);
+    background: rgba(8, 47, 73, 0.38);
+    color: #ecfeff;
+  }
+
+  .darkfantasy-theme .card {
+    border: 1px solid rgba(251, 191, 36, 0.24);
+    background:
+      linear-gradient(135deg, rgba(15, 23, 42, 0.82), rgba(49, 46, 129, 0.45)),
+      rgba(15, 23, 42, 0.72);
+    box-shadow: inset 0 0 0 1px rgba(103, 232, 249, 0.06), 0 1.5rem 5rem rgba(0, 0, 0, 0.28);
+  }
+
+  .darkfantasy-theme .card p {
+    color: #dbeafe;
+  }
+</style>
