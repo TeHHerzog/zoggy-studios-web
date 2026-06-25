@@ -3,49 +3,70 @@ import { studioName } from "@zoggy/branding";
 import StudioLayout from "../layouts/StudioLayout.astro";
 
 const title = `Gallery | ${studioName}`;
-const description = `Creature artwork, monster collections, and visual development from ${studioName}.`;
+const description = `Creature artwork and lore from the ${studioName} Monster Codex.`;
 
-const collections = [
+const creatures = [
   {
-    name: "Dark Fantasy Creatures",
-    desc: "The core monster population of the MMO world.",
+    name: "Chonkroach",
+    family: "Vermin",
+    role: "Scavenger",
+    lore: "A bloated, chitinous scavenger that drags its distended abdomen through the undercrypts. Surprisingly fast when startled.",
     color: "#c084fc",
+    habitat: "Undercrypts, refuse tunnels",
     svg: "M24 8L40 8L48 24L40 40L24 48L8 40L8 24Z"
   },
   {
-    name: "Trick &amp; Toon Monsters",
-    desc: "Unusual creatures that break the dark fantasy tone.",
+    name: "Glimmerfang",
+    family: "Aberration",
+    role: "Ambush predator",
+    lore: "A translucent predator whose crystalline fangs refract residual magic. It hunts by remaining perfectly still until its prey is close enough to taste.",
+    color: "#38bdf8",
+    habitat: "Crystal caves, mana-fractured zones",
+    svg: "M16 8L48 8L56 24L48 40L16 40L8 24Z"
+  },
+  {
+    name: "Rot-Knight",
+    family: "Undead",
+    role: "Elite soldier",
+    lore: "Ancient armor fused with decayed tissue and a will that refuses to quiet. Rot-Knights patrol the same halls they guarded in life, attacking anything that moves.",
+    color: "#fb7185",
+    habitat: "Ancient fortresses, burial halls",
+    svg: "M16 8L48 8L56 24L48 40L16 40L8 24Z"
+  },
+  {
+    name: "Clockwork Stalker",
+    family: "Construct",
+    role: "Pursuit unit",
+    lore: "A mechanical hunter assembled from brass, springs, and a stolen soul gem. It does not tire, does not stray, and does not stop until its target is pinned.",
     color: "#facc15",
+    habitat: "Abandoned workshops, clockwork ruins",
     svg: "M8 16C8 16 24 8 40 16C56 24 48 40 48 40C48 40 32 48 16 40C8 36 8 16 8 16Z"
   },
   {
-    name: "Clockwork Constructs",
-    desc: "Mechanical creatures built from gears and magic.",
-    color: "#38bdf8",
-    svg: "M16 8L48 8L56 24L48 40L16 40L8 24Z"
-  },
-  {
-    name: "Frost Creatures",
-    desc: "Beasts adapted to frozen wastes and arctic zones.",
+    name: "Frost-Mantle Basilisk",
+    family: "Reptilian",
+    role: "Zone boss",
+    lore: "A massive serpentine creature whose hide is crusted with permafrost. Its gaze does not petrify, it freezes solid anything caught in its line of sight.",
     color: "#67e8f9",
+    habitat: "Glacial peaks, frozen valleys",
     svg: "M32 8L48 32L32 56L16 32Z"
   },
   {
-    name: "Moon-Touched Beasts",
-    desc: "Creatures altered by lunar influence.",
+    name: "Moon-Touched Warden",
+    family: "Celestial-touched",
+    role: "Guardian",
+    lore: "Once a wolf, now something more. The Warden walks under the light of a broken moon, its fur silvered by an influence it does not understand and cannot escape.",
     color: "#a78bfa",
+    habitat: "Moonlit clearings, celestial ruins",
     svg: "M32 8C40 8 48 16 48 24C48 36 40 48 32 52C24 48 16 36 16 24C16 16 24 8 32 8Z"
   },
   {
-    name: "Bosses &amp; Mini-Bosses",
-    desc: "Named encounters with unique mechanics and loot.",
-    color: "#fb7185",
-    svg: "M16 8L48 8L56 24L48 40L16 40L8 24Z"
-  },
-  {
-    name: "Pixel &amp; Character Experiments",
-    desc: "Sprite work and pixel art across Zoggy projects.",
-    color: "#34d399",
+    name: "Ember Imp",
+    family: "Fiend",
+    role: "Harasser",
+    lore: "A small, grinning devil that leaves scorch marks wherever it lands. Weak alone, dangerous in numbers, and always laughing.",
+    color: "#f97316",
+    habitat: "Volcanic vents, hellish rifts",
     svg: "M16 12L32 8L48 12L48 36L32 56L16 36Z"
   }
 ];
@@ -53,39 +74,52 @@ const collections = [
 <StudioLayout title={title} description={description}>
   <section class="gallery-hero" aria-labelledby="gallery-title">
     <div class="gallery-hero-inner">
-      <p class="eyebrow">Creature gallery</p>
-      <h1 id="gallery-title">From the Monster Codex.</h1>
-      <p class="gallery-lead">Selected creatures from the Dark Fantasy MMO content pipeline. Each entry connects visual design with lore, combat data, and in-game behavior through the structured authoring system.</p>
+      <p class="eyebrow">Monster Codex</p>
+      <h1 id="gallery-title">From the creature archive.</h1>
+      <p class="gallery-lead">Curated entries from the Dark Fantasy MMO content pipeline. Each creature connects visual design with lore, combat data, and in-game behavior through the structured authoring system. <a href="/projects/monster-codex/" style="color: #c084fc; text-decoration: underline">View the full Codex project</a></p>
     </div>
   </section>
-  <section class="section" aria-label="Gallery collections">
+
+  <section class="section" aria-label="Creature entries">
     <div class="section-inner">
       <div class="section-heading">
-        <h2>Collections</h2>
-        <p>Browse creatures by category. Each collection shows curated entries.</p>
+        <h2>Creature gallery</h2>
+        <p>A selection of monsters from the ever-growing Codex.</p>
       </div>
-      <div class="gallery-grid">
-        {collections.map((col) => (
-          <div class="gallery-card">
-            <div class="gallery-preview" style={`--accent: ${col.color}`}>
-              <svg class="creature-icon" viewBox="0 0 64 64" fill="none" stroke={col.color} stroke-width="2" stroke-linejoin="round" aria-hidden="true">
-                <path d={col.svg} />
-                <circle cx="24" cy="24" r="3" fill={col.color} opacity="0.6" />
-                <circle cx="40" cy="24" r="3" fill={col.color} opacity="0.6" />
+      <div class="creature-grid">
+        {creatures.map((creature) => (
+          <article class="creature-card">
+            <div class="creature-visual" style={`--accent: ${creature.color}`}>
+              <svg class="creature-svg" viewBox="0 0 64 64" fill="none" stroke={creature.color} stroke-width="1.8" stroke-linejoin="round" aria-hidden="true">
+                <path d={creature.svg} />
+                <circle cx="22" cy="22" r="2.5" fill={creature.color} opacity="0.6" />
+                <circle cx="42" cy="22" r="2.5" fill={creature.color} opacity="0.6" />
               </svg>
             </div>
-            <h3 set:html={col.name}></h3>
-            <p>{col.desc}</p>
-          </div>
+            <div class="creature-body">
+              <div class="creature-meta">
+                <span class="pill" style={`border-color: ${creature.color}; color: ${creature.color}`}>{creature.family}</span>
+                <span class="pill">{creature.role}</span>
+              </div>
+              <h3>{creature.name}</h3>
+              <p class="creature-lore">{creature.lore}</p>
+              <p class="creature-habitat"><strong>Habitat:</strong> {creature.habitat}</p>
+            </div>
+          </article>
         ))}
       </div>
     </div>
   </section>
+
   <section class="section" aria-label="Note">
     <div class="section-inner">
       <div class="callout text-stack" style="text-align: center">
-        <h2>Artwork being prepared</h2>
-        <p>The gallery will feature curated creature artwork, screenshots, and development images as material is cleared. Check <a href="/updates/">the studio log</a> for new additions.</p>
+        <h2>Part of the Monster Codex pipeline</h2>
+        <p>Each creature entry is a structured record connecting lore, combat stats, AI behavior, spawning rules, loot tables, and in-game presentation. The full Codex contains hundreds of entries spanning dark fantasy, trick monsters, clockwork constructs, frost creatures, bosses, and more.</p>
+        <div class="actions" style="justify-content: center">
+          <a class="button button-primary" href="/projects/monster-codex/">About the Codex project</a>
+          <a class="button button-secondary" href="https://darkfantasy.herzogit.com/">Dark Fantasy MMO site</a>
+        </div>
       </div>
     </div>
   </section>
@@ -96,12 +130,17 @@ const collections = [
   .gallery-hero-inner { width: min(100%, 72rem); margin: 0 auto; }
   .gallery-hero .eyebrow { color: #c084fc; }
   .gallery-hero h1 { color: #fff7ed; }
-  .gallery-lead { max-width: 42rem; margin: clamp(1.25rem, 3vw, 2rem) 0 0; font-size: clamp(1.1rem, 2.5vw, 1.5rem); color: #e9d5ff; }
-  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 1.25rem; }
-  .gallery-card { border-radius: var(--radius-card); overflow: hidden; border: 1px solid rgba(17,24,39,0.12); background: rgba(255,255,255,0.68); }
-  .gallery-card h3 { margin: 1rem 1.25rem 0.35rem; font-family: var(--font-display); font-weight: 900; }
-  .gallery-card p { margin: 0 1.25rem 1.25rem; font-size: 0.9rem; color: #374151; }
-  .gallery-preview { width: 100%; aspect-ratio: 16/9; background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%); display: flex; align-items: center; justify-content: center; position: relative; }
-  .gallery-preview::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 32% 28%, color-mix(in srgb, var(--accent) 25%, transparent), transparent 16rem); }
-  .creature-icon { width: 64px; height: 64px; position: relative; z-index: 1; opacity: 0.85; }
+  .gallery-lead { max-width: 42rem; margin: clamp(1.25rem, 3vw, 2rem) 0 0; font-size: clamp(1.1rem, 2.5vw, 1.5rem); color: #e9d5ff; line-height: 1.5; }
+  .creature-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); gap: 1.5rem; }
+  .creature-card { border-radius: var(--radius-card); overflow: hidden; border: 1px solid rgba(17,24,39,0.12); background: rgba(255,255,255,0.68); box-shadow: 0 1.5rem 5rem rgba(15,23,42,0.08); display: grid; grid-template-rows: auto 1fr; }
+  .creature-visual { width: 100%; aspect-ratio: 16/10; background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%); display: flex; align-items: center; justify-content: center; position: relative; }
+  .creature-visual::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 32% 28%, color-mix(in srgb, var(--accent) 25%, transparent), transparent 16rem); }
+  .creature-svg { width: 80px; height: 80px; position: relative; z-index: 1; opacity: 0.9; }
+  .creature-body { padding: 1.25rem; display: grid; gap: 0.65rem; align-content: start; }
+  .creature-body h3 { margin: 0; font-family: var(--font-display); font-weight: 900; font-size: 1.35rem; }
+  .creature-meta { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .pill { display: inline-flex; border-radius: 999px; padding: 0.2rem 0.5rem; font-size: 0.72rem; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid currentColor; }
+  .creature-lore { margin: 0; font-size: 0.92rem; line-height: 1.55; color: #374151; }
+  .creature-habitat { margin: 0; font-size: 0.82rem; color: #64748b; }
+  .creature-habitat strong { font-weight: 800; color: #374151; }
 </style>
