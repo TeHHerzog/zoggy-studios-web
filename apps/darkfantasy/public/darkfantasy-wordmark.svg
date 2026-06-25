@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-label="Dark Fantasy MMO">
+  <rect width="100%" height="100%" fill="transparent"/>
+  <g fill="#DDD5C3" font-family="Outfit, sans-serif" font-weight="900" letter-spacing="2">
+    <text x="600" y="140" font-size="118" text-anchor="middle" letter-spacing="4">DARK</text>
+    <text x="600" y="240" font-size="72" text-anchor="middle" letter-spacing="14">FANTASY</text>
+    <text x="600" y="320" font-size="46" text-anchor="middle" letter-spacing="18">MMO</text>
+  </g>
+  <!-- ritual scar accents -->
+  <line x1="240" y1="148" x2="290" y2="128" stroke="#A33B45" stroke-width="3" stroke-linecap="square"/>
+  <line x1="340" y1="248" x2="380" y2="232" stroke="#A33B45" stroke-width="2.5" stroke-linecap="square"/>
+  <line x1="820" y1="248" x2="860" y2="232" stroke="#A33B45" stroke-width="2.5" stroke-linecap="square"/>
+  <line x1="560" y1="328" x2="590" y2="316" stroke="#A33B45" stroke-width="2" stroke-linecap="square"/>
+  <line x1="640" y1="328" x2="610" y2="316" stroke="#A33B45" stroke-width="2" stroke-linecap="square"/>
+  <!-- decorative wedges -->
+  <path d="M460 128 L480 128 L470 118 Z" fill="#B38A48"/>
+  <path d="M730 128 L720 118 L740 128 Z" fill="#B38A48"/>
+  <path d="M540 228 L560 228 L550 218 Z" fill="#72508E"/>
+  <path d="M650 228 L640 218 L660 228 Z" fill="#72508E"/>
+</svg>

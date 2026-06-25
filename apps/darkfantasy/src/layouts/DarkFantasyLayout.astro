@@ -29,8 +29,7 @@ const navItems = [
     <div class="page-shell">
       <header class="df-header" aria-label={`${gameName} site header`}>
         <a class="df-brand" href="/" aria-label={`${gameName} home`}>
-          <span class="df-mark" aria-hidden="true">DF</span>
-          <span class="df-brand-name">{gameName}</span>
+          <img src="/darkfantasy-wordmark.svg" alt="Dark Fantasy MMO" width="180" height="51" class="df-wordmark" loading="eager" />
         </a>
         <nav class="df-nav" aria-label="Primary navigation">
           {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
@@ -94,28 +93,16 @@ const navItems = [
   }
 
   .df-brand {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 0.65rem;
-    font-weight: 900;
-    font-size: 1.05rem;
-    letter-spacing: -0.02em;
     text-decoration: none;
-    color: var(--df-text);
+    line-height: 1;
   }
 
-  .df-mark {
-    display: inline-flex;
-    width: 2.2rem;
-    height: 2.2rem;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.5rem;
-    border: 1px solid var(--df-gold);
-    background: linear-gradient(135deg, var(--df-blood-dark), var(--df-cosmic));
-    color: var(--df-gold-bright);
-    font-size: 0.85rem;
-    font-weight: 900;
+  .df-wordmark {
+    display: block;
+    height: 42px;
+    width: auto;
   }
 
   .df-nav {

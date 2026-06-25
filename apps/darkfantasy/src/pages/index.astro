@@ -15,6 +15,7 @@ const description = `${gameName} is an old-school-inspired dark fantasy MMORPG c
     <div class="df-hero-body">
       <p class="df-eyebrow">{gameStatus} development</p>
       <h1 id="game-title">{gameName}</h1>
+      <img src="/darkfantasy-wordmark.svg" alt="Dark Fantasy MMO" class="df-hero-wordmark" loading="eager" />
       <p class="df-subtitle">An old-school-inspired dark fantasy MMORPG.</p>
       <p class="df-description">Dangerous exploration, meaningful character development, deeply authored creatures, and a persistent server-controlled world. A full-stack multiplayer project built with Godot, Go, and structured content pipelines.</p>
       <div class="actions">
@@ -147,7 +148,8 @@ const description = `${gameName} is an old-school-inspired dark fantasy MMORPG c
   .g3 { width: 18rem; height: 18rem; background: radial-gradient(circle, rgba(60,130,122,0.12), transparent 70%); top: 40%; left: 55%; }
   .df-hero-body { position: relative; z-index: 1; width: min(100%, 64rem); margin: 0 auto; }
   .df-eyebrow { font-size: clamp(0.78rem, 1.8vw, 0.92rem); font-weight: 900; letter-spacing: 0.16em; text-transform: uppercase; color: var(--df-blood-bright); margin: 0 0 1rem; }
-  .df-hero h1 { font-size: clamp(3rem, 16vw, 9rem); line-height: 0.82; letter-spacing: -0.08em; margin: 0; color: var(--df-text); text-shadow: 0 0 2.5rem rgba(129,44,50,0.2); max-width: 10ch; }
+  .df-hero h1 { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .df-hero-wordmark { display: block; width: min(100%, 38rem); height: auto; margin: 0; }
   .df-subtitle { font-size: clamp(1.3rem, 3vw, 2.2rem); font-weight: 800; margin: clamp(1rem, 3vw, 1.5rem) 0 0; color: var(--df-gold-bright); }
   .df-description { max-width: 38rem; font-size: clamp(1rem, 2vw, 1.2rem); margin: 0.75rem 0 0; color: var(--df-text-secondary); line-height: 1.5; }
   .df-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 2.9rem; border-radius: 999px; padding: 0.75rem 1.1rem; font-weight: 850; line-height: 1; text-decoration: none; transition: transform 180ms ease, background 180ms ease; font-size: 0.95rem; }
