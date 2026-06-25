@@ -1,0 +1,6 @@
+{
+  "name": "@zoggy/public-content-contract",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module"
+}
