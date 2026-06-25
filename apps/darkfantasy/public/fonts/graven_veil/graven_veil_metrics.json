@@ -1,0 +1,21 @@
+{
+  "family_name": "Graven Veil Display",
+  "status": "PROPOSED concept, not canonical game title and not a compiled font",
+  "em_units": 1000,
+  "cap_height": 880,
+  "baseline": 1000,
+  "default_advance": 840,
+  "recommended_tracking": {
+    "logo": 20,
+    "headings": 35,
+    "all_caps_small": 55
+  },
+  "recommended_sizes_px": {
+    "logo_min": 72,
+    "zone_heading": 48,
+    "panel_heading": 30,
+    "smallest_allowed": 24
+  },
+  "glyphs": "ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789 . , : ! ? - + / \\ ( ) [ ]",
+  "planned_next": "lowercase or small caps, accented Latin, kerning pairs, monochrome scars, hinting, accessibility review"
+}

@@ -1,7 +1,24 @@
-/* Dark Fantasy MMO Theme — Master Palette
+/* Dark Fantasy MMO Theme — Master Palette + Font Configuration
    Ancient, corrupted, vibrant, cosmic, grungy, unsettling.
    Inspired by late-1990s Korean MMORPG presentation.
    Source: Zoggy Studios brand palette v1 */
+
+/*
+   GRAVEN VEIL DISPLAY — Custom display font
+   Status: Concept stage, not yet compiled.
+   When the font is compiled as .woff2, place it in:
+     apps/darkfantasy/public/fonts/graven_veil/graven_veil_display.woff2
+   Then uncomment the @font-face rule below and update the path.
+*/
+/*
+@font-face {
+  font-family: "Graven Veil Display";
+  src: url("/fonts/graven_veil/graven_veil_display.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+*/
 
 :root {
   /* Core surfaces — dark forged metal, cracked stone, charred wood */
@@ -82,4 +99,9 @@
   --df-accent-premium: var(--df-gold);
   --df-accent-cosmic: var(--df-cosmic);
   --df-accent-witchfire: var(--df-witchfire);
+  --df-accent-cosmic: var(--df-cosmic);
+
+  /* Display font — uses Graven Veil when compiled, falls back to Outfit */
+  --df-font-display: "Graven Veil Display", "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --df-font-body: "Outfit", ui-sans-serif, system-ui, sans-serif;
 }

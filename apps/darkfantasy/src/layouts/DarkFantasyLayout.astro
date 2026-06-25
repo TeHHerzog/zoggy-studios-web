@@ -56,9 +56,14 @@ const navItems = [
     --focus-color: var(--df-witchfire-bright);
     background: var(--df-abyss);
     color: var(--df-text);
-    font-family: "Outfit", ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--df-font-body);
     font-weight: 400;
     line-height: 1.6;
+  }
+
+  .df-theme h1, .df-theme h2, .df-theme h3 {
+    font-family: var(--df-font-display);
+    font-weight: 900;
   }
 
   .df-theme::before {
