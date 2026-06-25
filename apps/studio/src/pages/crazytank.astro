@@ -1,0 +1,175 @@
+---
+import StudioLayout from "../layouts/StudioLayout.astro";
+
+const title = `CrazyTank | A Magical Fish Tank Game`;
+const description = `CrazyTank is a magical fish tank management game by NabExp. Made with Godot. Now in Early Access.`;
+---
+<StudioLayout title={title} description={description} image="/social-card.svg">
+  <section class="ct-hero" aria-labelledby="ct-title">
+    <div class="ct-hero-bg" aria-hidden="true">
+      <div class="ct-orb o1"></div>
+      <div class="ct-orb o2"></div>
+      <div class="ct-orb o3"></div>
+    </div>
+    <div class="ct-hero-inner">
+      <p class="ct-eyebrow">NabExp &mdash; Now in Early Access</p>
+      <h1 id="ct-title">CrazyTank</h1>
+      <p class="ct-tagline">A crazy magical fish tank management game.</p>
+      <p class="ct-desc">Meet the wizard fish. Help him spread happiness to every crazy tank. Manage magical fish, spawn items, and create the wildest aquarium you can imagine.</p>
+      <div class="actions">
+        <a class="ct-button ct-button-primary" href="https://nabexp.itch.io/crazytank">Play on itch.io</a>
+        <a class="ct-button ct-button-secondary" href="#about">About the game</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="ct-section" aria-labelledby="about-title">
+    <div class="ct-section-inner">
+      <div class="ct-section-heading">
+        <p class="eyebrow">About</p>
+        <h2 id="about-title">What is CrazyTank?</h2>
+      </div>
+      <div class="ct-features">
+        <article class="ct-feature-card">
+          <div class="ct-feature-icon" aria-hidden="true">🐟</div>
+          <h3>Magical Fish Tank</h3>
+          <p>Build and manage a fantastical aquarium filled with magical creatures, each with their own personality.</p>
+        </article>
+        <article class="ct-feature-card">
+          <div class="ct-feature-icon" aria-hidden="true">🧙</div>
+          <h3>Wizard Fish</h3>
+          <p>Help the wizard fish spread happiness. Click to select and spawn items, decorate tanks, and create chaos.</p>
+        </article>
+        <article class="ct-feature-card">
+          <div class="ct-feature-icon" aria-hidden="true">🎮</div>
+          <h3>Easy to Play</h3>
+          <p>WASD or arrow keys to move. Left click to interact. ESC to pause. Playable in browser or download for Windows.</p>
+        </article>
+        <article class="ct-feature-card">
+          <div class="ct-feature-icon" aria-hidden="true">✨</div>
+          <h3>Early Access</h3>
+          <p>In active development with new features, creatures, and tank options being added regularly.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="ct-section ct-section-dark" aria-label="Development">
+    <div class="ct-section-inner">
+      <div class="ct-section-heading">
+        <p class="eyebrow">Development</p>
+        <h2>Built with</h2>
+      </div>
+      <div class="ct-stack">
+        <div class="ct-stack-item">
+          <span class="ct-stack-icon" aria-hidden="true">&#9878;</span>
+          <span>Godot Engine</span>
+        </div>
+        <div class="ct-stack-item">
+          <span class="ct-stack-icon" aria-hidden="true">&#9835;</span>
+          <span>Audacity</span>
+        </div>
+        <div class="ct-stack-item">
+          <span class="ct-stack-icon" aria-hidden="true">&#9998;</span>
+          <span>Krita</span>
+        </div>
+        <div class="ct-stack-item">
+          <span class="ct-stack-icon" aria-hidden="true">&#9881;</span>
+          <span>AI-Assisted Workflows</span>
+        </div>
+      </div>
+      <div class="ct-credit">
+        <p><strong>Developer:</strong> NabExp</p>
+        <p><strong>Contributions from:</strong> Zoggy Studios &mdash; development support, AI-assisted tooling, and design feedback.</p>
+        <p><strong>Status:</strong> In development &middot; Early Access</p>
+        <p><strong>Platforms:</strong> HTML5 (browser) &middot; Windows</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ct-section" aria-label="Screenshots">
+    <div class="ct-section-inner">
+      <div class="ct-section-heading">
+        <p class="eyebrow">Media</p>
+        <h2>Screenshots</h2>
+      </div>
+      <div class="ct-screenshots">
+        <div class="ct-shot">
+          <div class="ct-shot-placeholder">
+            <span class="ct-shot-icon" aria-hidden="true">&#128247;</span>
+            <span>Screenshot 1</span>
+          </div>
+        </div>
+        <div class="ct-shot">
+          <div class="ct-shot-placeholder">
+            <span class="ct-shot-icon" aria-hidden="true">&#128247;</span>
+            <span>Screenshot 2</span>
+          </div>
+        </div>
+        <div class="ct-shot">
+          <div class="ct-shot-placeholder">
+            <span class="ct-shot-icon" aria-hidden="true">&#128247;</span>
+            <span>Screenshot 3</span>
+          </div>
+        </div>
+      </div>
+      <p class="ct-shot-note">Screenshots from the game available on the itch.io page. Placeholder slots ready for direct uploads.</p>
+    </div>
+  </section>
+
+  <section class="ct-section ct-section-cta" aria-label="Play">
+    <div class="ct-section-inner" style="text-align: center">
+      <h2>Ready to try it?</h2>
+      <p>Play CrazyTank in your browser or download for Windows. Free on itch.io.</p>
+      <div class="actions" style="justify-content: center">
+        <a class="ct-button ct-button-primary" href="https://nabexp.itch.io/crazytank">Play on itch.io</a>
+      </div>
+    </div>
+  </section>
+</StudioLayout>
+
+<style>
+  .ct-hero { position: relative; overflow: hidden; min-height: min(620px, 74svh); display: grid; align-items: center; padding: clamp(3rem, 9vw, 7rem) var(--space-page); background: linear-gradient(135deg, #0c0a2e 0%, #1a0a3e 35%, #2d1b69 65%, #0f172a 100%); color: #f8fafc; }
+  .ct-hero-bg { position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+  .ct-orb { position: absolute; border-radius: 50%; opacity: 0.4; }
+  .o1 { width: 32rem; height: 32rem; background: radial-gradient(circle, rgba(192,132,252,0.25), transparent 70%); top: -10rem; right: -6rem; }
+  .o2 { width: 24rem; height: 24rem; background: radial-gradient(circle, rgba(56,189,248,0.2), transparent 70%); bottom: -4rem; left: -4rem; }
+  .o3 { width: 14rem; height: 14rem; background: radial-gradient(circle, rgba(250,204,21,0.15), transparent 70%); top: 45%; left: 50%; }
+  .ct-hero-inner { position: relative; z-index: 1; width: min(100%, 72rem); margin: 0 auto; }
+  .ct-eyebrow { font-size: clamp(0.78rem, 1.8vw, 0.92rem); font-weight: 900; letter-spacing: 0.16em; text-transform: uppercase; color: #c084fc; margin: 0 0 1rem; }
+  .ct-hero h1 { font-size: clamp(3.5rem, 18vw, 10rem); line-height: 0.82; letter-spacing: -0.08em; margin: 0; color: #fff7ed; text-shadow: 0 0 3rem rgba(192,132,252,0.3); }
+  .ct-tagline { font-size: clamp(1.3rem, 3vw, 2.2rem); font-weight: 800; margin: clamp(1rem, 3vw, 1.5rem) 0 0; color: #fde68a; }
+  .ct-desc { max-width: 36rem; font-size: clamp(1rem, 2vw, 1.2rem); margin: 0.75rem 0 0; color: #cbd5e1; line-height: 1.5; }
+  .ct-button { display: inline-flex; align-items: center; justify-content: center; min-height: 2.9rem; border-radius: 999px; padding: 0.75rem 1.1rem; font-weight: 850; line-height: 1; text-decoration: none; transition: transform 180ms ease, background 180ms ease; }
+  .ct-button:active { transform: scale(0.97); }
+  .ct-button-primary { border: none; background: linear-gradient(135deg, #c084fc, #7c3aed); color: #ffffff; }
+  .ct-button-primary:hover { opacity: 0.9; }
+  .ct-button-secondary { border: 1px solid rgba(192,132,252,0.5); color: #c084fc; background: rgba(192,132,252,0.1); }
+
+  .ct-section { padding: clamp(4rem, 10vw, 7rem) var(--space-page); }
+  .ct-section-dark { background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%); color: #f8fafc; }
+  .ct-section-cta { background: linear-gradient(135deg, #1a0a3e 0%, #2d1b69 100%); color: #f8fafc; }
+  .ct-section-inner { width: min(100%, 72rem); margin: 0 auto; }
+  .ct-section-heading { max-width: 48rem; margin-bottom: clamp(1.5rem, 4vw, 3rem); }
+  .ct-section-heading h2 { margin: 0; font-family: var(--font-display); font-weight: 900; font-size: clamp(2.25rem, 7vw, 4.5rem); line-height: 0.95; letter-spacing: -0.06em; }
+  .ct-section-heading p { color: #c084fc; }
+  .ct-section-dark .ct-section-heading p { color: #38bdf8; }
+
+  .ct-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 1.25rem; }
+  .ct-feature-card { border-radius: var(--radius-card); padding: 1.5rem; border: 1px solid rgba(192,132,252,0.2); background: rgba(255,255,255,0.06); }
+  .ct-feature-card h3 { margin: 0.75rem 0 0.5rem; font-family: var(--font-display); font-weight: 900; font-size: 1.2rem; }
+  .ct-feature-card p { margin: 0; font-size: 0.92rem; line-height: 1.5; color: #94a3b8; }
+  .ct-feature-icon { font-size: 2rem; line-height: 1; }
+
+  .ct-stack { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2rem; }
+  .ct-stack-item { display: inline-flex; align-items: center; gap: 0.4rem; border-radius: 999px; padding: 0.5rem 1rem; border: 1px solid rgba(56,189,248,0.3); background: rgba(56,189,248,0.08); font-size: 0.9rem; font-weight: 700; }
+  .ct-stack-icon { font-size: 1.1rem; }
+  .ct-credit { display: grid; gap: 0.4rem; font-size: 0.95rem; line-height: 1.5; max-width: 36rem; }
+  .ct-credit p { margin: 0; }
+  .ct-credit strong { font-weight: 800; }
+
+  .ct-screenshots { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 1.25rem; }
+  .ct-shot-placeholder { width: 100%; aspect-ratio: 16/10; border-radius: var(--radius-card); border: 2px dashed rgba(148,163,184,0.3); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; color: #64748b; font-size: 0.9rem; }
+  .ct-shot-icon { font-size: 1.5rem; }
+  .ct-shot-note { text-align: center; font-size: 0.85rem; color: #64748b; margin-top: 1rem; }
+</style>
