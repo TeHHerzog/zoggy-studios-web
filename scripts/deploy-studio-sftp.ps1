@@ -55,7 +55,14 @@ try {
   $commands = @(
     "-mkdir $remoteDir",
     "cd $remoteDir",
-    "lcd $localDist",
+    "lcd `"$localDist`"",
+    "-mkdir _astro",
+    "-mkdir about",
+    "-mkdir contact",
+    "-mkdir privacy",
+    "-mkdir projects",
+    "-mkdir terms",
+    "-mkdir updates",
     "put -r _astro",
     "put -r about",
     "put -r contact",
@@ -67,14 +74,19 @@ try {
     "put 404.html",
     "put content-assets.mjs",
     "put content-modules.mjs",
-    "put data-store.json",
     "put favicon.ico",
     "put favicon.svg",
     "put index.html",
-    "put robots.txt",
-    "put settings.json",
-    "bye"
+    "put robots.txt"
   )
+
+  foreach ($optionalFile in @("data-store.json", "settings.json")) {
+    if (Test-Path (Join-Path $localDist $optionalFile)) {
+      $commands += "put $optionalFile"
+    }
+  }
+
+  $commands += "bye"
 
   Set-Content -Path $batchFile -Value $commands -Encoding ascii
 
