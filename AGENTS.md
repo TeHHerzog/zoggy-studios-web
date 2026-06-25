@@ -354,7 +354,12 @@ skills/security-boundary-review.md
 skills/public-content-contract.md
 skills/ionos-deployment.md
 skills/verification-reporting.md
+skills/design-taste-frontend.md
+skills/high-end-visual-design.md
+skills/brandkit-skill.md
 ```
+
+Design guidance skills (`design-taste-frontend.md`, `high-end-visual-design.md`, `brandkit-skill.md`) are sourced from the leonxlnx/taste-skill project. Use them when building or refining public-facing pages to ensure layouts, typography, spacing, and visual variety avoid generic AI defaults.
 
 For a task that spans multiple areas, read all applicable skill files.
 
