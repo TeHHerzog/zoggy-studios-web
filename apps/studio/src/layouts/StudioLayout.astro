@@ -1,0 +1,147 @@
+---
+import "@zoggy/ui/styles.css";
+import { studioName, studioShortName } from "@zoggy/branding";
+
+const { title, description } = Astro.props;
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/projects/", label: "Projects" },
+  { href: "/about/", label: "About" },
+  { href: "/updates/", label: "Updates" },
+  { href: "/contact/", label: "Contact" }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{title}</title>
+  </head>
+  <body class="studio-theme">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="page-shell">
+      <header class="site-header" aria-label={`${studioName} site header`}>
+        <a class="brand-link" href="/" aria-label={`${studioName} home`}>
+          <span class="brand-mark" aria-hidden="true">Z</span>
+          <span>{studioName}</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+        </nav>
+      </header>
+      <main id="main-content" class="main-content">
+        <slot />
+      </main>
+      <footer class="site-footer">
+        <span>{studioName}</span>
+        <span>{studioShortName} is a solo-led studio for games, apps, stories, and strange new worlds.</span>
+        <span class="footer-links">
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+        </span>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style>
+  .studio-theme {
+    --focus-color: #2563eb;
+    --skip-bg: #111827;
+    --skip-text: #ffffff;
+    background:
+      radial-gradient(circle at 12% 12%, rgba(56, 189, 248, 0.35), transparent 28rem),
+      radial-gradient(circle at 92% 22%, rgba(250, 204, 21, 0.25), transparent 24rem),
+      linear-gradient(135deg, #fff7ed 0%, #eef6ff 46%, #fff 100%);
+    color: #111827;
+  }
+
+  .studio-theme .site-header,
+  .studio-theme .site-footer {
+    border-color: rgba(17, 24, 39, 0.14);
+  }
+
+  .studio-theme .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    border-bottom: 1px solid rgba(17, 24, 39, 0.12);
+    background: rgba(255, 250, 245, 0.78);
+    backdrop-filter: blur(18px);
+  }
+
+  .studio-theme .site-footer {
+    border-top: 1px solid rgba(17, 24, 39, 0.12);
+  }
+
+  .studio-theme .brand-mark {
+    background: #111827;
+    color: #fef3c7;
+  }
+
+  .studio-theme .site-nav a {
+    color: #374151;
+  }
+
+  .studio-theme .site-nav a:hover,
+  .studio-theme .site-nav a:focus-visible {
+    background: rgba(17, 24, 39, 0.08);
+    color: #111827;
+  }
+
+  .footer-links {
+    display: inline-flex;
+    gap: 0.8rem;
+  }
+
+  .footer-links a {
+    font-weight: 800;
+  }
+
+  .header-note,
+  .studio-theme .supporting,
+  .studio-theme .site-footer {
+    color: #374151;
+  }
+
+  .studio-theme .eyebrow {
+    color: #2563eb;
+  }
+
+  .studio-theme .lead {
+    color: #1f2937;
+  }
+
+  .studio-theme .button-primary {
+    border-color: #111827;
+    background: #111827;
+    color: #ffffff;
+  }
+
+  .studio-theme .button-secondary {
+    background: rgba(255, 255, 255, 0.72);
+    color: #111827;
+  }
+
+  .studio-theme .card {
+    border: 1px solid rgba(17, 24, 39, 0.12);
+    background: rgba(255, 255, 255, 0.68);
+    box-shadow: 0 1.5rem 5rem rgba(15, 23, 42, 0.08);
+  }
+
+  .studio-theme .hero-panel,
+  .studio-theme .callout,
+  .studio-theme .timeline li {
+    border: 1px solid rgba(17, 24, 39, 0.12);
+    background: rgba(255, 255, 255, 0.62);
+    box-shadow: 0 1.5rem 5rem rgba(15, 23, 42, 0.08);
+  }
+
+  .studio-theme .status-pill {
+    color: #2563eb;
+  }
+</style>

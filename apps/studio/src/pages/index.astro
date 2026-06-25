@@ -1,0 +1,71 @@
+---
+import { studioName, studioTagline, gameName, gameStatus } from "@zoggy/branding";
+import StudioLayout from "../layouts/StudioLayout.astro";
+
+const title = `${studioName} | Games, Apps, Stories, and Strange New Worlds`;
+const description = `${studioName} is a solo-led creative and technology studio for games, apps, writing, and future media projects.`;
+---
+
+<StudioLayout title={title} description={description}>
+  <section class="hero" aria-labelledby="studio-title">
+    <div class="hero-inner hero-grid">
+      <div>
+        <p class="eyebrow">Solo-led creative studio</p>
+        <h1 id="studio-title">{studioName}</h1>
+        <p class="lead">{studioTagline}</p>
+        <p class="supporting">A flexible home for games, apps, books, scripts, experiments, and technology projects as they grow from rough ideas into real public work.</p>
+        <div class="actions" aria-label="Primary links">
+          <a class="button button-primary" href="/projects/">View the project shelf</a>
+          <a class="button button-secondary" href="/about/">What this studio is</a>
+        </div>
+      </div>
+      <aside class="hero-panel" aria-label="Current studio focus">
+        <span class="status-pill">Current focus</span>
+        <h2>{gameName}</h2>
+        <p>An old-school-inspired dark fantasy MMORPG in {gameStatus.toLowerCase()} development. The full game site is intentionally shelved until more public material is ready.</p>
+        <a class="button button-secondary" href="/projects/#dark-fantasy-mmo">Read the project note</a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="direction-title">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2 id="direction-title">Built to grow in more than one direction.</h2>
+        <p>Zoggy Studios starts as a simple public identity. It can become a game studio, software lab, writing desk, media label, or a mix of all of them without pretending everything is finished today.</p>
+      </div>
+      <div class="wide-grid">
+        <article class="card">
+          <h3>Games</h3>
+          <p>Original worlds, prototypes, devlogs, and release-ready projects when they are ready to show.</p>
+        </article>
+        <article class="card">
+          <h3>Apps and tools</h3>
+          <p>Utilities, experiments, and practical software that can stand beside creative projects.</p>
+        </article>
+        <article class="card">
+          <h3>Books and scripts</h3>
+          <p>Long-form writing, story worlds, screenplays, and creative drafts can live under the same umbrella.</p>
+        </article>
+        <article class="card">
+          <h3>Technology notes</h3>
+          <p>Lessons learned while building with code, systems, automation, and AI-assisted workflows.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="start-title">
+    <div class="section-inner">
+      <div class="callout text-stack">
+        <span class="status-pill">Right now</span>
+        <h2 id="start-title">Start honest. Expand when the work is real.</h2>
+        <p>This site will avoid fake portfolios, fake team size, fake press, and fake launch promises. It will show what exists, what is being explored, and what is intentionally waiting.</p>
+        <div class="actions">
+          <a class="button button-primary" href="/updates/">Read studio updates</a>
+          <a class="button button-secondary" href="/contact/">Get in touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</StudioLayout>

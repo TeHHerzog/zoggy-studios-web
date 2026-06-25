@@ -1,0 +1,43 @@
+---
+import { gameName, gameStatus, studioName } from "@zoggy/branding";
+import StudioLayout from "../layouts/StudioLayout.astro";
+
+const title = `Projects | ${studioName}`;
+const description = `Current and future project shelves for ${studioName}.`;
+---
+
+<StudioLayout title={title} description={description}>
+  <section class="section" aria-labelledby="projects-title">
+    <div class="page-content text-stack">
+      <p class="eyebrow">Project shelf</p>
+      <h1 id="projects-title" class="page-title">Work can start small here.</h1>
+      <p class="page-intro">This page separates active work from future shelves so the studio can grow without pretending every direction is ready at once.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Project list">
+    <div class="section-inner wide-grid">
+      <article id="dark-fantasy-mmo" class="card project-card">
+        <span class="status-pill">{gameStatus}</span>
+        <h2>{gameName}</h2>
+        <p>An old-school-inspired dark fantasy MMORPG currently being developed privately. The public game site remains shelved until screenshots, systems, lore, and alpha information are ready to present safely.</p>
+        <a class="button button-secondary" href="https://darkfantasy.herzogit.com/">Placeholder site</a>
+      </article>
+      <article class="card project-card">
+        <span class="status-pill">Exploring</span>
+        <h2>Apps and utilities</h2>
+        <p>A future place for useful tools, small apps, technical experiments, and software that does not need to be tied to a game release.</p>
+      </article>
+      <article class="card project-card">
+        <span class="status-pill">Future shelf</span>
+        <h2>Books and story worlds</h2>
+        <p>Long-form writing, worldbuilding, novels, guides, or companion material can be added when there is something real to share.</p>
+      </article>
+      <article class="card project-card">
+        <span class="status-pill">Future shelf</span>
+        <h2>Scripts and media</h2>
+        <p>Movie scripts, pilots, short-form media, and production ideas can live here later with clear request or contact paths.</p>
+      </article>
+    </div>
+  </section>
+</StudioLayout>

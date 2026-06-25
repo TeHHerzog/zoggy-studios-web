@@ -1,0 +1,34 @@
+---
+import { studioName } from "@zoggy/branding";
+import StudioLayout from "../layouts/StudioLayout.astro";
+
+const title = `Updates | ${studioName}`;
+const description = `Studio updates and development notes from ${studioName}.`;
+---
+
+<StudioLayout title={title} description={description}>
+  <section class="section" aria-labelledby="updates-title">
+    <div class="page-content text-stack">
+      <p class="eyebrow">Studio log</p>
+      <h1 id="updates-title" class="page-title">Updates should be useful, not noisy.</h1>
+      <p class="page-intro">This page starts as a simple log. A full blog or newsletter should only be added if it can be maintained consistently.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Update entries">
+    <div class="section-inner">
+      <ol class="timeline">
+        <li class="text-stack">
+          <span class="status-pill">June 2026</span>
+          <h2>Zoggy Studios foundation begins</h2>
+          <p>The studio site is being shaped as a broad home for games, apps, books, scripts, technology work, and future creative projects.</p>
+        </li>
+        <li class="text-stack">
+          <span class="status-pill">Current boundary</span>
+          <h2>Dark Fantasy MMO remains private-first</h2>
+          <p>The MMO can be mentioned as an active project, but detailed public pages wait until safe public material is ready.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+</StudioLayout>

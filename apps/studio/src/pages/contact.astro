@@ -1,0 +1,37 @@
+---
+import { studioName } from "@zoggy/branding";
+import StudioLayout from "../layouts/StudioLayout.astro";
+
+const title = `Contact | ${studioName}`;
+const description = `Contact ${studioName} for project, press, collaboration, or general inquiries.`;
+---
+
+<StudioLayout title={title} description={description}>
+  <section class="section" aria-labelledby="contact-title">
+    <div class="page-content text-stack">
+      <p class="eyebrow">Contact</p>
+      <h1 id="contact-title" class="page-title">A direct path is better than a broken form.</h1>
+      <p class="page-intro">For now, contact is intentionally simple. Use email for project questions, collaboration ideas, press interest, or general studio inquiries.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="contact-options-title">
+    <div class="section-inner wide-grid">
+      <article class="card text-stack">
+        <h2 id="contact-options-title">Email</h2>
+        <ul class="contact-list">
+          <li><a href="mailto:hello@games.herzogit.com">hello@games.herzogit.com</a></li>
+        </ul>
+      </article>
+      <article class="card text-stack">
+        <h2>Good reasons to reach out</h2>
+        <ul class="note-list">
+          <li>Studio or project questions.</li>
+          <li>Creative collaboration ideas.</li>
+          <li>Press, coverage, or interview interest.</li>
+          <li>Technology or app-related conversations.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+</StudioLayout>

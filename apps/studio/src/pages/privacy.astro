@@ -1,0 +1,19 @@
+---
+import { studioName } from "@zoggy/branding";
+import StudioLayout from "../layouts/StudioLayout.astro";
+
+const title = `Privacy | ${studioName}`;
+const description = `Privacy information for the ${studioName} public website.`;
+---
+
+<StudioLayout title={title} description={description}>
+  <section class="section" aria-labelledby="privacy-title">
+    <div class="page-content text-stack">
+      <p class="eyebrow">Privacy</p>
+      <h1 id="privacy-title" class="page-title">Privacy basics</h1>
+      <p>This static website does not currently provide account registration, login, player portals, analytics dashboards, comments, purchases, or forms.</p>
+      <p>If you contact {studioName} by email, your message and email address are used to reply to you. Do not send sensitive account or security information.</p>
+      <p>This page is a practical placeholder and not a substitute for legal advice. It should be reviewed before any public launch involving analytics, newsletters, commerce, accounts, or user submissions.</p>
+    </div>
+  </section>
+</StudioLayout>

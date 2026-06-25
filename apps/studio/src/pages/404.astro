@@ -1,0 +1,22 @@
+---
+import { studioName } from "@zoggy/branding";
+import StudioLayout from "../layouts/StudioLayout.astro";
+
+const title = `Page Not Found | ${studioName}`;
+const description = `The requested ${studioName} page was not found.`;
+---
+
+<StudioLayout title={title} description={description}>
+  <section class="hero" aria-labelledby="not-found-title">
+    <div class="hero-inner">
+      <p class="eyebrow">404</p>
+      <h1 id="not-found-title">Page not found</h1>
+      <p class="lead">This part of {studioName} is not published yet.</p>
+      <p class="supporting">The studio site is growing in small, verified pieces. Try the homepage, projects, about, updates, or contact pages.</p>
+      <div class="actions">
+        <a class="button button-primary" href="/">Return home</a>
+        <a class="button button-secondary" href="/projects/">View projects</a>
+      </div>
+    </div>
+  </section>
+</StudioLayout>

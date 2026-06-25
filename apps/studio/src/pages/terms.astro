@@ -1,0 +1,19 @@
+---
+import { studioName } from "@zoggy/branding";
+import StudioLayout from "../layouts/StudioLayout.astro";
+
+const title = `Terms | ${studioName}`;
+const description = `Basic terms information for the ${studioName} public website.`;
+---
+
+<StudioLayout title={title} description={description}>
+  <section class="section" aria-labelledby="terms-title">
+    <div class="page-content text-stack">
+      <p class="eyebrow">Terms</p>
+      <h1 id="terms-title" class="page-title">Use this site plainly and respectfully.</h1>
+      <p>The current {studioName} website is informational. It does not sell products, provide accounts, host user-generated content, or grant access to private game systems.</p>
+      <p>Studio names, project names, page copy, and original materials should not be copied or presented as your own. Links to public pages are welcome.</p>
+      <p>This page is a practical placeholder and not legal advice. It should be reviewed before product sales, downloadable assets, accounts, community features, or release campaigns are added.</p>
+    </div>
+  </section>
+</StudioLayout>

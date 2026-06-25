@@ -1,0 +1,35 @@
+---
+import { studioName } from "@zoggy/branding";
+import StudioLayout from "../layouts/StudioLayout.astro";
+
+const title = `About | ${studioName}`;
+const description = `${studioName} is a solo-led creative and technology studio for games, apps, stories, and experiments.`;
+---
+
+<StudioLayout title={title} description={description}>
+  <section class="section" aria-labelledby="about-title">
+    <div class="page-content text-stack">
+      <p class="eyebrow">About the studio</p>
+      <h1 id="about-title" class="page-title">A small studio identity with room to become more.</h1>
+      <p class="page-intro">{studioName} is currently a solo-led, AI-assisted creative and technology studio. It exists to give games, apps, writing, and experiments a consistent public home while the work develops.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="principles-title">
+    <div class="section-inner wide-grid">
+      <article class="card text-stack">
+        <h2 id="principles-title">Operating principles</h2>
+        <ul class="note-list">
+          <li>Show real progress instead of pretending every idea is finished.</li>
+          <li>Keep private systems, private content, and unreleased game details out of public pages.</li>
+          <li>Use the studio brand as a home base across creative and technical work.</li>
+          <li>Let the business side mature when releases, contracts, money, or collaborators require it.</li>
+        </ul>
+      </article>
+      <article class="card text-stack">
+        <h2>What it is not yet</h2>
+        <p>This is not currently a publisher, agency, legal advisory page, public account platform, or full MMO portal. Those can be considered later if the work reaches that stage.</p>
+      </article>
+    </div>
+  </section>
+</StudioLayout>
