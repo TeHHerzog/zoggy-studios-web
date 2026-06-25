@@ -1,55 +1,113 @@
 ---
-import { studioName, studioTagline, gameName, gameStatus } from "@zoggy/branding";
+import { studioName, gameName } from "@zoggy/branding";
 import StudioLayout from "../layouts/StudioLayout.astro";
 
-const title = `${studioName} | Games, Apps, Stories, and Strange New Worlds`;
-const description = `${studioName} is a solo-led creative and technology studio for games, apps, books, scripts, and strange new worlds.`;
+const title = `${studioName} | Games, Tools, and Strange Worlds Built One System at a Time`;
+const description = `${studioName} is a solo-led creative and technology studio developing games, tools, creature-filled worlds, and technical experiments.`;
 ---
 
 <StudioLayout title={title} description={description}>
   <section class="hero" aria-labelledby="studio-title">
     <div class="hero-inner hero-grid">
       <div>
-        <p class="eyebrow">Solo-led creative studio</p>
-        <h1 id="studio-title">{studioName}</h1>
-        <p class="lead">{studioTagline}</p>
-        <p class="supporting">A flexible home for games, apps, books, scripts, experiments, and technology projects as they move from rough ideas into real public work.</p>
+        <p class="eyebrow">Solo-led game and technology studio</p>
+        <h1 id="studio-title">Games, tools, and strange worlds built one system at a time.</h1>
+        <p class="lead">Zoggy Studios develops original games, practical development tools, creature-filled worlds, and technical experiments. Current work centers on a dark fantasy MMORPG, its supporting server technology, world-building tools, and content pipeline.</p>
         <div class="actions" aria-label="Primary links">
-          <a class="button button-primary" href="/projects/">View the project shelf</a>
-          <a class="button button-secondary" href="/about/">What this studio is</a>
+          <a class="button button-primary" href="/projects/">Explore projects</a>
+          <a class="button button-secondary" href="/updates/">Read the studio log</a>
         </div>
       </div>
-      <aside class="hero-panel" aria-label="Current studio focus">
-        <span class="status-pill">Current focus</span>
-        <h2>{gameName}</h2>
-        <p>An old-school-inspired dark fantasy MMORPG in {gameStatus.toLowerCase()} development. It stays here as a project note until public game material is ready.</p>
-        <a class="button button-secondary" href="/projects/#dark-fantasy-mmo">Read the project note</a>
-      </aside>
     </div>
   </section>
 
-  <section class="section" aria-labelledby="direction-title">
+  <section class="section" aria-labelledby="current-work-title">
     <div class="section-inner">
       <div class="section-heading">
-        <h2 id="direction-title">Built to grow in more than one direction.</h2>
-        <p>Zoggy Studios starts as a public home base. It can become a game studio, software lab, writing desk, media label, or a mix of all of them without pretending everything is finished today.</p>
+        <h2 id="current-work-title">Current work</h2>
+        <p>What the studio is actively building right now.</p>
+      </div>
+      <div class="wide-grid">
+        <article class="card project-card">
+          <span class="status-pill">Active development</span>
+          <h3>{gameName}</h3>
+          <p>An old-school-inspired dark fantasy MMORPG with a Godot client, authoritative Go server, persistent world, and deep creature ecology.</p>
+          <a class="button button-secondary" href="/projects/dark-fantasy-mmo/">Project details</a>
+        </article>
+        <article class="card project-card">
+          <span class="status-pill">Internal tool</span>
+          <h3>Development Supervisor</h3>
+          <p>A Go-based control suite for building, launching, monitoring, and troubleshooting the MMO server and its supporting services.</p>
+          <a class="button button-secondary" href="/projects/development-supervisor/">Project details</a>
+        </article>
+        <article class="card project-card">
+          <span class="status-pill">In development</span>
+          <h3>Groundmaker & World Pipeline</h3>
+          <p>Terrain and zone-authoring tools that connect the Godot world to authoritative server data for a seamless multiplayer environment.</p>
+          <a class="button button-secondary" href="/projects/groundmaker/">Project details</a>
+        </article>
+        <article class="card project-card">
+          <span class="status-pill">Active development</span>
+          <h3>Monster Codex</h3>
+          <p>A structured creature-authoring system turning monster ideas, art, lore, stats, abilities, and loot into game-ready content.</p>
+          <a class="button button-secondary" href="/projects/monster-codex/">Project details</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="creature-title">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2 id="creature-title">From the creature archive</h2>
+        <p>Selected monsters from the Codex. Each creature connects lore, combat, loot, and in-game behavior through a structured data pipeline.</p>
+      </div>
+      <div class="actions">
+        <a class="button button-secondary" href="/gallery/">View the creature gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="tech-title">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2 id="tech-title">Technology from the workshop</h2>
+        <p>Practical engineering writing about what the studio is building and how it works.</p>
       </div>
       <div class="wide-grid">
         <article class="card">
-          <h3>Games</h3>
-          <p>Original worlds, prototypes, devlogs, and release-ready projects when they are ready to show.</p>
+          <h3>Why a Development Supervisor exists</h3>
+          <p>Launching several dev services without enough visibility into build failures, startup ordering, and connection problems led to a practical tool.</p>
         </article>
         <article class="card">
-          <h3>Apps and tools</h3>
-          <p>Utilities, experiments, and practical software that can stand beside creative projects.</p>
+          <h3>Keeping Godot and Go on the Same Grid</h3>
+          <p>Translating between server units, Godot units, logical tiles, elevation layers, entity origins, and area-of-interest cells.</p>
+        </article>
+      </div>
+      <div class="actions" style="margin-top: 1.5rem">
+        <a class="button button-secondary" href="/technology/">More technology notes</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="experimental-title">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2 id="experimental-title">Experimental shelf</h2>
+        <p>Older concepts and prototype ideas that inform current work.</p>
+      </div>
+      <div class="wide-grid">
+        <article class="card">
+          <span class="status-pill">Prototype</span>
+          <h3>Empire of the Hill</h3>
+          <p>An ant-colony RTS and survival experiment exploring colony simulation, pheromone systems, and isometric strategy gameplay.</p>
+          <a class="button button-secondary" href="/projects/empire-of-the-hill/">Read more</a>
         </article>
         <article class="card">
-          <h3>Books and scripts</h3>
-          <p>Long-form writing, story worlds, screenplays, and creative drafts can live under the same umbrella.</p>
-        </article>
-        <article class="card">
-          <h3>Technology notes</h3>
-          <p>Notes from building with code, systems, automation, and a small crew of AI-assisted workflows.</p>
+          <span class="status-pill">Exploring</span>
+          <h3>Experimental Lab</h3>
+          <p>Smaller game concepts, characters, art experiments, and prototype ideas collected in one place.</p>
+          <a class="button button-secondary" href="/projects/experimental-lab/">Browse experiments</a>
         </article>
       </div>
     </div>
@@ -62,7 +120,7 @@ const description = `${studioName} is a solo-led creative and technology studio 
         <h2 id="start-title">Start honest. Expand when the work earns it.</h2>
         <p>This site avoids fake portfolios, fake team size, fake press, and fake launch promises. It shows what exists, what is being explored, and what is intentionally waiting.</p>
         <div class="actions">
-          <a class="button button-primary" href="/updates/">Read studio updates</a>
+          <a class="button button-primary" href="/about/">About the studio</a>
           <a class="button button-secondary" href="/contact/">Get in touch</a>
         </div>
       </div>
