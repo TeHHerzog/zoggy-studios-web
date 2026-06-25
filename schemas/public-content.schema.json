@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://games.herzogit.com/schemas/public-content.schema.json",
+  "title": "Zoggy Studios Public Content Bundle Placeholder",
+  "description": "Phase 0 placeholder for a future sanitized public-content bundle. This schema is not a private MMO exporter contract.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "content_version",
+    "generated_at",
+    "monsters",
+    "items",
+    "skills",
+    "zones",
+    "quests"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "content_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "monsters": {
+      "type": "array",
+      "items": false
+    },
+    "items": {
+      "type": "array",
+      "items": false
+    },
+    "skills": {
+      "type": "array",
+      "items": false
+    },
+    "zones": {
+      "type": "array",
+      "items": false
+    },
+    "quests": {
+      "type": "array",
+      "items": false
+    }
+  }
+}
