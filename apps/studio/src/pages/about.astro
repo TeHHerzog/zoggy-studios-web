@@ -5,13 +5,27 @@ import StudioLayout from "../layouts/StudioLayout.astro";
 const title = `About | ${studioName}`;
 const description = `${studioName} is a solo-led creative and technology studio for games, apps, books, scripts, stories, and experiments.`;
 ---
-
 <StudioLayout title={title} description={description}>
   <section class="section" aria-labelledby="about-title">
     <div class="page-content text-stack">
       <p class="eyebrow">About the studio</p>
       <h1 id="about-title" class="page-title">A small studio identity with room to become more.</h1>
       <p class="page-intro">{studioName} is currently solo-led and tool-assisted. It exists to give games, apps, writing, scripts, technology experiments, and future creative work a consistent public home while the work develops.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="story-title">
+    <div class="section-inner wide-grid">
+      <article class="card text-stack">
+        <h2 id="story-title">Why the studio exists</h2>
+        <p>Zoggy Studios started as a simple idea: if I am going to build games, apps, tools, write books and scripts, and explore creative and technology projects, they should live under one name. One identity. One place where the work speaks for itself.</p>
+        <p>The studio is not a facade. It is not pretending to be a large team or a funded company. It is a public home base for a solo creator who builds across disciplines and wants the work to be findable, understandable, and honest about where it is in its lifecycle.</p>
+      </article>
+      <article class="card text-stack">
+        <h2>How it works</h2>
+        <p>The studio is solo-led and AI-assisted. A growing collection of specialized agents help with code, design, content, and infrastructure — but every decision, direction, and release belongs to one person.</p>
+        <p>This setup makes it possible to work on a server-authoritative MMO, a development dashboard, a creature content pipeline, an ant-colony RTS prototype, and creative writing projects without a large team. The bottleneck is not tools. It is focus and scope.</p>
+      </article>
     </div>
   </section>
 

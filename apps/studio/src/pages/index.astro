@@ -5,17 +5,21 @@ import StudioLayout from "../layouts/StudioLayout.astro";
 const title = `${studioName} | Games, Tools, and Strange Worlds Built One System at a Time`;
 const description = `${studioName} is a solo-led creative and technology studio developing games, tools, creature-filled worlds, and technical experiments.`;
 ---
-
 <StudioLayout title={title} description={description}>
   <section class="hero" aria-labelledby="studio-title">
-    <div class="hero-inner hero-grid">
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-shape shape-a"></div>
+      <div class="hero-shape shape-b"></div>
+      <div class="hero-shape shape-c"></div>
+    </div>
+    <div class="hero-inner">
       <div>
         <p class="eyebrow">Solo-led game and technology studio</p>
         <h1 id="studio-title">Games, tools, and strange worlds built one system at a time.</h1>
         <p class="lead">Zoggy Studios develops original games, practical development tools, creature-filled worlds, and technical experiments. Current work centers on a dark fantasy MMORPG, its supporting server technology, world-building tools, and content pipeline.</p>
         <div class="actions" aria-label="Primary links">
           <a class="button button-primary" href="/projects/">Explore projects</a>
-          <a class="button button-secondary" href="/updates/">Read the studio log</a>
+          <a class="button button-secondary" href="/now/">What I am working on now</a>
         </div>
       </div>
     </div>
@@ -115,11 +119,11 @@ const description = `${studioName} is a solo-led creative and technology studio 
 
   <section class="section" aria-labelledby="start-title">
     <div class="section-inner">
-      <div class="callout text-stack">
+      <div class="callout text-stack" style="text-align: center">
         <span class="status-pill">Right now</span>
         <h2 id="start-title">Start honest. Expand when the work earns it.</h2>
-        <p>This site avoids fake portfolios, fake team size, fake press, and fake launch promises. It shows what exists, what is being explored, and what is intentionally waiting.</p>
-        <div class="actions">
+        <p style="max-width: 38rem; margin: 0 auto">This site avoids fake portfolios, fake team size, fake press, and fake launch promises. It shows what exists, what is being explored, and what is intentionally waiting.</p>
+        <div class="actions" style="justify-content: center">
           <a class="button button-primary" href="/about/">About the studio</a>
           <a class="button button-secondary" href="/contact/">Get in touch</a>
         </div>
@@ -127,3 +131,13 @@ const description = `${studioName} is a solo-led creative and technology studio 
     </div>
   </section>
 </StudioLayout>
+
+<style>
+  .hero { position: relative; overflow: hidden; }
+  .hero-visual { position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+  .hero-shape { position: absolute; border-radius: 50%; opacity: 0.5; }
+  .shape-a { width: 38rem; height: 38rem; background: radial-gradient(circle, rgba(56,189,248,0.2), transparent 70%); top: -12rem; right: -8rem; }
+  .shape-b { width: 28rem; height: 28rem; background: radial-gradient(circle, rgba(250,204,21,0.15), transparent 70%); bottom: -6rem; left: -6rem; }
+  .shape-c { width: 18rem; height: 18rem; background: radial-gradient(circle, rgba(192,132,252,0.12), transparent 70%); top: 40%; left: 55%; }
+  .hero-inner { position: relative; z-index: 1; }
+</style>

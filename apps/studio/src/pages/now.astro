@@ -1,0 +1,90 @@
+---
+import { studioName, gameName, gameStatus } from "@zoggy/branding";
+import StudioLayout from "../layouts/StudioLayout.astro";
+
+const title = `Now | ${studioName}`;
+const description = `What ${studioName} is focused on right now.`;
+---
+<StudioLayout title={title} description={description}>
+  <section class="section" aria-labelledby="now-title">
+    <div class="page-content text-stack">
+      <p class="eyebrow">Now</p>
+      <h1 id="now-title" class="page-title">What I am working on right now.</h1>
+      <p class="page-intro">Inspired by the <a href="https://nownownow.com/about">now page</a> movement. This page says what I am focused on at this point in my life, not what I will do someday.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Current focus areas">
+    <div class="section-inner wide-grid">
+      <article class="card text-stack">
+        <span class="status-pill">Active development</span>
+        <h2>{gameName}</h2>
+        <p>The flagship project. Building the Godot client, Go server, world pipeline, and content systems for an old-school-inspired dark fantasy MMORPG in {gameStatus.toLowerCase()} development. Current focus is server infrastructure, character flow, and the first playable slice.</p>
+        <a class="button button-secondary" href="/projects/dark-fantasy-mmo/">Project page</a>
+      </article>
+      <article class="card text-stack">
+        <span class="status-pill">Building</span>
+        <h2>Development tools</h2>
+        <p>The Development Supervisor dashboard, Groundmaker world pipeline, and Monster Codex content system are under active construction alongside the game. The tools and the game inform each other.</p>
+        <a class="button button-secondary" href="/technology/">See the technology log</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Recent milestones">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>Recent milestones</h2>
+      </div>
+      <div class="wide-grid">
+        <article class="card">
+          <span class="status-pill">Done</span>
+          <h3>Public studio site live</h3>
+          <p>Zoggy Studios foundation site deployed and mapped to games.herzogit.com.</p>
+        </article>
+        <article class="card">
+          <span class="status-pill">Done</span>
+          <h3>Monster Codex pipeline</h3>
+          <p>Structured creature authoring system operational with hundreds of creature entries.</p>
+        </article>
+        <article class="card">
+          <span class="status-pill">In progress</span>
+          <h3>Server lifecycle</h3>
+          <p>Development Supervisor reaching feature-complete state for dev environment use.</p>
+        </article>
+        <article class="card">
+          <span class="status-pill">Next</span>
+          <h3>Login and character flow</h3>
+          <p>Implementing authentication, character creation, and world entry systems.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Creative work">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>Creative work</h2>
+        <p>Games and technology are the main focus, but other creative work moves forward alongside them.</p>
+      </div>
+      <div class="wide-grid">
+        <article class="card">
+          <h3>Writing and worldbuilding</h3>
+          <p>Long-form writing, story worlds, and narrative development continues as a parallel creative track.</p>
+        </article>
+        <article class="card">
+          <h3>Future concepts</h3>
+          <p>Prototype ideas and experimental projects cycle through the lab. Nothing is announced until it is real enough to describe honestly.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Mantra">
+    <div class="section-inner">
+      <div class="callout text-stack" style="text-align: center">
+        <p style="font-size: clamp(1.2rem, 3vw, 1.8rem); font-weight: 800; max-width: 36rem; margin: 0 auto">Building one system at a time. Letting the work define the direction.</p>
+      </div>
+    </div>
+  </section>
+</StudioLayout>
