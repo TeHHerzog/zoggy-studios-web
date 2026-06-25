@@ -9,6 +9,11 @@ const description = `${gameName} is an old-school-inspired dark fantasy MMORPG i
 <StudioLayout title={title} description={description}>
   <section class="mmo-hero" aria-labelledby="mmo-title">
     <div class="mmo-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/projects/">Projects</a>
+        <span aria-hidden="true">/</span>
+        <span class="current">Dark Fantasy MMO</span>
+      </nav>
       <p class="eyebrow">{gameStatus} development</p>
       <h1 id="mmo-title">{gameName}</h1>
       <p class="lead">An old-school-inspired dark fantasy MMORPG focused on dangerous exploration, meaningful character development, deeply authored creatures, and a persistent server-controlled world.</p>
