@@ -59,25 +59,31 @@ try {
     "-mkdir _astro",
     "-mkdir about",
     "-mkdir contact",
+    "-mkdir gallery",
     "-mkdir privacy",
     "-mkdir projects",
+    "-mkdir technology",
     "-mkdir terms",
     "-mkdir updates",
     "put -r _astro",
     "put -r about",
     "put -r contact",
+    "put -r gallery",
     "put -r privacy",
     "put -r projects",
+    "put -r technology",
     "put -r terms",
     "put -r updates",
     "put .htaccess",
     "put 404.html",
+    "put brand-mark.svg",
     "put content-assets.mjs",
     "put content-modules.mjs",
     "put favicon.ico",
     "put favicon.svg",
     "put index.html",
-    "put robots.txt"
+    "put robots.txt",
+    "put social-card.svg"
   )
 
   foreach ($optionalFile in @("data-store.json", "settings.json")) {
