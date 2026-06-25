@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Zoggy Studios icon">
   <rect width="64" height="64" rx="18" fill="#111827" />
-  <path fill="#fef3c7" d="M16 17h34v8L29 47h22v8H14v-8l21-22H16z" />
-  <circle cx="49" cy="17" r="5" fill="#38bdf8" />
+  <path fill="#fff7ed" d="M15 16h34v8L28 47h22v8H13v-8l21-23H15z" />
+  <circle cx="49" cy="17" r="6" fill="#38bdf8" />
 </svg>

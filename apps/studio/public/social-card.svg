@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Zoggy Studios social preview card">
+  <defs>
+    <radialGradient id="glow-a" cx="15%" cy="18%" r="55%">
+      <stop stop-color="#38bdf8" stop-opacity="0.55" />
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glow-b" cx="85%" cy="20%" r="50%">
+      <stop stop-color="#facc15" stop-opacity="0.42" />
+      <stop offset="1" stop-color="#facc15" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="card-bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff7ed" />
+      <stop offset="0.52" stop-color="#eef6ff" />
+      <stop offset="1" stop-color="#ffffff" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#card-bg)" />
+  <rect width="1200" height="630" fill="url(#glow-a)" />
+  <rect width="1200" height="630" fill="url(#glow-b)" />
+  <g transform="translate(84 82)">
+    <rect width="128" height="128" rx="34" fill="#111827" />
+    <path fill="#fff7ed" d="M31 33h68v16L57 94h44v17H27V94l42-45H31z" />
+    <circle cx="98" cy="34" r="13" fill="#38bdf8" />
+  </g>
+  <text x="84" y="304" fill="#111827" font-family="Trebuchet MS, Segoe UI, Arial, sans-serif" font-size="104" font-weight="900" letter-spacing="-6">Zoggy Studios</text>
+  <text x="90" y="380" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="700">Games, apps, books, scripts, and strange new worlds.</text>
+  <text x="90" y="462" fill="#374151" font-family="Segoe UI, Arial, sans-serif" font-size="30">A solo-led creative and technology studio.</text>
+  <rect x="84" y="512" width="334" height="54" rx="27" fill="#111827" />
+  <text x="116" y="548" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="800">games.herzogit.com</text>
+</svg>

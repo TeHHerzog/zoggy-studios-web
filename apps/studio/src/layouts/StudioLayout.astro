@@ -2,7 +2,13 @@
 import "@zoggy/ui/styles.css";
 import { studioName, studioShortName } from "@zoggy/branding";
 
-const { title, description } = Astro.props;
+const {
+  title,
+  description,
+  image = "/social-card.svg"
+} = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? "https://games.herzogit.com");
+const socialImageUrl = new URL(image, canonicalUrl);
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/projects/", label: "Projects" },
@@ -18,7 +24,20 @@ const navItems = [
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#fff7ed" />
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="/favicon.ico" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={studioName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl} />
     <title>{title}</title>
   </head>
   <body class="studio-theme">
@@ -26,7 +45,7 @@ const navItems = [
     <div class="page-shell">
       <header class="site-header" aria-label={`${studioName} site header`}>
         <a class="brand-link" href="/" aria-label={`${studioName} home`}>
-          <span class="brand-mark" aria-hidden="true">Z</span>
+          <img class="brand-mark" src="/brand-mark.svg" alt="" width="38" height="38" loading="eager" />
           <span>{studioName}</span>
         </a>
         <nav class="site-nav" aria-label="Primary navigation">
@@ -79,8 +98,7 @@ const navItems = [
   }
 
   .studio-theme .brand-mark {
-    background: #111827;
-    color: #fef3c7;
+    display: block;
   }
 
   .studio-theme .site-nav a {
