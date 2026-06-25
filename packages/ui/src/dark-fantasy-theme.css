@@ -1,0 +1,85 @@
+/* Dark Fantasy MMO Theme — Master Palette
+   Ancient, corrupted, vibrant, cosmic, grungy, unsettling.
+   Inspired by late-1990s Korean MMORPG presentation.
+   Source: Zoggy Studios brand palette v1 */
+
+:root {
+  /* Core surfaces — dark forged metal, cracked stone, charred wood */
+  --df-abyss: #090b0f;
+  --df-obsidian: #111419;
+  --df-iron: #181d23;
+  --df-raised: #222932;
+  --df-coal: #0e1216;
+
+  /* Borders — tarnished iron, ash lines */
+  --df-border: #3b444d;
+  --df-border-subtle: #292f36;
+
+  /* Text — old vellum, weathered parchment, dead ash */
+  --df-text: #ddd5c3;
+  --df-text-secondary: #b5aa94;
+  --df-text-muted: #7d7b73;
+
+  /* Brand primary — blood rust hierarchy */
+  --df-blood: #812c32;
+  --df-blood-bright: #a33b45;
+  --df-blood-dark: #4b1b20;
+
+  /* Premium accent — relic gold */
+  --df-gold: #b38a48;
+  --df-gold-bright: #d0a85d;
+
+  /* Supernatural accents — cosmic, witchfire */
+  --df-cosmic: #72508e;
+  --df-cosmic-bright: #9367b3;
+  --df-witchfire: #3c827a;
+  --df-witchfire-bright: #64a69d;
+
+  /* Energy colors — thin glows, borders, status effects */
+  --df-energy-blood: #b93846;
+  --df-energy-ember: #d06937;
+  --df-energy-sulfur: #c7a83b;
+  --df-energy-toxic: #8da83e;
+  --df-energy-rot: #647b35;
+  --df-energy-moonlight: #74a9b9;
+  --df-energy-frost: #a6c8cf;
+  --df-energy-arcane: #8862aa;
+  --df-energy-void: #a54d83;
+  --df-energy-celestial: #516e9b;
+
+  /* Feedback UI — desaturated, world-integrated */
+  --df-success: #628a62;
+  --df-warning: #c09347;
+  --df-danger: #a74343;
+  --df-info: #568094;
+  --df-disabled: #555a5b;
+
+  /* Character resources */
+  --df-health: #963740;
+  --df-mana: #536e98;
+  --df-stamina: #8c8748;
+  --df-corruption: #765087;
+  --df-poison: #78943f;
+  --df-spirit: #4e978d;
+
+  /* Rarity accents */
+  --df-common: #8a8d89;
+  --df-uncommon: #66864e;
+  --df-rare: #4f76a1;
+  --df-epic: #79539a;
+  --df-legendary: #c09243;
+  --df-mythic: #b34866;
+  --df-artifact: #57a99b;
+  --df-cursed: #8c2937;
+
+  /* Layout tokens */
+  --df-surface-page: var(--df-abyss);
+  --df-surface-panel: var(--df-iron);
+  --df-surface-panel-hover: var(--df-raised);
+  --df-text-primary: var(--df-text);
+  --df-text-secondary: var(--df-text-secondary);
+  --df-accent-primary: var(--df-blood);
+  --df-accent-premium: var(--df-gold);
+  --df-accent-cosmic: var(--df-cosmic);
+  --df-accent-witchfire: var(--df-witchfire);
+}

@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "exports": {
-    "./styles.css": "./src/styles.css"
+    "./styles.css": "./src/styles.css",
+    "./dark-fantasy-theme.css": "./src/dark-fantasy-theme.css"
   }
 }
