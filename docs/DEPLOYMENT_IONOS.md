@@ -10,6 +10,18 @@ The Hosting API can manage hosting-related services such as DNS, domains, and SS
 
 SFTP/SSH is the practical deployment path for generated static files. Use it to upload the contents of `dist/studio/` to the `/games/` webspace directory.
 
+## IONOS SSH Account Rule
+
+IONOS SSH access is tied to the SSH user or main FTP user. Extra SFTP accounts can transfer files, but they do not include SSH shell access.
+
+For this project, use the main SFTP/SSH user for SSH setup and key-based deploy:
+
+```text
+u80057117
+```
+
+Do not use the SFTP-only account for `npm run ionos:ssh:install-key`, because it cannot open an SSH shell.
+
 ## Local Secret File
 
 Local deployment settings may be stored in:
