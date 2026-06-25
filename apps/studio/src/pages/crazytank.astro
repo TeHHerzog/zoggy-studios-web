@@ -12,13 +12,20 @@ const description = `CrazyTank is a magical fish tank management game by NabExp.
       <div class="ct-orb o3"></div>
     </div>
     <div class="ct-hero-inner">
-      <p class="ct-eyebrow">NabExp &mdash; Now in Early Access</p>
-      <h1 id="ct-title">CrazyTank</h1>
-      <p class="ct-tagline">A crazy magical fish tank management game.</p>
-      <p class="ct-desc">Meet the wizard fish. Help him spread happiness to every crazy tank. Manage magical fish, spawn items, and create the wildest aquarium you can imagine.</p>
-      <div class="actions">
-        <a class="ct-button ct-button-primary" href="https://nabexp.itch.io/crazytank">Play on itch.io</a>
-        <a class="ct-button ct-button-secondary" href="#about">About the game</a>
+      <div class="ct-hero-grid">
+        <div>
+          <p class="ct-eyebrow">NabExp &mdash; Now in Early Access</p>
+          <h1 id="ct-title">CrazyTank</h1>
+          <p class="ct-tagline">A crazy magical fish tank management game.</p>
+          <p class="ct-desc">Meet the wizard fish. Help him spread happiness to every crazy tank. Manage magical fish, spawn items, and create the wildest aquarium you can imagine.</p>
+          <div class="actions">
+            <a class="ct-button ct-button-primary" href="https://nabexp.itch.io/crazytank">Play on itch.io</a>
+            <a class="ct-button ct-button-secondary" href="#about">About the game</a>
+          </div>
+        </div>
+        <div class="ct-hero-art">
+          <img src="https://img.itch.zone/aW1nLzI2NDc4MDU3LnBuZw==/original/MzHiOC.png" alt="CrazyTank game art" class="ct-hero-img" loading="eager" />
+        </div>
       </div>
     </div>
   </section>
@@ -94,26 +101,23 @@ const description = `CrazyTank is a magical fish tank management game by NabExp.
         <h2>Screenshots</h2>
       </div>
       <div class="ct-screenshots">
-        <div class="ct-shot">
-          <div class="ct-shot-placeholder">
-            <span class="ct-shot-icon" aria-hidden="true">&#128247;</span>
-            <span>Screenshot 1</span>
-          </div>
-        </div>
-        <div class="ct-shot">
-          <div class="ct-shot-placeholder">
-            <span class="ct-shot-icon" aria-hidden="true">&#128247;</span>
-            <span>Screenshot 2</span>
-          </div>
-        </div>
-        <div class="ct-shot">
-          <div class="ct-shot-placeholder">
-            <span class="ct-shot-icon" aria-hidden="true">&#128247;</span>
-            <span>Screenshot 3</span>
-          </div>
-        </div>
+        <a href="https://img.itch.zone/aW1hZ2UvNDQzODYzNi8yNjQ3ODYxOS5wbmc=/original/IrjHq2.png" target="_blank" class="ct-shot-link">
+          <img class="ct-shot-img" src="https://img.itch.zone/aW1hZ2UvNDQzODYzNi8yNjQ3ODYxOS5wbmc=/794x1000/TT4tJM.png" alt="CrazyTank screenshot 1" loading="lazy" />
+        </a>
+        <a href="https://img.itch.zone/aW1hZ2UvNDQzODYzNi8yNjQ3ODYxNy5wbmc=/original/olNpSB.png" target="_blank" class="ct-shot-link">
+          <img class="ct-shot-img" src="https://img.itch.zone/aW1hZ2UvNDQzODYzNi8yNjQ3ODYxNy5wbmc=/794x1000/7UAz5X.png" alt="CrazyTank screenshot 2" loading="lazy" />
+        </a>
+        <a href="https://img.itch.zone/aW1hZ2UvNDQzODYzNi8yNjQ3ODYxOC5wbmc=/original/GFPcZy.png" target="_blank" class="ct-shot-link">
+          <img class="ct-shot-img" src="https://img.itch.zone/aW1hZ2UvNDQzODYzNi8yNjQ3ODYxOC5wbmc=/794x1000/eVzkmj.png" alt="CrazyTank screenshot 3" loading="lazy" />
+        </a>
+        <a href="https://img.itch.zone/aW1hZ2UvNDQzODYzNi8yNjQ3ODY0OS5wbmc=/original/g6FHUm.png" target="_blank" class="ct-shot-link">
+          <img class="ct-shot-img" src="https://img.itch.zone/aW1hZ2UvNDQzODYzNi8yNjQ3ODY0OS5wbmc=/794x1000/Vffgjz.png" alt="CrazyTank screenshot 4" loading="lazy" />
+        </a>
+        <a href="https://img.itch.zone/aW1hZ2UvNDQzODYzNi8yNjQ3ODY1MC5wbmc=/original/YwAueg.png" target="_blank" class="ct-shot-link">
+          <img class="ct-shot-img" src="https://img.itch.zone/aW1hZ2UvNDQzODYzNi8yNjQ3ODY1MC5wbmc=/794x1000/jTNqwg.png" alt="CrazyTank screenshot 5" loading="lazy" />
+        </a>
       </div>
-      <p class="ct-shot-note">Screenshots from the game available on the itch.io page. Placeholder slots ready for direct uploads.</p>
+      <p class="ct-shot-note">Click screenshots to view full resolution. Hosted on itch.io.</p>
     </div>
   </section>
 
@@ -136,6 +140,9 @@ const description = `CrazyTank is a magical fish tank management game by NabExp.
   .o2 { width: 24rem; height: 24rem; background: radial-gradient(circle, rgba(56,189,248,0.2), transparent 70%); bottom: -4rem; left: -4rem; }
   .o3 { width: 14rem; height: 14rem; background: radial-gradient(circle, rgba(250,204,21,0.15), transparent 70%); top: 45%; left: 50%; }
   .ct-hero-inner { position: relative; z-index: 1; width: min(100%, 72rem); margin: 0 auto; }
+  .ct-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 5vw, 4rem); align-items: center; }
+  .ct-hero-art { display: flex; align-items: center; justify-content: center; }
+  .ct-hero-img { width: 100%; max-width: 24rem; border-radius: var(--radius-card); box-shadow: 0 2rem 6rem rgba(0,0,0,0.4); }
   .ct-eyebrow { font-size: clamp(0.78rem, 1.8vw, 0.92rem); font-weight: 900; letter-spacing: 0.16em; text-transform: uppercase; color: #c084fc; margin: 0 0 1rem; }
   .ct-hero h1 { font-size: clamp(3.5rem, 18vw, 10rem); line-height: 0.82; letter-spacing: -0.08em; margin: 0; color: #fff7ed; text-shadow: 0 0 3rem rgba(192,132,252,0.3); }
   .ct-tagline { font-size: clamp(1.3rem, 3vw, 2.2rem); font-weight: 800; margin: clamp(1rem, 3vw, 1.5rem) 0 0; color: #fde68a; }
@@ -150,6 +157,7 @@ const description = `CrazyTank is a magical fish tank management game by NabExp.
   .ct-section-dark { background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%); color: #f8fafc; }
   .ct-section-cta { background: linear-gradient(135deg, #1a0a3e 0%, #2d1b69 100%); color: #f8fafc; }
   .ct-section-inner { width: min(100%, 72rem); margin: 0 auto; }
+  @media (max-width: 640px) { .ct-hero-grid { grid-template-columns: 1fr; } .ct-hero-art { order: -1; } .ct-hero-img { max-width: 16rem; } }
   .ct-section-heading { max-width: 48rem; margin-bottom: clamp(1.5rem, 4vw, 3rem); }
   .ct-section-heading h2 { margin: 0; font-family: var(--font-display); font-weight: 900; font-size: clamp(2.25rem, 7vw, 4.5rem); line-height: 0.95; letter-spacing: -0.06em; }
   .ct-section-heading p { color: #c084fc; }
@@ -169,7 +177,8 @@ const description = `CrazyTank is a magical fish tank management game by NabExp.
   .ct-credit strong { font-weight: 800; }
 
   .ct-screenshots { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 1.25rem; }
-  .ct-shot-placeholder { width: 100%; aspect-ratio: 16/10; border-radius: var(--radius-card); border: 2px dashed rgba(148,163,184,0.3); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; color: #64748b; font-size: 0.9rem; }
-  .ct-shot-icon { font-size: 1.5rem; }
+  .ct-shot-link { display: block; border-radius: var(--radius-card); overflow: hidden; border: 1px solid rgba(148,163,184,0.2); transition: opacity 180ms ease; }
+  .ct-shot-link:hover { opacity: 0.88; }
+  .ct-shot-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
   .ct-shot-note { text-align: center; font-size: 0.85rem; color: #64748b; margin-top: 1rem; }
 </style>
