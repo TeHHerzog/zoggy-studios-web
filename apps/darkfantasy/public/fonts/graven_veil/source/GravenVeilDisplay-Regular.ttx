@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ttFont ttLibVersion="4.0">
+<GlyphOrder>
+<GlyphID id="0" name=".notdef"/>
+<GlyphID id="1" name="uni0030"/>
+<GlyphID id="2" name="uni0031"/>
+<GlyphID id="3" name="uni0032"/>
+<GlyphID id="4" name="uni0033"/>
+<GlyphID id="5" name="uni0034"/>
+<GlyphID id="6" name="uni0035"/>
+<GlyphID id="7" name="uni0036"/>
+<GlyphID id="8" name="uni0037"/>
+<GlyphID id="9" name="uni0038"/>
+<GlyphID id="10" name="uni0039"/>
+<GlyphID id="11" name="uni0041"/>
+<GlyphID id="12" name="uni0042"/>
+<GlyphID id="13" name="uni0043"/>
+<GlyphID id="14" name="uni0044"/>
+<GlyphID id="15" name="uni0045"/>
+<GlyphID id="16" name="uni0046"/>
+<GlyphID id="17" name="uni0047"/>
+<GlyphID id="18" name="uni0048"/>
+<GlyphID id="19" name="uni0049"/>
+<GlyphID id="20" name="uni004A"/>
+<GlyphID id="21" name="uni004B"/>
+<GlyphID id="22" name="uni004C"/>
+<GlyphID id="23" name="uni004D"/>
+<GlyphID id="24" name="uni004E"/>
+<GlyphID id="25" name="uni004F"/>
+<GlyphID id="26" name="uni0050"/>
+<GlyphID id="27" name="uni0051"/>
+<GlyphID id="28" name="uni0052"/>
+<GlyphID id="29" name="uni0053"/>
+<GlyphID id="30" name="uni0054"/>
+<GlyphID id="31" name="uni0055"/>
+<GlyphID id="32" name="uni0056"/>
+<GlyphID id="33" name="uni0057"/>
+<GlyphID id="34" name="uni0058"/>
+<GlyphID id="35" name="uni0059"/>
+<GlyphID id="36" name="uni005A"/>
+</GlyphOrder>
+<cmap><tableVersion version="0"/><cmap_format_4 platformID="3" platEncID="3" language="0">
+<map code="0x0" name=".notdef"/>
+<map code="0x0030" name="uni0030"/>
+<map code="0x0031" name="uni0031"/>
+<map code="0x0032" name="uni0032"/>
+<map code="0x0033" name="uni0033"/>
+<map code="0x0034" name="uni0034"/>
+<map code="0x0035" name="uni0035"/>
+<map code="0x0036" name="uni0036"/>
+<map code="0x0037" name="uni0037"/>
+<map code="0x0038" name="uni0038"/>
+<map code="0x0039" name="uni0039"/>
+<map code="0x0041" name="uni0041"/>
+<map code="0x0042" name="uni0042"/>
+<map code="0x0043" name="uni0043"/>
+<map code="0x0044" name="uni0044"/>
+<map code="0x0045" name="uni0045"/>
+<map code="0x0046" name="uni0046"/>
+<map code="0x0047" name="uni0047"/>
+<map code="0x0048" name="uni0048"/>
+<map code="0x0049" name="uni0049"/>
+<map code="0x004A" name="uni004A"/>
+<map code="0x004B" name="uni004B"/>
+<map code="0x004C" name="uni004C"/>
+<map code="0x004D" name="uni004D"/>
+<map code="0x004E" name="uni004E"/>
+<map code="0x004F" name="uni004F"/>
+<map code="0x0050" name="uni0050"/>
+<map code="0x0051" name="uni0051"/>
+<map code="0x0052" name="uni0052"/>
+<map code="0x0053" name="uni0053"/>
+<map code="0x0054" name="uni0054"/>
+<map code="0x0055" name="uni0055"/>
+<map code="0x0056" name="uni0056"/>
+<map code="0x0057" name="uni0057"/>
+<map code="0x0058" name="uni0058"/>
+<map code="0x0059" name="uni0059"/>
+<map code="0x005A" name="uni005A"/>
+</cmap_format_4></cmap>
+<head><tableVersion value="1.0"/><fontRevision value="1.0"/><checkSumAdjustment value="0"/><magicNumber value="0x5F0F3CF5"/><flags value="00000000 00001011"/><unitsPerEm value="1000"/><created value="Thu Jun 25 00:00:00 2026"/><modified value="Thu Jun 25 00:00:00 2026"/><xMin value="0"/><yMin value="-180"/><xMax value="1000"/><yMax value="920"/><macStyle value="00000000 00000000"/><lowestRecPPEM value="8"/><fontDirectionHint value="2"/><indexToLocFormat value="0"/><glyphDataFormat value="0"/></head>
+<hhea><tableVersion value="0x00010000"/><ascent value="920"/><descent value="-180"/><lineGap value="80"/><advanceWidthMax value="1000"/><minLeftSideBearing value="0"/><minRightSideBearing value="0"/><xMaxExtent value="1000"/><caretSlopeRise value="1"/><caretSlopeRun value="0"/><caretOffset value="0"/><reserved0 value="0"/><reserved1 value="0"/><reserved2 value="0"/><reserved3 value="0"/><metricDataFormat value="0"/><numberOfHMetrics value="37"/></hhea>
+<hmtx>
+<mtx name=".notdef" width="800" lsb="0"/>
+<mtx name="uni0030" width="800" lsb="0"/>
+<mtx name="uni0031" width="800" lsb="0"/>
+<mtx name="uni0032" width="800" lsb="0"/>
+<mtx name="uni0033" width="800" lsb="0"/>
+<mtx name="uni0034" width="800" lsb="0"/>
+<mtx name="uni0035" width="800" lsb="0"/>
+<mtx name="uni0036" width="800" lsb="0"/>
+<mtx name="uni0037" width="800" lsb="0"/>
+<mtx name="uni0038" width="800" lsb="0"/>
+<mtx name="uni0039" width="800" lsb="0"/>
+<mtx name="uni0041" width="800" lsb="0"/>
+<mtx name="uni0042" width="800" lsb="0"/>
+<mtx name="uni0043" width="800" lsb="0"/>
+<mtx name="uni0044" width="800" lsb="0"/>
+<mtx name="uni0045" width="800" lsb="0"/>
+<mtx name="uni0046" width="800" lsb="0"/>
+<mtx name="uni0047" width="800" lsb="0"/>
+<mtx name="uni0048" width="800" lsb="0"/>
+<mtx name="uni0049" width="800" lsb="0"/>
+<mtx name="uni004A" width="800" lsb="0"/>
+<mtx name="uni004B" width="800" lsb="0"/>
+<mtx name="uni004C" width="800" lsb="0"/>
+<mtx name="uni004D" width="800" lsb="0"/>
+<mtx name="uni004E" width="800" lsb="0"/>
+<mtx name="uni004F" width="800" lsb="0"/>
+<mtx name="uni0050" width="800" lsb="0"/>
+<mtx name="uni0051" width="800" lsb="0"/>
+<mtx name="uni0052" width="800" lsb="0"/>
+<mtx name="uni0053" width="800" lsb="0"/>
+<mtx name="uni0054" width="800" lsb="0"/>
+<mtx name="uni0055" width="800" lsb="0"/>
+<mtx name="uni0056" width="800" lsb="0"/>
+<mtx name="uni0057" width="800" lsb="0"/>
+<mtx name="uni0058" width="800" lsb="0"/>
+<mtx name="uni0059" width="800" lsb="0"/>
+<mtx name="uni005A" width="800" lsb="0"/>
+</hmtx>
+<maxp><tableVersion value="0x00010000"/><numGlyphs value="37"/><maxZones value="2"/><maxTwilightPoints value="0"/><maxStorage value="0"/><maxFunctionDefs value="0"/><maxInstructionDefs value="0"/><maxStackElements value="0"/><maxSizeOfInstructions value="0"/><maxComponentElements value="0"/><maxComponentDepth value="0"/></maxp>
+<name>
+<namerecord nameID="0" platformID="3" platEncID="1" langID="0x409">Zoggy Studios 2026</namerecord>
+<namerecord nameID="1" platformID="3" platEncID="1" langID="0x409">Graven Veil Display</namerecord>
+<namerecord nameID="2" platformID="3" platEncID="1" langID="0x409">Regular</namerecord>
+<namerecord nameID="4" platformID="3" platEncID="1" langID="0x409">Graven Veil Display</namerecord>
+<namerecord nameID="5" platformID="3" platEncID="1" langID="0x409">Version 0.100</namerecord>
+<namerecord nameID="6" platformID="3" platEncID="1" langID="0x409">GravenVeilDisplay-Regular</namerecord>
+</name>
+<OS_2><version value="4"/><xAvgCharWidth value="800"/><usWeightClass value="400"/><usWidthClass value="4"/><fsType value="0000 0000 0000 0100"/><ySubscriptXSize value="650"/><ySubscriptYSize value="600"/><ySubscriptXOffset value="0"/><ySubscriptYOffset value="75"/><ySuperscriptXSize value="650"/><ySuperscriptYSize value="600"/><ySuperscriptXOffset value="0"/><ySuperscriptYOffset value="350"/><yStrikeoutSize value="50"/><yStrikeoutPosition value="300"/><sFamilyClass value="0"/><panose value="00 00 00 00 00 00 00 00 00 00"/><ulUnicodeRange1 value="7"/><ulUnicodeRange2 value="0"/><ulUnicodeRange3 value="0"/><ulUnicodeRange4 value="0"/><achVendID value="NONE"/><fsSelection value="00000000 01000000"/><usFirstCharIndex value="32"/><usLastCharIndex value="90"/><sTypoAscender value="920"/><sTypoDescender value="-180"/><sTypoLineGap value="80"/><usWinAscent value="1000"/><usWinDescent value="200"/><sxHeight value="650"/><sCapHeight value="880"/><usDefaultChar value="0"/><usBreakChar value="32"/><usMaxContext value="0"/></OS_2>
+<post><formatType value="2.0"/><isFixedPitch value="0"/><italicAngle value="0"/><underlinePosition value="-100"/><underlineThickness value="50"/><isFixedPitch value="0"/><minMemType42 value="0"/><maxMemType42 value="0"/><minMemType1 value="0"/><maxMemType1 value="0"/><psNames>
+<psName name=".notdef"/>
+<psName name="uni0030"/>
+<psName name="uni0031"/>
+<psName name="uni0032"/>
+<psName name="uni0033"/>
+<psName name="uni0034"/>
+<psName name="uni0035"/>
+<psName name="uni0036"/>
+<psName name="uni0037"/>
+<psName name="uni0038"/>
+<psName name="uni0039"/>
+<psName name="uni0041"/>
+<psName name="uni0042"/>
+<psName name="uni0043"/>
+<psName name="uni0044"/>
+<psName name="uni0045"/>
+<psName name="uni0046"/>
+<psName name="uni0047"/>
+<psName name="uni0048"/>
+<psName name="uni0049"/>
+<psName name="uni004A"/>
+<psName name="uni004B"/>
+<psName name="uni004C"/>
+<psName name="uni004D"/>
+<psName name="uni004E"/>
+<psName name="uni004F"/>
+<psName name="uni0050"/>
+<psName name="uni0051"/>
+<psName name="uni0052"/>
+<psName name="uni0053"/>
+<psName name="uni0054"/>
+<psName name="uni0055"/>
+<psName name="uni0056"/>
+<psName name="uni0057"/>
+<psName name="uni0058"/>
+<psName name="uni0059"/>
+<psName name="uni005A"/>
+</psNames><extraNames/></post>
+<SVG><version value="1"/>
+<svgDoc startGlyphID="0" endGlyphID="0"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><rect x="100" y="100" width="800" height="800" fill="none" stroke="#DDD5C3" stroke-width="20"/></svg>]]></svgDoc>
+<svgDoc startGlyphID="1" endGlyphID="1"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="36.0" y1="24.0" x2="124.0" y2="24.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="80.0" y1="24.0" x2="80.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="36.0" y1="200.0" x2="124.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="2" endGlyphID="2"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><polyline points="22.0,200.0 80.0,24.0 138.0,200.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><line x1="44.0" y1="130.0" x2="116.0" y2="130.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="3" endGlyphID="3"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="24.0" y1="24.0" x2="24.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polyline points="24.0,24.0 100.0,24.0 134.0,52.0 104.0,94.0 24.0,94.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><polyline points="24.0,94.0 108.0,94.0 140.0,144.0 104.0,200.0 24.0,200.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="4" endGlyphID="4"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><polyline points="136.0,44.0 104.0,24.0 50.0,26.0 20.0,72.0 20.0,152.0 52.0,198.0 112.0,198.0 138.0,176.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="5" endGlyphID="5"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="24.0" y1="24.0" x2="24.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polyline points="24.0,24.0 90.0,24.0 138.0,68.0 138.0,152.0 90.0,200.0 24.0,200.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="6" endGlyphID="6"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="26.0" y1="24.0" x2="26.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="26.0" y1="24.0" x2="138.0" y2="24.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="26.0" y1="104.0" x2="114.0" y2="104.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="26.0" y1="200.0" x2="140.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="7" endGlyphID="7"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="26.0" y1="24.0" x2="26.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="26.0" y1="24.0" x2="140.0" y2="24.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="26.0" y1="104.0" x2="114.0" y2="104.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="8" endGlyphID="8"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><polyline points="136.0,44.0 104.0,24.0 50.0,26.0 20.0,72.0 20.0,152.0 52.0,198.0 112.0,198.0 138.0,166.0 138.0,122.0 90.0,122.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><line x1="138.0" y1="122.0" x2="138.0" y2="196.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="9" endGlyphID="9"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="24.0" y1="24.0" x2="24.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="136.0" y1="24.0" x2="136.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="24.0" y1="108.0" x2="136.0" y2="108.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="10" endGlyphID="10"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="36.0" y1="24.0" x2="124.0" y2="24.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="80.0" y1="24.0" x2="80.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="36.0" y1="200.0" x2="124.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="11" endGlyphID="11"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><polyline points="22.0,200.0 80.0,24.0 138.0,200.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><line x1="44.0" y1="130.0" x2="116.0" y2="130.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="12" endGlyphID="12"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="24.0" y1="24.0" x2="24.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polyline points="24.0,24.0 100.0,24.0 134.0,52.0 104.0,94.0 24.0,94.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><polyline points="24.0,94.0 108.0,94.0 140.0,144.0 104.0,200.0 24.0,200.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="13" endGlyphID="13"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><polyline points="136.0,44.0 104.0,24.0 50.0,26.0 20.0,72.0 20.0,152.0 52.0,198.0 112.0,198.0 138.0,176.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="14" endGlyphID="14"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="24.0" y1="24.0" x2="24.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polyline points="24.0,24.0 90.0,24.0 138.0,68.0 138.0,152.0 90.0,200.0 24.0,200.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="15" endGlyphID="15"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="26.0" y1="24.0" x2="26.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="26.0" y1="24.0" x2="138.0" y2="24.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="26.0" y1="104.0" x2="114.0" y2="104.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="26.0" y1="200.0" x2="140.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="16" endGlyphID="16"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="26.0" y1="24.0" x2="26.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="26.0" y1="24.0" x2="140.0" y2="24.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="26.0" y1="104.0" x2="114.0" y2="104.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="17" endGlyphID="17"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><polyline points="136.0,44.0 104.0,24.0 50.0,26.0 20.0,72.0 20.0,152.0 52.0,198.0 112.0,198.0 138.0,166.0 138.0,122.0 90.0,122.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><line x1="138.0" y1="122.0" x2="138.0" y2="196.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="18" endGlyphID="18"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="24.0" y1="24.0" x2="24.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="136.0" y1="24.0" x2="136.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="24.0" y1="108.0" x2="136.0" y2="108.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="19" endGlyphID="19"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="36.0" y1="24.0" x2="124.0" y2="24.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="80.0" y1="24.0" x2="80.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="36.0" y1="200.0" x2="124.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="20" endGlyphID="20"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><polyline points="22.0,200.0 80.0,24.0 138.0,200.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><line x1="44.0" y1="130.0" x2="116.0" y2="130.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="21" endGlyphID="21"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="24.0" y1="24.0" x2="24.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polyline points="24.0,24.0 100.0,24.0 134.0,52.0 104.0,94.0 24.0,94.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><polyline points="24.0,94.0 108.0,94.0 140.0,144.0 104.0,200.0 24.0,200.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="22" endGlyphID="22"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><polyline points="136.0,44.0 104.0,24.0 50.0,26.0 20.0,72.0 20.0,152.0 52.0,198.0 112.0,198.0 138.0,176.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="23" endGlyphID="23"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="24.0" y1="24.0" x2="24.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polyline points="24.0,24.0 90.0,24.0 138.0,68.0 138.0,152.0 90.0,200.0 24.0,200.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="24" endGlyphID="24"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="26.0" y1="24.0" x2="26.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="26.0" y1="24.0" x2="138.0" y2="24.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="26.0" y1="104.0" x2="114.0" y2="104.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="26.0" y1="200.0" x2="140.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="25" endGlyphID="25"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="26.0" y1="24.0" x2="26.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="26.0" y1="24.0" x2="140.0" y2="24.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="26.0" y1="104.0" x2="114.0" y2="104.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="26" endGlyphID="26"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><polyline points="136.0,44.0 104.0,24.0 50.0,26.0 20.0,72.0 20.0,152.0 52.0,198.0 112.0,198.0 138.0,166.0 138.0,122.0 90.0,122.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><line x1="138.0" y1="122.0" x2="138.0" y2="196.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="27" endGlyphID="27"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="24.0" y1="24.0" x2="24.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="136.0" y1="24.0" x2="136.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="24.0" y1="108.0" x2="136.0" y2="108.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="28" endGlyphID="28"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="36.0" y1="24.0" x2="124.0" y2="24.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="80.0" y1="24.0" x2="80.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="36.0" y1="200.0" x2="124.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="29" endGlyphID="29"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><polyline points="22.0,200.0 80.0,24.0 138.0,200.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><line x1="44.0" y1="130.0" x2="116.0" y2="130.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="30" endGlyphID="30"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="24.0" y1="24.0" x2="24.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polyline points="24.0,24.0 100.0,24.0 134.0,52.0 104.0,94.0 24.0,94.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><polyline points="24.0,94.0 108.0,94.0 140.0,144.0 104.0,200.0 24.0,200.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="31" endGlyphID="31"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><polyline points="136.0,44.0 104.0,24.0 50.0,26.0 20.0,72.0 20.0,152.0 52.0,198.0 112.0,198.0 138.0,176.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="32" endGlyphID="32"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="24.0" y1="24.0" x2="24.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polyline points="24.0,24.0 90.0,24.0 138.0,68.0 138.0,152.0 90.0,200.0 24.0,200.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="33" endGlyphID="33"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="26.0" y1="24.0" x2="26.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="26.0" y1="24.0" x2="138.0" y2="24.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="26.0" y1="104.0" x2="114.0" y2="104.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="26.0" y1="200.0" x2="140.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="34" endGlyphID="34"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="26.0" y1="24.0" x2="26.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="26.0" y1="24.0" x2="140.0" y2="24.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="26.0" y1="104.0" x2="114.0" y2="104.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="35" endGlyphID="35"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><polyline points="136.0,44.0 104.0,24.0 50.0,26.0 20.0,72.0 20.0,152.0 52.0,198.0 112.0,198.0 138.0,166.0 138.0,122.0 90.0,122.0" fill="none" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square" stroke-linejoin="miter"/><line x1="138.0" y1="122.0" x2="138.0" y2="196.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+<svgDoc startGlyphID="36" endGlyphID="36"><![CDATA[<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><g transform="translate(100,0)"><line x1="24.0" y1="24.0" x2="24.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="136.0" y1="24.0" x2="136.0" y2="200.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><line x1="24.0" y1="108.0" x2="136.0" y2="108.0" stroke="#DDD5C3" stroke-width="14.4" stroke-linecap="square"/><polygon points="14.0,208.0 38.0,208.0 26.0,194.0" fill="#DDD5C3"/><polygon points="122.0,208.0 146.0,208.0 134.0,194.0" fill="#DDD5C3"/></g></svg>]]></svgDoc>
+</SVG>
+</ttFont>
