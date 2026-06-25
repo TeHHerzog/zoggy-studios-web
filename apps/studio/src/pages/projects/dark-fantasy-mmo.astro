@@ -7,71 +7,129 @@ const description = `${gameName} is an old-school-inspired dark fantasy MMORPG i
 ---
 
 <StudioLayout title={title} description={description}>
-  <section class="section" aria-labelledby="mmo-title">
-    <div class="page-content text-stack">
-      <p class="eyebrow">{gameStatus}</p>
-      <h1 id="mmo-title" class="page-title">{gameName}</h1>
-      <p class="page-intro">An old-school-inspired dark fantasy MMORPG focused on dangerous exploration, meaningful character development, deeply authored creatures, and a persistent server-controlled world.</p>
+  <section class="mmo-hero" aria-labelledby="mmo-title">
+    <div class="mmo-hero-inner">
+      <p class="eyebrow">{gameStatus} development</p>
+      <h1 id="mmo-title">{gameName}</h1>
+      <p class="lead">An old-school-inspired dark fantasy MMORPG focused on dangerous exploration, meaningful character development, deeply authored creatures, and a persistent server-controlled world.</p>
     </div>
   </section>
 
   <section class="section" aria-label="What is being built">
-    <div class="section-inner wide-grid">
-      <article class="card text-stack">
-        <h2>What is being built</h2>
-        <ul class="note-list">
-          <li>Godot 4.7 game client with multiplayer architecture</li>
-          <li>Authoritative Golang game server with WebSocket communication</li>
-          <li>Character creation and progression with seven core stats</li>
-          <li>Combat, abilities, casting, inventory, quests, and world systems</li>
-          <li>Web-based administration and content management tools</li>
-          <li>World-building and terrain authoring pipeline</li>
-          <li>Structured content pipeline for monsters, items, quests, and lore</li>
-        </ul>
-      </article>
-      <article class="card text-stack">
-        <h2>Current development focus</h2>
-        <ul class="note-list">
-          <li>Server lifecycle and observability infrastructure</li>
-          <li>Login and character flow implementation</li>
-          <li>Character stat allocation and progression systems</li>
-          <li>Content relationships and administration tooling</li>
-          <li>First playable world slice</li>
-          <li>Monster and item content integration</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <section class="section" aria-label="Game pillars">
     <div class="section-inner">
       <div class="section-heading">
-        <h2>Public-safe game pillars</h2>
+        <h2>What is being built</h2>
+        <p>A full-stack multiplayer project from client to server to content pipeline.</p>
       </div>
       <div class="wide-grid">
         <article class="card">
-          <h3>Old-school MMORPG progression</h3>
-          <p>Leveling, stats, classes, and equipment that respect traditional role-playing depth while being accessible to modern players.</p>
+          <h3>Client</h3>
+          <p>Godot 4.7 game client with multiplayer architecture, character creation, combat, abilities, inventory, and world rendering.</p>
         </article>
         <article class="card">
-          <h3>Server-authoritative gameplay</h3>
-          <p>The Go server owns all gameplay decisions. The client is a window into a persistent, trusted world state.</p>
+          <h3>Server</h3>
+          <p>Authoritative Golang game server with WebSocket communication, Protobuf messaging, and persistent database storage.</p>
         </article>
         <article class="card">
-          <h3>Dangerous dark fantasy world</h3>
-          <p>A ruined, mythic tone with cosmic and corrupted elements, balanced with readability and accessibility.</p>
+          <h3>Administration</h3>
+          <p>Web-based content management tools for monsters, items, quests, and world data.</p>
         </article>
         <article class="card">
-          <h3>Strong class identity</h3>
-          <p>The Knight, Elf, Mage, and Prince establish distinct play styles with meaningful stat allocation and ability trees.</p>
+          <h3>World pipeline</h3>
+          <p>Terrain authoring, zone data, and content pipelines that feed both client and server from one source.</p>
         </article>
-        <article class="card">
-          <h3>Deep monster ecology</h3>
-          <p>Hundreds of creatures with structured data connecting lore, combat, loot, AI, and world placement.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Current development focus">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>Current development focus</h2>
+      </div>
+      <div class="status-grid">
+        <article class="status-item">
+          <span class="status-dot"></span>
+          <div>
+            <h3>Server lifecycle</h3>
+            <p>Observability, startup ordering, and graceful shutdown</p>
+          </div>
         </article>
-        <article class="card">
+        <article class="status-item">
+          <span class="status-dot"></span>
+          <div>
+            <h3>Login and character flow</h3>
+            <p>Authentication, character creation, and world entry</p>
+          </div>
+        </article>
+        <article class="status-item">
+          <span class="status-dot"></span>
+          <div>
+            <h3>Stat allocation</h3>
+            <p>Seven core stats defining class identity</p>
+          </div>
+        </article>
+        <article class="status-item">
+          <span class="status-dot"></span>
+          <div>
+            <h3>Content tooling</h3>
+            <p>Administration UI for monsters, items, and relationships</p>
+          </div>
+        </article>
+        <article class="status-item">
+          <span class="status-dot"></span>
+          <div>
+            <h3>Playable world slice</h3>
+            <p>First zone with movement, monsters, and interaction</p>
+          </div>
+        </article>
+        <article class="status-item">
+          <span class="status-dot"></span>
+          <div>
+            <h3>Content integration</h3>
+            <p>Monster and item data feeding server systems</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pillars-section" aria-label="Game pillars">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>Game pillars</h2>
+        <p>The design foundations that shape every system.</p>
+      </div>
+      <div class="pillar-grid">
+        <article class="pillar-card">
+          <span class="pillar-icon" aria-hidden="true">&#9670;</span>
+          <h3>Old-school progression</h3>
+          <p>Leveling, stats, classes, and equipment that respect traditional role-playing depth.</p>
+        </article>
+        <article class="pillar-card">
+          <span class="pillar-icon" aria-hidden="true">&#9670;</span>
+          <h3>Server-authoritative</h3>
+          <p>The Go server owns all gameplay decisions. The client is a view into a trusted world.</p>
+        </article>
+        <article class="pillar-card">
+          <span class="pillar-icon" aria-hidden="true">&#9670;</span>
+          <h3>Dark fantasy world</h3>
+          <p>A ruined, mythic tone with cosmic and corrupted elements, balanced with readability.</p>
+        </article>
+        <article class="pillar-card">
+          <span class="pillar-icon" aria-hidden="true">&#9670;</span>
+          <h3>Class identity</h3>
+          <p>Knight, Elf, Mage, and Prince with distinct stat priorities and ability trees.</p>
+        </article>
+        <article class="pillar-card">
+          <span class="pillar-icon" aria-hidden="true">&#9670;</span>
+          <h3>Monster ecology</h3>
+          <p>Hundreds of creatures with structured data connecting lore, combat, loot, and AI.</p>
+        </article>
+        <article class="pillar-card">
+          <span class="pillar-icon" aria-hidden="true">&#9670;</span>
           <h3>Data-driven content</h3>
-          <p>Monsters, items, zones, and quests are defined in structured data that feeds the server, client, and eventual wiki.</p>
+          <p>Monsters, items, zones, and quests defined in structured data, not hardcoded logic.</p>
         </article>
       </div>
     </div>
@@ -79,9 +137,9 @@ const description = `${gameName} is an old-school-inspired dark fantasy MMORPG i
 
   <section class="section" aria-label="Technical stack">
     <div class="section-inner">
-      <div class="callout text-stack">
+      <div class="callout" style="text-align: center">
         <h2>Technical stack</h2>
-        <p>Godot 4.7 client, Go WebSocket server, Protobuf messaging, persistent database storage, web administration layer, structured content pipelines, and AI-assisted solo development workflows.</p>
+        <p>Godot 4.7 client &middot; Go WebSocket server &middot; Protobuf messaging &middot; Persistent database &middot; Web admin layer &middot; Structured content pipelines &middot; AI-assisted solo development</p>
         <p class="supporting">Architecture and infrastructure details remain private during development.</p>
       </div>
     </div>
@@ -89,7 +147,143 @@ const description = `${gameName} is an old-school-inspired dark fantasy MMORPG i
 </StudioLayout>
 
 <style>
-  .studio-theme .card h3 {
-    margin-bottom: 0.5rem;
+  .mmo-hero {
+    background:
+      radial-gradient(circle at 18% 22%, rgba(139, 92, 246, 0.35), transparent 24rem),
+      radial-gradient(circle at 82% 18%, rgba(244, 63, 94, 0.2), transparent 22rem),
+      radial-gradient(circle at 55% 88%, rgba(20, 184, 166, 0.18), transparent 20rem),
+      linear-gradient(145deg, #12070d 0%, #1b0f2e 42%, #051015 100%);
+    color: #f8fafc;
+    min-height: min(640px, 72svh);
+    display: grid;
+    align-items: center;
+    padding: clamp(3rem, 9vw, 7rem) var(--space-page);
+    position: relative;
+  }
+
+  .mmo-hero::before {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 54px 54px;
+    content: "";
+    pointer-events: none;
+    mask-image: linear-gradient(to bottom, black, transparent 78%);
+  }
+
+  .mmo-hero-inner {
+    width: min(100%, 72rem);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .mmo-hero .eyebrow {
+    color: #67e8f9;
+    text-shadow: 0 0 1.2rem rgba(103, 232, 249, 0.4);
+  }
+
+  .mmo-hero h1 {
+    color: #fff7ed;
+    text-shadow: 0 0 2.5rem rgba(217, 70, 239, 0.3);
+    max-width: 10ch;
+  }
+
+  .mmo-hero .lead {
+    color: #fde68a;
+    max-width: 38rem;
+  }
+
+  .mmo-hero .card {
+    background: rgba(15, 23, 42, 0.82);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+    box-shadow: inset 0 0 0 1px rgba(103, 232, 249, 0.06), 0 1.5rem 5rem rgba(0, 0, 0, 0.28);
+  }
+
+  .status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+    gap: 1rem;
+  }
+
+  .status-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: var(--radius-card);
+    border: 1px solid rgba(17, 24, 39, 0.12);
+    background: rgba(255, 255, 255, 0.62);
+    box-shadow: 0 1.5rem 5rem rgba(15, 23, 42, 0.08);
+  }
+
+  .status-item h3 {
+    margin: 0 0 0.25rem;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 900;
+  }
+
+  .status-item p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: #374151;
+  }
+
+  .status-dot {
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 50%;
+    background: #2563eb;
+    margin-top: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  .pillars-section {
+    background:
+      radial-gradient(circle at 18% 22%, rgba(56, 189, 248, 0.12), transparent 24rem),
+      radial-gradient(circle at 82% 78%, rgba(250, 204, 21, 0.08), transparent 22rem);
+  }
+
+  .pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    gap: 1.25rem;
+  }
+
+  .pillar-card {
+    border-radius: var(--radius-card);
+    padding: clamp(1.2rem, 3vw, 1.6rem);
+    border: 1px solid rgba(17, 24, 39, 0.12);
+    background: rgba(255, 255, 255, 0.68);
+    box-shadow: 0 1.5rem 5rem rgba(15, 23, 42, 0.08);
+  }
+
+  .pillar-card h3 {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-display);
+    font-weight: 900;
+  }
+
+  .pillar-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #374151;
+  }
+
+  .pillar-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    background: #111827;
+    color: #38bdf8;
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
   }
 </style>

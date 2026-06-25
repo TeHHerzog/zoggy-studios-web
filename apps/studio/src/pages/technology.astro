@@ -5,93 +5,104 @@ import StudioLayout from "../layouts/StudioLayout.astro";
 const title = `Technology | ${studioName}`;
 const description = `Technology notes, development tools, and engineering writing from ${studioName}.`;
 ---
-
 <StudioLayout title={title} description={description}>
-  <section class="section" aria-labelledby="tech-title">
-    <div class="page-content text-stack">
+  <section class="tech-hero" aria-labelledby="tech-title">
+    <div class="tech-hero-inner">
       <p class="eyebrow">Technology workshop</p>
-      <h1 id="tech-title" class="page-title">Engineering notes and development tools.</h1>
-      <p class="page-intro">Zoggy Studios builds tooling and infrastructure alongside its games. These are the systems, lessons, and practical engineering stories behind the projects.</p>
+      <h1 id="tech-title">Engineering notes<br />and development tools.</h1>
+      <p class="tech-lead">Zoggy Studios builds tooling and infrastructure alongside its games. These are the systems, lessons, and practical engineering stories behind the projects.</p>
     </div>
   </section>
-
   <section class="section" aria-label="Tools">
     <div class="section-inner">
       <div class="section-heading">
-        <h2>Games and development tools</h2>
-        <p>Internal tools that support game development and server operations.</p>
+        <h2>Development tools</h2>
+        <p>Internal tools supporting game development and server operations.</p>
       </div>
       <div class="wide-grid">
         <article class="card project-card">
-          <h2>Development Supervisor</h2>
-          <p>Build, launch, and monitor the game server and supporting services from one dashboard.</p>
+          <h3>Development Supervisor</h3>
+          <p>Build, launch, and monitor the game server from one dashboard.</p>
           <a class="button button-secondary" href="/projects/development-supervisor/">View project</a>
         </article>
         <article class="card project-card">
-          <h2>Groundmaker</h2>
-          <p>Terrain and world authoring pipeline that produces neutral data for both Godot and Go.</p>
+          <h3>Groundmaker</h3>
+          <p>World authoring pipeline producing neutral data for Godot and Go.</p>
           <a class="button button-secondary" href="/projects/groundmaker/">View project</a>
         </article>
         <article class="card project-card">
-          <h2>Monster Codex pipeline</h2>
-          <p>Structured content authoring that connects creature data to server, client, and wiki.</p>
+          <h3>Monster Codex</h3>
+          <p>Content authoring connecting creature data to server, client, and wiki.</p>
           <a class="button button-secondary" href="/projects/monster-codex/">View project</a>
         </article>
         <article class="card project-card">
-          <h2>Content administration tools</h2>
-          <p>Web-based tools for managing monsters, items, quests, and game content.</p>
+          <h3>Content admin tools</h3>
+          <p>Web-based tools for managing monsters, items, quests, and game data.</p>
           <span class="status-pill">Part of MMO infrastructure</span>
         </article>
       </div>
     </div>
   </section>
-
   <section class="section" aria-label="Articles">
     <div class="section-inner">
       <div class="section-heading">
         <h2>Technology notes</h2>
         <p>Public technical writing from ongoing development.</p>
       </div>
-      <div class="wide-grid">
-        <article class="card text-stack">
+      <div class="article-grid">
+        <div class="article-card">
+          <span class="article-tag">Logging</span>
           <h3>Building live logging for a Go game server</h3>
-          <p>Structured logging, WebSocket streaming, and how the Development Supervisor displays real-time process output.</p>
-        </article>
-        <article class="card text-stack">
+          <p>Structured logging, WebSocket streaming, and the Development Supervisor.</p>
+        </div>
+        <div class="article-card">
+          <span class="article-tag">Infrastructure</span>
           <h3>Understanding process startup and shutdown</h3>
-          <p>Graceful shutdown, signal handling, and service ordering in a multiplayer server environment.</p>
-        </article>
-        <article class="card text-stack">
+          <p>Graceful shutdown, signal handling, and service ordering.</p>
+        </div>
+        <div class="article-card">
+          <span class="article-tag">Coordination</span>
           <h3>Coordinating Godot and Go world measurements</h3>
-          <p>How server units, Godot units, tiles, elevation layers, and collision footprints stay consistent across two runtimes.</p>
-        </article>
-        <article class="card text-stack">
+          <p>Server units, tiles, elevation layers, and collision footprints.</p>
+        </div>
+        <div class="article-card">
+          <span class="article-tag">Gameplay</span>
           <h3>Designing server-authoritative movement</h3>
-          <p>Validating player position, speed, and actions on the server to prevent cheating and desync.</p>
-        </article>
-        <article class="card text-stack">
+          <p>Validating position, speed, and actions on the server.</p>
+        </div>
+        <div class="article-card">
+          <span class="article-tag">Data</span>
           <h3>Creating content schemas for monsters and items</h3>
-          <p>YAML-driven content definitions that feed server logic, client display, database storage, and wiki generation.</p>
-        </article>
-        <article class="card text-stack">
+          <p>YAML definitions feeding server, client, database, and wiki.</p>
+        </div>
+        <div class="article-card">
+          <span class="article-tag">Process</span>
           <h3>Using AI agents without losing project consistency</h3>
-          <p>Managing multiple AI coding agents, shared conventions, repository boundaries, and quality review across a solo project.</p>
-        </article>
-        <article class="card text-stack">
+          <p>Managing multiple agents, conventions, and review across a solo project.</p>
+        </div>
+        <div class="article-card">
+          <span class="article-tag">Tooling</span>
           <h3>Building useful internal dashboards</h3>
-          <p>What information a solo developer actually needs at a glance during active development sessions.</p>
-        </article>
-        <article class="card text-stack">
+          <p>What a solo developer needs at a glance during active sessions.</p>
+        </div>
+        <div class="article-card">
+          <span class="article-tag">Design</span>
           <h3>Designing a first playable MMO slice</h3>
-          <p>What goes into the first vertical slice of a persistent multiplayer world: login, movement, monsters, and a small playable zone.</p>
-        </article>
+          <p>Login, movement, monsters, and a small playable zone.</p>
+        </div>
       </div>
     </div>
   </section>
 </StudioLayout>
-
 <style>
-  .studio-theme .card h3 {
-    margin-bottom: 0.5rem;
-  }
+  .tech-hero { background: radial-gradient(circle at 12% 18%, rgba(56,189,248,0.28), transparent 22rem), radial-gradient(circle at 88% 22%, rgba(52,211,153,0.18), transparent 20rem), linear-gradient(150deg, #0c1929 0%, #0f172a 52%, #020617 100%); color: #f8fafc; min-height: min(480px, 56svh); display: grid; align-items: center; padding: clamp(3rem, 9vw, 5rem) var(--space-page); }
+  .tech-hero-inner { width: min(100%, 72rem); margin: 0 auto; }
+  .tech-hero .eyebrow { color: #38bdf8; }
+  .tech-hero h1 { color: #f8fafc; }
+  .tech-lead { max-width: 42rem; margin: clamp(1.25rem, 3vw, 2rem) 0 0; font-size: clamp(1.1rem, 2.5vw, 1.5rem); color: #bae6fd; }
+  .article-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 1.25rem; }
+  .article-card { border-radius: var(--radius-card); padding: clamp(1.2rem, 3vw, 1.6rem); border: 1px solid rgba(17,24,39,0.12); background: rgba(255,255,255,0.68); box-shadow: 0 1.5rem 5rem rgba(15,23,42,0.08); }
+  .article-card h3 { margin: 0.5rem 0 0.35rem; font-family: var(--font-display); font-weight: 900; font-size: 1.1rem; }
+  .article-card p { margin: 0; font-size: 0.9rem; line-height: 1.5; color: #374151; }
+  .article-tag { display: inline-flex; border-radius: 999px; padding: 0.25rem 0.5rem; font-size: 0.72rem; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; background: rgba(37,99,235,0.1); color: #2563eb; }
 </style>

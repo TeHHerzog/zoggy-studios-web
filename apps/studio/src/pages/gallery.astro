@@ -5,68 +5,73 @@ import StudioLayout from "../layouts/StudioLayout.astro";
 const title = `Gallery | ${studioName}`;
 const description = `Creature artwork, monster collections, and visual development from ${studioName}.`;
 ---
-
 <StudioLayout title={title} description={description}>
-  <section class="section" aria-labelledby="gallery-title">
-    <div class="page-content text-stack">
+  <section class="gallery-hero" aria-labelledby="gallery-title">
+    <div class="gallery-hero-inner">
       <p class="eyebrow">Creature gallery</p>
-      <h1 id="gallery-title" class="page-title">From the Monster Codex.</h1>
-      <p class="page-intro">Selected creatures from the Dark Fantasy MMO content pipeline. Each entry connects visual design with lore, combat data, and in-game behavior through the structured authoring system.</p>
+      <h1 id="gallery-title">From the Monster Codex.</h1>
+      <p class="gallery-lead">Selected creatures from the Dark Fantasy MMO content pipeline. Each entry connects visual design with lore, combat data, and in-game behavior through the structured authoring system.</p>
     </div>
   </section>
-
   <section class="section" aria-label="Gallery collections">
     <div class="section-inner">
       <div class="section-heading">
         <h2>Collections</h2>
-        <p>Browse creatures by category. Each collection shows 4-8 entries at a time.</p>
+        <p>Browse creatures by category. Each collection shows curated entries.</p>
       </div>
-      <div class="wide-grid">
-        <article class="card project-card">
-          <h2>Dark Fantasy Creatures</h2>
-          <p>The core monster population of the MMO world. Serious, dangerous, and lore-rich.</p>
-          <span class="status-pill">Coming soon</span>
-        </article>
-        <article class="card project-card">
-          <h2>Trick and Toon Monsters</h2>
-          <p>Unusual creatures that break the dark fantasy tone with humor or surprise.</p>
-          <span class="status-pill">Coming soon</span>
-        </article>
-        <article class="card project-card">
-          <h2>Clockwork Constructs</h2>
-          <p>Mechanical and animated creatures built from gears, magic, and strange materials.</p>
-          <span class="status-pill">Coming soon</span>
-        </article>
-        <article class="card project-card">
-          <h2>Frost Creatures</h2>
-          <p>Beasts adapted to frozen wastes and arctic zones.</p>
-          <span class="status-pill">Coming soon</span>
-        </article>
-        <article class="card project-card">
-          <h2>Moon-Touched Beasts</h2>
-          <p>Creatures altered by lunar influence, celestial events, or otherworldly exposure.</p>
-          <span class="status-pill">Coming soon</span>
-        </article>
-        <article class="card project-card">
-          <h2>Bosses and Mini-Bosses</h2>
-          <p>Named encounters with unique mechanics, loot tables, and arena designs.</p>
-          <span class="status-pill">Coming soon</span>
-        </article>
-        <article class="card project-card">
-          <h2>Pixel and Character Experiments</h2>
-          <p>Sprite work, character studies, and pixel art from across Zoggy projects.</p>
-          <span class="status-pill">Coming soon</span>
-        </article>
+      <div class="gallery-grid">
+        <div class="gallery-card">
+          <div class="gallery-preview"><span class="gallery-count">4&ndash;8 entries</span></div>
+          <h3>Dark Fantasy Creatures</h3>
+          <p>The core monster population.</p>
+        </div>
+        <div class="gallery-card">
+          <div class="gallery-preview"><span class="gallery-count">Coming soon</span></div>
+          <h3>Trick &amp; Toon Monsters</h3>
+          <p>Playful and surprising creatures.</p>
+        </div>
+        <div class="gallery-card">
+          <div class="gallery-preview"><span class="gallery-count">Coming soon</span></div>
+          <h3>Clockwork Constructs</h3>
+          <p>Gears, magic, and strange materials.</p>
+        </div>
+        <div class="gallery-card">
+          <div class="gallery-preview"><span class="gallery-count">Coming soon</span></div>
+          <h3>Frost Creatures</h3>
+          <p>Adapted to frozen wastes.</p>
+        </div>
+        <div class="gallery-card">
+          <div class="gallery-preview"><span class="gallery-count">Coming soon</span></div>
+          <h3>Moon-Touched Beasts</h3>
+          <p>Altered by lunar influence.</p>
+        </div>
+        <div class="gallery-card">
+          <div class="gallery-preview"><span class="gallery-count">Coming soon</span></div>
+          <h3>Bosses &amp; Mini-Bosses</h3>
+          <p>Named encounters, unique loot.</p>
+        </div>
       </div>
     </div>
   </section>
-
   <section class="section" aria-label="Note">
     <div class="section-inner">
-      <div class="callout text-stack">
+      <div class="callout text-stack" style="text-align: center">
         <h2>Visual content is being prepared</h2>
-        <p>The gallery will open with curated creature artwork, screenshots, and development images as material is cleared for public presentation. Check the <a href="/updates/">studio log</a> for new additions.</p>
+        <p>The gallery will open with curated creature artwork, screenshots, and development images as material is cleared. Check <a href="/updates/">the studio log</a> for new additions.</p>
       </div>
     </div>
   </section>
 </StudioLayout>
+<style>
+  .gallery-hero { background: radial-gradient(circle at 22% 18%, rgba(192,132,252,0.3), transparent 22rem), radial-gradient(circle at 78% 78%, rgba(52,211,153,0.15), transparent 20rem), linear-gradient(155deg, #0f172a 0%, #1e1b4b 52%, #0f172a 100%); color: #f8fafc; min-height: min(480px, 56svh); display: grid; align-items: center; padding: clamp(3rem, 9vw, 5rem) var(--space-page); }
+  .gallery-hero-inner { width: min(100%, 72rem); margin: 0 auto; }
+  .gallery-hero .eyebrow { color: #c084fc; }
+  .gallery-hero h1 { color: #fff7ed; }
+  .gallery-lead { max-width: 42rem; margin: clamp(1.25rem, 3vw, 2rem) 0 0; font-size: clamp(1.1rem, 2.5vw, 1.5rem); color: #e9d5ff; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 1.25rem; }
+  .gallery-card { border-radius: var(--radius-card); overflow: hidden; border: 1px solid rgba(17,24,39,0.12); background: rgba(255,255,255,0.68); }
+  .gallery-card h3 { margin: 1rem 1.25rem 0.35rem; font-family: var(--font-display); font-weight: 900; }
+  .gallery-card p { margin: 0 1.25rem 1.25rem; font-size: 0.9rem; color: #374151; }
+  .gallery-preview { width: 100%; aspect-ratio: 16/9; background: radial-gradient(circle at 32% 28%, rgba(192,132,252,0.12), transparent 16rem), linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%); display: flex; align-items: center; justify-content: center; }
+  .gallery-count { display: inline-flex; padding: 0.35rem 0.8rem; border-radius: 999px; background: rgba(255,255,255,0.1); color: #c084fc; font-size: 0.8rem; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid rgba(192,132,252,0.3); }
+</style>

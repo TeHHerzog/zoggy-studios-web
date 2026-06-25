@@ -7,43 +7,64 @@ const description = `A Go-based internal development tool for building, launchin
 ---
 
 <StudioLayout title={title} description={description}>
-  <section class="section" aria-labelledby="supervisor-title">
-    <div class="page-content text-stack">
+  <section class="sup-hero" aria-labelledby="sup-title">
+    <div class="sup-hero-inner">
       <p class="eyebrow">Internal tool</p>
-      <h1 id="supervisor-title" class="page-title">Development Supervisor & Control Suite</h1>
-      <p class="page-intro">An internal development application for building, launching, monitoring, and troubleshooting the game server and its supporting services.</p>
+      <h1 id="sup-title">Development Supervisor</h1>
+      <p class="sup-lead">A Go-based control suite for building, launching, monitoring, and troubleshooting the game server and its supporting services.</p>
     </div>
   </section>
 
-  <section class="section" aria-label="About the tool">
+  <section class="section" aria-label="Problem">
     <div class="section-inner">
-      <div class="wide-grid">
-        <article class="card text-stack">
-          <h2>What it does</h2>
-          <p>The Control Suite provides live process output, health information, build visibility, crash reporting, and a central place to understand what the development environment is doing at any moment.</p>
-          <p>The tool grew from a practical problem: launching several development services without enough visibility into build failures, startup ordering, connection problems, or hanging processes.</p>
-        </article>
-        <article class="card text-stack">
-          <h2>Key features</h2>
-          <ul class="note-list">
-            <li>Live server console output streamed to a dashboard</li>
-            <li>Build and launch stage tracking</li>
-            <li>Process health states and restart behavior</li>
-            <li>Server connection status monitoring</li>
-            <li>Recent errors and warnings panel</li>
-            <li>Crash reporting and recovery workflows</li>
-          </ul>
-        </article>
+      <div class="section-heading" style="max-width: 100%; text-align: center">
+        <h2>Born from a practical problem</h2>
+        <p style="max-width: 48rem; margin: 0 auto">Launching several development services without enough visibility into build failures, startup ordering, connection problems, or hanging processes. The Control Suite became the answer.</p>
       </div>
     </div>
   </section>
 
   <section class="section" aria-label="Architecture">
     <div class="section-inner">
-      <div class="callout text-stack">
-        <h2>How it works</h2>
+      <div class="arch-callout">
+        <div class="arch-flow">
+          <span class="arch-node">Control Suite</span>
+          <span class="arch-arrow" aria-hidden="true">&rarr;</span>
+          <span class="arch-node">Supervisor</span>
+          <span class="arch-arrow" aria-hidden="true">&rarr;</span>
+          <span class="arch-node">Game Server</span>
+        </div>
         <p>A three-layer architecture: the dashboard frontend communicates with a supervisor process that manages game server instances, monitors their health, and reports status changes.</p>
-        <p>Control Suite <span aria-hidden="true">&rarr;</span> Supervisor <span aria-hidden="true">&rarr;</span> Game Server</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Features">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>Key features</h2>
+      </div>
+      <div class="wide-grid">
+        <article class="card feature-card">
+          <span class="feature-icon" aria-hidden="true">&#9776;</span>
+          <h3>Live console output</h3>
+          <p>Real-time server process output streamed to the dashboard.</p>
+        </article>
+        <article class="card feature-card">
+          <span class="feature-icon" aria-hidden="true">&#9673;</span>
+          <h3>Build tracking</h3>
+          <p>Build and launch stage visibility from source to running service.</p>
+        </article>
+        <article class="card feature-card">
+          <span class="feature-icon" aria-hidden="true">&#9733;</span>
+          <h3>Health monitoring</h3>
+          <p>Process health states, restart behavior, and crash recovery.</p>
+        </article>
+        <article class="card feature-card">
+          <span class="feature-icon" aria-hidden="true">&#9881;</span>
+          <h3>Connection status</h3>
+          <p>Server connection monitoring with error and warning panels.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -55,9 +76,102 @@ const description = `A Go-based internal development tool for building, launchin
         <p>This project demonstrates that Zoggy Studios is not merely brainstorming a game. The studio creates supporting technology around its projects: practical tools that solve real engineering problems.</p>
       </article>
       <article class="card text-stack">
-        <h2>Tech</h2>
-        <p>Built in Go. Uses process management, WebSocket streaming, and structured logging. Designed for the development environment first, with potential server-administration use later.</p>
+        <h2>Built with</h2>
+        <p>Go, process management, WebSocket streaming, structured logging. Designed for the development environment with potential server-administration applications later.</p>
       </article>
     </div>
   </section>
 </StudioLayout>
+
+<style>
+  .sup-hero {
+    background:
+      radial-gradient(circle at 12% 18%, rgba(56, 189, 248, 0.3), transparent 22rem),
+      radial-gradient(circle at 88% 22%, rgba(52, 211, 153, 0.2), transparent 20rem),
+      linear-gradient(160deg, #0f172a 0%, #1e293b 52%, #020617 100%);
+    color: #f8fafc;
+    min-height: min(520px, 60svh);
+    display: grid;
+    align-items: center;
+    padding: clamp(3rem, 9vw, 6rem) var(--space-page);
+  }
+
+  .sup-hero-inner {
+    width: min(100%, 72rem);
+    margin: 0 auto;
+  }
+
+  .sup-hero .eyebrow {
+    color: #34d399;
+  }
+
+  .sup-hero h1 {
+    color: #f8fafc;
+    text-shadow: 0 0 2rem rgba(56, 189, 248, 0.25);
+  }
+
+  .sup-lead {
+    max-width: 46rem;
+    margin: clamp(1.25rem, 3vw, 2rem) 0 0;
+    font-size: clamp(1.15rem, 2.5vw, 1.6rem);
+    line-height: 1.3;
+    color: #cbd5e1;
+  }
+
+  .arch-callout {
+    border-radius: var(--radius-card);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border: 1px solid rgba(17, 24, 39, 0.12);
+    background: rgba(255, 255, 255, 0.62);
+    text-align: center;
+  }
+
+  .arch-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+  }
+
+  .arch-node {
+    display: inline-flex;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    background: #111827;
+    color: #38bdf8;
+    font-weight: 700;
+  }
+
+  .arch-arrow {
+    color: #64748b;
+    font-size: 1.4rem;
+  }
+
+  .feature-card {
+    text-align: center;
+  }
+
+  .feature-card h3 {
+    margin-top: 0.75rem;
+  }
+
+  .feature-card p {
+    color: #374151;
+  }
+
+  .feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.75rem;
+    background: #111827;
+    color: #38bdf8;
+    font-size: 1rem;
+  }
+</style>

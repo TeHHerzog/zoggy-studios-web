@@ -5,17 +5,15 @@ import StudioLayout from "../../layouts/StudioLayout.astro";
 const title = `Monster Codex | ${studioName}`;
 const description = `A structured creature-authoring system for the Dark Fantasy MMO connecting lore, combat, art, and game data.`;
 ---
-
 <StudioLayout title={title} description={description}>
-  <section class="section" aria-labelledby="codex-title">
-    <div class="page-content text-stack">
+  <section class="codex-hero" aria-labelledby="codex-title">
+    <div class="codex-hero-inner">
       <p class="eyebrow">Active development</p>
-      <h1 id="codex-title" class="page-title">Monster Codex & Content Pipeline</h1>
-      <p class="page-intro">A structured creature-authoring system that connects monster identity, visual direction, lore, ecology, combat statistics, abilities, AI, spawning, loot, quests, audio, database records, and in-game presentation into one pipeline.</p>
+      <h1 id="codex-title">Monster Codex</h1>
+      <p class="codex-lead">A structured creature-authoring system that connects monster identity, visual direction, lore, ecology, combat statistics, abilities, spawning, loot, and database records into one pipeline.</p>
     </div>
   </section>
-
-  <section class="section" aria-label="Codex overview">
+  <section class="section" aria-label="Codex overview" style="position: relative">
     <div class="section-inner wide-grid">
       <article class="card text-stack">
         <h2>The scope</h2>
@@ -34,61 +32,43 @@ const description = `A structured creature-authoring system for the Dark Fantasy
       </article>
     </div>
   </section>
-
-  <section class="section" aria-label="Case study">
+  <section class="section" aria-label="Case study" style="background: radial-gradient(circle at 18% 22%, rgba(192,132,252,0.15), transparent 24rem), radial-gradient(circle at 82% 78%, rgba(244,63,94,0.1), transparent 22rem)">
     <div class="section-inner">
-      <div class="callout text-stack">
+      <div class="section-heading">
         <h2>Case study: Chonkroach</h2>
-        <p>Chonkroach is a single creature that demonstrates how the Codex works end to end:</p>
+        <p>A single creature that demonstrates how the Codex works end to end, from concept to in-game data.</p>
       </div>
-      <div class="wide-grid" style="margin-top: 1rem">
-        <article class="card">
-          <h3>Creature artwork</h3>
-          <p>Visual concept and in-game representation.</p>
-        </article>
-        <article class="card">
-          <h3>Public lore</h3>
-          <p>Short in-world description and ecological context.</p>
-        </article>
-        <article class="card">
-          <h3>Dimensions</h3>
-          <p>Height, weight, and creature family classification.</p>
-        </article>
-        <article class="card">
-          <h3>Habitat & combat role</h3>
-          <p>Where it spawns, how it behaves, and its role in encounters.</p>
-        </article>
-        <article class="card">
-          <h3>Signature abilities</h3>
-          <p>Unique skills and combat mechanics.</p>
-        </article>
-        <article class="card">
-          <h3>Loot examples</h3>
-          <p>Items and resources dropped on defeat.</p>
-        </article>
-        <article class="card">
-          <h3>Color palette</h3>
-          <p>Visual design system for the creature family.</p>
-        </article>
-        <article class="card">
-          <h3>Data pipeline</h3>
-          <p>How the same record feeds server, client, database, and future wiki.</p>
-        </article>
+      <div class="wide-grid">
+        <article class="card"><h3>Creature artwork</h3><p>Visual concept and in-game representation.</p></article>
+        <article class="card"><h3>Public lore</h3><p>Short in-world description and ecological context.</p></article>
+        <article class="card"><h3>Dimensions & family</h3><p>Height, weight, and creature family classification.</p></article>
+        <article class="card"><h3>Habitat & role</h3><p>Where it spawns, how it behaves, combat role.</p></article>
+        <article class="card"><h3>Abilities</h3><p>Unique skills and combat mechanics.</p></article>
+        <article class="card"><h3>Loot examples</h3><p>Items and resources dropped on defeat.</p></article>
+        <article class="card"><h3>Color palette</h3><p>Visual design system for the creature family.</p></article>
+        <article class="card"><h3>Data pipeline</h3><p>How the same record feeds server, client, database, and wiki.</p></article>
       </div>
     </div>
   </section>
-
   <section class="section" aria-label="Gallery link">
     <div class="section-inner">
-      <div class="actions">
+      <div class="actions" style="justify-content: center">
         <a class="button button-primary" href="/gallery/">Browse creature gallery</a>
       </div>
     </div>
   </section>
 </StudioLayout>
-
 <style>
-  .studio-theme .card h3 {
-    margin-bottom: 0.5rem;
+  .codex-hero {
+    background: radial-gradient(circle at 28% 22%, rgba(192,132,252,0.35), transparent 24rem), radial-gradient(circle at 72% 18%, rgba(244,63,94,0.2), transparent 22rem), linear-gradient(145deg, #1a0a1e 0%, #2d1248 35%, #0f172a 100%);
+    color: #f8fafc;
+    min-height: min(520px, 60svh);
+    display: grid;
+    align-items: center;
+    padding: clamp(3rem, 9vw, 6rem) var(--space-page);
   }
+  .codex-hero-inner { width: min(100%, 72rem); margin: 0 auto; }
+  .codex-hero .eyebrow { color: #c084fc; }
+  .codex-hero h1 { color: #fff7ed; text-shadow: 0 0 2rem rgba(192,132,252,0.3); }
+  .codex-lead { max-width: 42rem; margin: clamp(1.25rem, 3vw, 2rem) 0 0; font-size: clamp(1.15rem, 2.5vw, 1.6rem); line-height: 1.3; color: #e9d5ff; }
 </style>
