@@ -18,6 +18,7 @@ const requiredSites = [
       path.join("projects", "empire-of-the-hill", "index.html"),
       path.join("projects", "experimental-lab", "index.html"),
       path.join("gallery", "index.html"),
+      path.join("now", "index.html"),
       path.join("technology", "index.html"),
       path.join("about", "index.html"),
       path.join("updates", "index.html"),
