@@ -2,6 +2,77 @@
 
 This milestone documents a manual deployment process only. Automated deployment is intentionally not implemented.
 
+## Access Methods
+
+IONOS provides two different access paths that are useful for this project.
+
+The Hosting API can manage hosting-related services such as DNS, domains, and SSL where supported by the API. The API key is passed in the `X-API-Key` header. It does not appear to provide a simple static webspace file-upload endpoint for this shared hosting setup.
+
+SFTP/SSH is the practical deployment path for generated static files. Use it to upload the contents of `dist/studio/` to the `/games/` webspace directory.
+
+## Local Secret File
+
+Local deployment settings may be stored in:
+
+```text
+.env.deploy.local
+```
+
+This file is ignored by git through the `.env.*` rule. Do not commit it. Do not paste its contents into documentation or commits.
+
+Expected local values:
+
+```text
+IONOS_API_KEY=publicprefix.secret
+IONOS_SFTP_HOST=home565324678.1and1-data.host
+IONOS_SFTP_PORT=22
+IONOS_SFTP_USER=u80057117
+IONOS_REMOTE_DIR=/games/
+IONOS_SFTP_KEY=C:\Users\Zog\.ssh\zoggy_studios_ionos_ed25519
+```
+
+The API key can be tested with:
+
+```text
+npm run ionos:api:check
+```
+
+This confirms API access only. It does not upload files.
+
+## SSH Key Setup
+
+Create or keep a local SSH key outside the repository. The current expected key path is:
+
+```text
+C:\Users\Zog\.ssh\zoggy_studios_ionos_ed25519
+```
+
+If IONOS provides a UI field for SSH public keys, add the `.pub` file contents there.
+
+If IONOS requires one password-based SSH login first, run:
+
+```text
+npm run ionos:ssh:install-key
+```
+
+That helper reads `.env.deploy.local`, connects with SSH, and appends the local public key to `~/.ssh/authorized_keys` on the webspace. It may prompt for the IONOS SFTP/SSH password in your local terminal. Do not save that password in the repository.
+
+After key setup, test key login manually:
+
+```text
+ssh -i C:\Users\Zog\.ssh\zoggy_studios_ionos_ed25519 -p 22 u80057117@home565324678.1and1-data.host
+```
+
+## Local Studio Upload Command
+
+After building and verifying, upload the studio site with:
+
+```text
+npm run deploy:studio
+```
+
+The upload command uses `sftp.exe` and the key path from `.env.deploy.local`.
+
 ## Manual Process
 
 1. Install dependencies with `npm install`.
