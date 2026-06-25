@@ -24,7 +24,8 @@ const requiredSites = [
       path.join("updates", "index.html"),
       path.join("contact", "index.html"),
       path.join("privacy", "index.html"),
-      path.join("terms", "index.html")
+      path.join("terms", "index.html"),
+      path.join("work", "index.html")
     ]
   },
   {

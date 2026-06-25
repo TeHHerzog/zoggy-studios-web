@@ -1,0 +1,78 @@
+---
+import { studioName } from "@zoggy/branding";
+import StudioLayout from "../layouts/StudioLayout.astro";
+
+const title = `Work | ${studioName}`;
+const description = `Websites, apps, and projects built for clients and collaborators by ${studioName}.`;
+---
+<StudioLayout title={title} description={description}>
+  <section class="section" aria-labelledby="work-title">
+    <div class="page-content text-stack">
+      <p class="eyebrow">Client work</p>
+      <h1 id="work-title" class="page-title">Websites and projects built for others.</h1>
+      <p class="page-intro">Zoggy Studios also takes on external web development, design, and technical projects. Each project here was built for a client, collaborator, or commission. This section is new and will grow as work is delivered.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Available services">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>Services offered</h2>
+        <p>Clean, honest, solo-delivered work. No agency overhead, no sales pipeline, just straightforward building.</p>
+      </div>
+      <div class="wide-grid">
+        <article class="card">
+          <h3>Websites</h3>
+          <p>Static sites, landing pages, portfolios, marketing pages, and content sites built with modern tooling. Fast, responsive, accessible by default.</p>
+        </article>
+        <article class="card">
+          <h3>Web applications</h3>
+          <p>Custom tools, dashboards, internal systems, and interactive web apps. From concept to deployment.</p>
+        </article>
+        <article class="card">
+          <h3>Technical consulting</h3>
+          <p>Architecture review, project setup, CI/CD pipelines, AI agent workflows, and development process advice for solo developers and small teams.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Project portfolio">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>Delivered work</h2>
+        <p>Projects completed for clients, collaborators, and commissions.</p>
+      </div>
+
+      <div class="wide-grid">
+        <article class="card project-card">
+          <span class="status-pill">Live</span>
+          <h3>games.herzogit.com</h3>
+          <p>Zoggy Studios public website. Astro static site with 17 pages, responsive design, custom SVG brand assets, social metadata, Google Fonts, and IONOS SFTP deployment pipeline. Built for myself, serves as a template for client projects.</p>
+        </article>
+        <article class="card project-card">
+          <span class="status-pill">Available</span>
+          <h3>Your project here</h3>
+          <p>This slot is ready for the next client or collaborator project. Each entry shows the project name, what was built, the tech used, and a live link if public.</p>
+        </article>
+        <article class="card project-card">
+          <span class="status-pill">Available</span>
+          <h3>Your project here</h3>
+          <p>Same format, clean and consistent. Contact via the studio email to start a conversation about your project.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Contact">
+    <div class="section-inner">
+      <div class="callout text-stack" style="text-align: center">
+        <h2>Interested in working together?</h2>
+        <p style="max-width: 32rem; margin: 0 auto">Websites, tools, experiments, or technical projects. Reach out and describe what you need built.</p>
+        <div class="actions" style="justify-content: center">
+          <a class="button button-primary" href="/contact/">Get in touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</StudioLayout>
