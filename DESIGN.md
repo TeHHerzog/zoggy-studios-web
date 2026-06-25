@@ -52,3 +52,11 @@ Dark Fantasy MMO is one project under that umbrella. It has its own visual atmos
 ## Component Scope
 
 Phase 1 only needs a page shell, skip link, cards, call-to-action links, footer treatment, and error-page structure. Do not build a large design system yet.
+
+## Logo Direction
+
+Current mark: bold geometric `Z`, rounded square, small spark/orb.
+
+The mark should stay broad enough for games, apps, books, scripts, and technology projects. Avoid symbols that make Zoggy Studios look like only a dark fantasy game studio.
+
+Optional future exploration can use the prompts in `docs/LOGO_IDEAS.md`.

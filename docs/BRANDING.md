@@ -22,6 +22,16 @@ A solo-led creative and technology studio for games, apps, stories, and strange 
 
 This avoids locking the brand to one game or pretending the studio already has a large catalog, team, publisher operation, or release pipeline.
 
+## Logo Exploration
+
+Logo directions and image-generation prompts are tracked in:
+
+```text
+docs/LOGO_IDEAS.md
+```
+
+The current SVG mark is temporary but usable. It should be treated as a starter identity until a stronger brand direction is selected.
+
 ## Branding Configuration
 
 The single branding source is:
