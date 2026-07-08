@@ -7,48 +7,60 @@ const description = `Active projects and experiments from ${studioName}.`;
 ---
 
 <StudioLayout title={title} description={description}>
-  <section class="section" aria-labelledby="projects-title">
+  <section class="section" style="padding-bottom: 2rem;" aria-labelledby="projects-title">
     <div class="page-content text-stack">
       <p class="eyebrow">Project shelf</p>
       <h1 id="projects-title" class="page-title">What the studio is building.</h1>
       <p class="page-intro">Each project here represents real work in progress, from game systems and server infrastructure to creature design and world-building tools.</p>
+      
+      <div class="filter-nav" aria-label="Project categories">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="games">Games</button>
+        <button class="filter-btn" data-filter="tools">Development Tools</button>
+        <button class="filter-btn" data-filter="prototypes">Prototypes &amp; Lab</button>
+      </div>
     </div>
   </section>
 
-  <section class="section" aria-label="Active projects">
+  <section class="section" style="padding-top: 0;" aria-label="Active projects">
     <div class="section-inner">
-      <div class="wide-grid">
-        <article class="card project-card">
-          <span class="status-pill">Active development</span>
+      <div class="wide-grid project-grid">
+        <article class="card project-card" data-category="games">
+          <span class="status-pill"><span class="pulse-dot"></span>Active development</span>
           <h2>Dark Fantasy MMO</h2>
           <p>An old-school-inspired dark fantasy MMORPG featuring a Godot 4.7 client, authoritative Go game server, persistent world, deep class identity, creature ecology, and server-authoritative gameplay.</p>
           <a class="button button-secondary" href="/projects/dark-fantasy-mmo/">View project</a>
         </article>
-        <article class="card project-card">
-          <span class="status-pill">Internal tool</span>
+        
+        <article class="card project-card" data-category="tools">
+          <span class="status-pill"><span class="pulse-dot"></span>Internal tool</span>
           <h2>Development Supervisor & Control Suite</h2>
           <p>A Go-based tool for building, launching, monitoring, and troubleshooting the game server and its supporting services with live process output and health tracking.</p>
           <a class="button button-secondary" href="/projects/development-supervisor/">View project</a>
         </article>
-        <article class="card project-card">
+        
+        <article class="card project-card" data-category="tools">
           <span class="status-pill">In development</span>
           <h2>Groundmaker & World Pipeline</h2>
           <p>Terrain and zone-authoring tools that create world data readable by both the Godot client and the authoritative Go server for persistent multiplayer zones.</p>
           <a class="button button-secondary" href="/projects/groundmaker/">View project</a>
         </article>
-        <article class="card project-card">
-          <span class="status-pill">Active development</span>
+        
+        <article class="card project-card" data-category="tools">
+          <span class="status-pill"><span class="pulse-dot"></span>Active development</span>
           <h2>Monster Codex & Content Pipeline</h2>
           <p>A structured creature-authoring system connecting monster identity, visual direction, lore, ecology, combat stats, abilities, AI, spawning, loot, quests, and database records.</p>
           <a class="button button-secondary" href="/projects/monster-codex/">View project</a>
         </article>
-        <article class="card project-card">
+        
+        <article class="card project-card" data-category="games">
           <span class="status-pill">Prototype</span>
           <h2>Empire of the Hill</h2>
           <p>A 2D/2.5D ant-colony RTS and survival experiment inspired by colony simulation and classic strategy games.</p>
           <a class="button button-secondary" href="/projects/empire-of-the-hill/">View project</a>
         </article>
-        <article class="card project-card">
+        
+        <article class="card project-card" data-category="prototypes">
           <span class="status-pill">Exploring</span>
           <h2>Experimental Lab</h2>
           <p>A single home for smaller game concepts, character ideas, art experiments, and prototype concepts.</p>
@@ -58,3 +70,115 @@ const description = `Active projects and experiments from ${studioName}.`;
     </div>
   </section>
 </StudioLayout>
+
+<style>
+  .filter-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1.5rem;
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 1.25rem;
+  }
+
+  .filter-btn {
+    border-radius: 999px;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    color: var(--text-color);
+    padding: 0.5rem 1.1rem;
+    font-size: 0.88rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .filter-btn:hover {
+    border-color: var(--card-hover-border);
+    transform: scale(1.03);
+  }
+
+  .filter-btn.active {
+    background: var(--accent-color);
+    color: var(--skip-text);
+    border-color: var(--accent-color);
+  }
+
+  .project-card {
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .project-card.hidden-anim {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  .project-card.hidden-display {
+    display: none !important;
+  }
+
+  .pulse-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    box-shadow: 0 0 8px var(--status-glow);
+    margin-right: 6px;
+    animation: pulse-badge 1.8s infinite ease-in-out;
+  }
+
+  @keyframes pulse-badge {
+    0% {
+      transform: scale(0.85);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+      box-shadow: 0 0 12px var(--status-glow);
+    }
+    100% {
+      transform: scale(0.85);
+      opacity: 0.5;
+    }
+  }
+</style>
+
+<script>
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      projectCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const matches = filterValue === 'all' || category === filterValue;
+
+        if (matches) {
+          card.classList.remove('hidden-display');
+          // Force layout reflow
+          void (card as HTMLElement).offsetWidth;
+          card.classList.remove('hidden-anim');
+        } else {
+          card.classList.add('hidden-anim');
+          
+          const onTransitionEnd = (e: Event) => {
+            if (e.target === card && card.classList.contains('hidden-anim')) {
+              card.classList.add('hidden-display');
+              card.removeEventListener('transitionend', onTransitionEnd);
+            }
+          };
+          card.addEventListener('transitionend', onTransitionEnd);
+        }
+      });
+    });
+  });
+</script>

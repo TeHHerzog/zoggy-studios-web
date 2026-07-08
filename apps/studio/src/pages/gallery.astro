@@ -13,7 +13,12 @@ const creatures = [
     lore: "A bloated, chitinous scavenger that drags its distended abdomen through the undercrypts. Surprisingly fast when startled.",
     color: "#c084fc",
     habitat: "Undercrypts, refuse tunnels",
-    svg: "M24 8L40 8L48 24L40 40L24 48L8 40L8 24Z"
+    svg: "M24 8L40 8L48 24L40 40L24 48L8 40L8 24Z",
+    stats: { hp: 25, speed: 85, threat: 15 },
+    loot: [
+      { item: "Chitin Shell Fragment", rate: "65%" },
+      { item: "Undercrypt Spore", rate: "35%" }
+    ]
   },
   {
     name: "Glimmerfang",
@@ -22,7 +27,13 @@ const creatures = [
     lore: "A translucent predator whose crystalline fangs refract residual magic. It hunts by remaining perfectly still until its prey is close enough to taste.",
     color: "#38bdf8",
     habitat: "Crystal caves, mana-fractured zones",
-    svg: "M16 8L48 8L56 24L48 40L16 40L8 24Z"
+    svg: "M16 8L48 8L56 24L48 40L16 40L8 24Z",
+    stats: { hp: 45, speed: 75, threat: 50 },
+    loot: [
+      { item: "Refractive Crystal Fang", rate: "25%" },
+      { item: "Glowing Dust", rate: "70%" },
+      { item: "Focus Rune", rate: "5%" }
+    ]
   },
   {
     name: "Rot-Knight",
@@ -31,7 +42,12 @@ const creatures = [
     lore: "Ancient armor fused with decayed tissue and a will that refuses to quiet. Rot-Knights patrol the same halls they guarded in life, attacking anything that moves.",
     color: "#fb7185",
     habitat: "Ancient fortresses, burial halls",
-    svg: "M16 8L48 8L56 24L48 40L16 40L8 24Z"
+    svg: "M16 8L48 8L56 24L48 40L16 40L8 24Z",
+    stats: { hp: 90, speed: 30, threat: 80 },
+    loot: [
+      { item: "Rusty Iron Pauldron", rate: "40%" },
+      { item: "Wailing Essence", rate: "15%" }
+    ]
   },
   {
     name: "Clockwork Stalker",
@@ -40,7 +56,12 @@ const creatures = [
     lore: "A mechanical hunter assembled from brass, springs, and a stolen soul gem. It does not tire, does not stray, and does not stop until its target is pinned.",
     color: "#facc15",
     habitat: "Abandoned workshops, clockwork ruins",
-    svg: "M8 16C8 16 24 8 40 16C56 24 48 40 48 40C48 40 32 48 16 40C8 36 8 16 8 16Z"
+    svg: "M8 16C8 16 24 8 40 16C56 24 48 40 48 40C48 40 32 48 16 40C8 36 8 16 8 16Z",
+    stats: { hp: 60, speed: 90, threat: 70 },
+    loot: [
+      { item: "Brass Gears", rate: "80%" },
+      { item: "Imperfect Soul Gem", rate: "12%" }
+    ]
   },
   {
     name: "Frost-Mantle Basilisk",
@@ -49,7 +70,12 @@ const creatures = [
     lore: "A massive serpentine creature whose hide is crusted with permafrost. Its gaze does not petrify, it freezes solid anything caught in its line of sight.",
     color: "#67e8f9",
     habitat: "Glacial peaks, frozen valleys",
-    svg: "M32 8L48 32L32 56L16 32Z"
+    svg: "M32 8L48 32L32 56L16 32Z",
+    stats: { hp: 120, speed: 40, threat: 95 },
+    loot: [
+      { item: "Frozen Serpent Scale", rate: "30%" },
+      { item: "Glacial Core", rate: "5%" }
+    ]
   },
   {
     name: "Moon-Touched Warden",
@@ -58,7 +84,12 @@ const creatures = [
     lore: "Once a wolf, now something more. The Warden walks under the light of a broken moon, its fur silvered by an influence it does not understand and cannot escape.",
     color: "#a78bfa",
     habitat: "Moonlit clearings, celestial ruins",
-    svg: "M32 8C40 8 48 16 48 24C48 36 40 48 32 52C24 48 16 36 16 24C16 16 24 8 32 8Z"
+    svg: "M32 8C40 8 48 16 48 24C48 36 40 48 32 52C24 48 16 36 16 24C16 16 24 8 32 8Z",
+    stats: { hp: 80, speed: 80, threat: 75 },
+    loot: [
+      { item: "Silvered Fur Pelt", rate: "50%" },
+      { item: "Astral Shard", rate: "20%" }
+    ]
   },
   {
     name: "Ember Imp",
@@ -67,7 +98,12 @@ const creatures = [
     lore: "A small, grinning devil that leaves scorch marks wherever it lands. Weak alone, dangerous in numbers, and always laughing.",
     color: "#f97316",
     habitat: "Volcanic vents, hellish rifts",
-    svg: "M16 12L32 8L48 12L48 36L32 56L16 36Z"
+    svg: "M16 12L32 8L48 12L48 36L32 56L16 36Z",
+    stats: { hp: 30, speed: 85, threat: 35 },
+    loot: [
+      { item: "Smoldering Ashes", rate: "75%" },
+      { item: "Imp Horn", rate: "40%" }
+    ]
   }
 ];
 ---
@@ -76,7 +112,7 @@ const creatures = [
     <div class="gallery-hero-inner">
       <p class="eyebrow">Monster Codex</p>
       <h1 id="gallery-title">From the creature archive.</h1>
-      <p class="gallery-lead">Curated entries from the Dark Fantasy MMO content pipeline. Each creature connects visual design with lore, combat data, and in-game behavior through the structured authoring system. <a href="/projects/monster-codex/" style="color: #c084fc; text-decoration: underline">View the full Codex project</a></p>
+      <p class="gallery-lead">Curated entries from the Dark Fantasy MMO content pipeline. Each creature connects visual design with lore, combat data, and in-game behavior through the structured authoring system. <a href="/projects/monster-codex/" style="color: var(--accent-color); text-decoration: underline">View the full Codex project</a></p>
     </div>
   </section>
 
@@ -84,11 +120,25 @@ const creatures = [
     <div class="section-inner">
       <div class="section-heading">
         <h2>Creature gallery</h2>
-        <p>A selection of monsters from the ever-growing Codex.</p>
+        <p>A selection of monsters from the ever-growing Codex. Click any card to inspect statistics, drop tables, and lore.</p>
       </div>
+      
       <div class="creature-grid">
         {creatures.map((creature) => (
-          <article class="creature-card">
+          <article 
+            class="creature-card" 
+            data-name={creature.name}
+            data-family={creature.family}
+            data-role={creature.role}
+            data-lore={creature.lore}
+            data-habitat={creature.habitat}
+            data-color={creature.color}
+            data-svg={creature.svg}
+            data-hp={creature.stats.hp}
+            data-speed={creature.stats.speed}
+            data-threat={creature.stats.threat}
+            data-loot={JSON.stringify(creature.loot)}
+          >
             <div class="creature-visual" style={`--accent: ${creature.color}`}>
               <svg class="creature-svg" viewBox="0 0 64 64" fill="none" stroke={creature.color} stroke-width="1.8" stroke-linejoin="round" aria-hidden="true">
                 <path d={creature.svg} />
@@ -111,6 +161,59 @@ const creatures = [
     </div>
   </section>
 
+  <!-- Drawer Overlay & Details Sidebar Panel -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+  <div id="creature-drawer" class="creature-drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true">
+    <button id="drawer-close" class="drawer-close" aria-label="Close details" title="Close drawer">&times;</button>
+    <div class="drawer-content">
+      <div class="drawer-visual-wrapper" id="drawer-visual">
+        <svg id="drawer-svg" viewBox="0 0 64 64" fill="none" stroke-width="1.8" stroke-linejoin="round"></svg>
+      </div>
+      <div class="drawer-heading-group">
+        <div class="creature-meta">
+          <span class="pill" id="drawer-family"></span>
+          <span class="pill" id="drawer-role"></span>
+        </div>
+        <h2 id="drawer-title"></h2>
+        <p id="drawer-habitat" class="creature-habitat"></p>
+      </div>
+      
+      <div class="drawer-stats-section">
+        <h3 style="font-size: 0.9rem; margin: 0 0 0.5rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-secondary);">Combat Profile</h3>
+        <div class="drawer-stats-list">
+          <div class="stat-row">
+            <span class="stat-label">Health</span>
+            <div class="stat-bar-outer">
+              <div class="stat-bar-inner" id="stat-hp" style="width: 0%"></div>
+            </div>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Speed</span>
+            <div class="stat-bar-outer">
+              <div class="stat-bar-inner" id="stat-speed" style="width: 0%"></div>
+            </div>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Threat</span>
+            <div class="stat-bar-outer">
+              <div class="stat-bar-inner" id="stat-threat" style="width: 0%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="drawer-loot-section">
+        <h3 style="font-size: 0.9rem; margin: 0 0 0.5rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-secondary);">Codex Drops</h3>
+        <div class="loot-table" id="drawer-loot"></div>
+      </div>
+
+      <div class="drawer-lore-section">
+        <h3 style="font-size: 0.9rem; margin: 0 0 0.5rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-secondary);">Lore &amp; Ecology</h3>
+        <p id="drawer-lore" style="font-size: 0.95rem; line-height: 1.6; margin: 0; color: var(--text-secondary);"></p>
+      </div>
+    </div>
+  </div>
+
   <section class="section" aria-label="Note">
     <div class="section-inner">
       <div class="callout text-stack" style="text-align: center">
@@ -126,21 +229,193 @@ const creatures = [
 </StudioLayout>
 
 <style>
-  .gallery-hero { background: radial-gradient(circle at 22% 18%, rgba(192,132,252,0.3), transparent 22rem), radial-gradient(circle at 78% 78%, rgba(52,211,153,0.15), transparent 20rem), linear-gradient(155deg, #0f172a 0%, #1e1b4b 52%, #0f172a 100%); color: #f8fafc; min-height: min(480px, 56svh); display: grid; align-items: center; padding: clamp(3rem, 9vw, 5rem) var(--space-page); }
+  .gallery-hero { 
+    background: 
+      radial-gradient(circle at 22% 18%, rgba(192, 132, 252, 0.25), transparent 22rem), 
+      radial-gradient(circle at 78% 78%, rgba(52, 211, 153, 0.12), transparent 20rem), 
+      linear-gradient(155deg, #0f172a 0%, #1e1b4b 52%, #0f172a 100%); 
+    color: #f8fafc; 
+    min-height: min(480px, 56svh); 
+    display: grid; 
+    align-items: center; 
+    padding: clamp(3rem, 9vw, 5rem) var(--space-page); 
+  }
   .gallery-hero-inner { width: min(100%, 72rem); margin: 0 auto; }
   .gallery-hero .eyebrow { color: #c084fc; }
   .gallery-hero h1 { color: #fff7ed; }
   .gallery-lead { max-width: 42rem; margin: clamp(1.25rem, 3vw, 2rem) 0 0; font-size: clamp(1.1rem, 2.5vw, 1.5rem); color: #e9d5ff; line-height: 1.5; }
+  
   .creature-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); gap: 1.5rem; }
-  .creature-card { border-radius: var(--radius-card); overflow: hidden; border: 1px solid rgba(17,24,39,0.12); background: rgba(255,255,255,0.68); box-shadow: 0 1.5rem 5rem rgba(15,23,42,0.08); display: grid; grid-template-rows: auto 1fr; }
-  .creature-visual { width: 100%; aspect-ratio: 16/10; background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%); display: flex; align-items: center; justify-content: center; position: relative; }
-  .creature-visual::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 32% 28%, color-mix(in srgb, var(--accent) 25%, transparent), transparent 16rem); }
-  .creature-svg { width: 80px; height: 80px; position: relative; z-index: 1; opacity: 0.9; }
+  
+  .creature-card { 
+    border-radius: var(--radius-card); 
+    overflow: hidden; 
+    border: 1px solid var(--card-border); 
+    background: var(--card-bg); 
+    box-shadow: var(--card-shadow); 
+    display: grid; 
+    grid-template-rows: auto 1fr;
+    cursor: pointer;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .creature-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    border-color: var(--accent-color);
+    box-shadow: var(--card-hover-shadow);
+  }
+  .creature-card:hover .creature-svg {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px var(--accent));
+  }
+  
+  .creature-visual { 
+    width: 100%; 
+    aspect-ratio: 16/10; 
+    background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    position: relative; 
+  }
+  .creature-visual::after { 
+    content: ""; 
+    position: absolute; 
+    inset: 0; 
+    background: radial-gradient(circle at 32% 28%, color-mix(in srgb, var(--accent) 25%, transparent), transparent 16rem); 
+  }
+  .creature-svg { 
+    width: 80px; 
+    height: 80px; 
+    position: relative; 
+    z-index: 1; 
+    opacity: 0.9; 
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.25s ease;
+  }
   .creature-body { padding: 1.25rem; display: grid; gap: 0.65rem; align-content: start; }
   .creature-body h3 { margin: 0; font-family: var(--font-display); font-weight: 900; font-size: 1.35rem; }
   .creature-meta { display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .pill { display: inline-flex; border-radius: 999px; padding: 0.2rem 0.5rem; font-size: 0.72rem; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid currentColor; }
-  .creature-lore { margin: 0; font-size: 0.92rem; line-height: 1.55; color: #374151; }
-  .creature-habitat { margin: 0; font-size: 0.82rem; color: #64748b; }
-  .creature-habitat strong { font-weight: 800; color: #374151; }
+  .creature-lore { margin: 0; font-size: 0.92rem; line-height: 1.55; color: var(--text-secondary); }
+  .creature-habitat { margin: 0; font-size: 0.82rem; color: var(--text-muted); }
+  .creature-habitat strong { font-weight: 800; color: var(--text-secondary); }
 </style>
+
+<script>
+  const cards = document.querySelectorAll('.creature-card');
+  const drawer = document.getElementById('creature-drawer');
+  const overlay = document.getElementById('drawer-overlay');
+  const closeBtn = document.getElementById('drawer-close');
+
+  const drawerTitle = document.getElementById('drawer-title');
+  const drawerFamily = document.getElementById('drawer-family');
+  const drawerRole = document.getElementById('drawer-role');
+  const drawerHabitat = document.getElementById('drawer-habitat');
+  const drawerLore = document.getElementById('drawer-lore');
+  const drawerLoot = document.getElementById('drawer-loot');
+  
+  const statHp = document.getElementById('stat-hp');
+  const statSpeed = document.getElementById('stat-speed');
+  const statThreat = document.getElementById('stat-threat');
+  const drawerSvg = document.getElementById('drawer-svg');
+
+  function openDrawer(card: Element) {
+    const name = card.getAttribute('data-name') || '';
+    const family = card.getAttribute('data-family') || '';
+    const role = card.getAttribute('data-role') || '';
+    const lore = card.getAttribute('data-lore') || '';
+    const habitat = card.getAttribute('data-habitat') || '';
+    const color = card.getAttribute('data-color') || '';
+    const svgPath = card.getAttribute('data-svg') || '';
+    
+    const hp = card.getAttribute('data-hp') || '0';
+    const speed = card.getAttribute('data-speed') || '0';
+    const threat = card.getAttribute('data-threat') || '0';
+    
+    let lootData = [];
+    try {
+      lootData = JSON.parse(card.getAttribute('data-loot') || '[]');
+    } catch (e) {
+      console.error("Failed to parse loot metadata", e);
+    }
+
+    if (drawerTitle) drawerTitle.textContent = name;
+    if (drawerFamily) {
+      drawerFamily.textContent = family;
+      drawerFamily.style.borderColor = color;
+      drawerFamily.style.color = color;
+    }
+    if (drawerRole) drawerRole.textContent = role;
+    if (drawerHabitat) drawerHabitat.innerHTML = `<strong>Habitat:</strong> ${habitat}`;
+    if (drawerLore) drawerLore.textContent = lore;
+    
+    if (statHp) statHp.style.width = `${Math.min(100, parseInt(hp) / 1.2)}%`; // Normalize HP max 120
+    if (statSpeed) statSpeed.style.width = `${speed}%`;
+    if (statThreat) statThreat.style.width = `${threat}%`;
+
+    // Set custom accent variables on drawer
+    if (drawer) {
+      drawer.style.setProperty('--creature-accent', color);
+      drawer.style.setProperty('--creature-accent-glow', `color-mix(in srgb, ${color} 30%, transparent)`);
+    }
+
+    // Populate loot table
+    if (drawerLoot) {
+      drawerLoot.innerHTML = '';
+      if (lootData.length === 0) {
+        drawerLoot.innerHTML = '<p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">No drop data available.</p>';
+      } else {
+        lootData.forEach((item: { item: string, rate: string }) => {
+          const row = document.createElement('div');
+          row.className = 'loot-row';
+          row.innerHTML = `<span>${item.item}</span><span>${item.rate}</span>`;
+          drawerLoot.appendChild(row);
+        });
+      }
+    }
+
+    // Populate SVG
+    if (drawerSvg) {
+      drawerSvg.innerHTML = `
+        <path d="${svgPath}" stroke="${color}" />
+        <circle cx="22" cy="22" r="2.5" fill="${color}" opacity="0.6" />
+        <circle cx="42" cy="22" r="2.5" fill="${color}" opacity="0.6" />
+      `;
+    }
+
+    // Activate classes
+    drawer?.classList.add('active');
+    overlay?.classList.add('active');
+    drawer?.setAttribute('aria-hidden', 'false');
+    
+    // Keyboard focus management
+    closeBtn?.focus();
+  }
+
+  function closeDrawer() {
+    drawer?.classList.remove('active');
+    overlay?.classList.remove('active');
+    drawer?.setAttribute('aria-hidden', 'true');
+  }
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => openDrawer(card));
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+    card.addEventListener('keydown', (e: Event) => {
+      const keyEvent = e as KeyboardEvent;
+      if (keyEvent.key === 'Enter' || keyEvent.key === ' ') {
+        e.preventDefault();
+        openDrawer(card);
+      }
+    });
+  });
+
+  closeBtn?.addEventListener('click', closeDrawer);
+  overlay?.addEventListener('click', closeDrawer);
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeDrawer();
+    }
+  });
+</script>

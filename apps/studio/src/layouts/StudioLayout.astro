@@ -46,6 +46,17 @@ const navItems = [
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImageUrl} />
     <title>{title}</title>
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('theme') || 
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark-theme');
+        } else {
+          document.documentElement.classList.remove('dark-theme');
+        }
+      })();
+    </script>
   </head>
   <body class="studio-theme">
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -57,6 +68,22 @@ const navItems = [
         </a>
         <nav class="site-nav" aria-label="Primary navigation">
           {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle color theme">
+            <svg class="sun-icon" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2"></path>
+              <path d="M12 20v2"></path>
+              <path d="M4.93 4.93l1.41 1.41"></path>
+              <path d="M17.66 17.66l1.41 1.41"></path>
+              <path d="M2 12h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="M6.34 17.66l-1.41 1.41"></path>
+              <path d="M19.07 4.93l-1.41 1.41"></path>
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+            </svg>
+          </button>
         </nav>
       </header>
       <main id="main-content" class="main-content">
@@ -71,37 +98,49 @@ const navItems = [
         </span>
       </footer>
     </div>
+    <script>
+      const toggleBtn = document.getElementById('theme-toggle');
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+          const isDark = document.documentElement.classList.contains('dark-theme');
+          if (isDark) {
+            document.documentElement.classList.remove('dark-theme');
+            localStorage.setItem('theme', 'light');
+          } else {
+            document.documentElement.classList.add('dark-theme');
+            localStorage.setItem('theme', 'dark');
+          }
+        });
+      }
+    </script>
   </body>
 </html>
 
 <style>
   .studio-theme {
-    --focus-color: #2563eb;
-    --skip-bg: #111827;
-    --skip-text: #ffffff;
-    background:
-      radial-gradient(circle at 12% 12%, rgba(56, 189, 248, 0.35), transparent 28rem),
-      radial-gradient(circle at 92% 22%, rgba(250, 204, 21, 0.25), transparent 24rem),
-      linear-gradient(135deg, #fff7ed 0%, #eef6ff 46%, #fff 100%);
-    color: #111827;
+    background: var(--bg-gradient);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   .studio-theme .site-header,
   .studio-theme .site-footer {
-    border-color: rgba(17, 24, 39, 0.14);
+    border-color: var(--header-border);
+    transition: border-color 0.3s ease;
   }
 
   .studio-theme .site-header {
     position: sticky;
     top: 0;
     z-index: 20;
-    border-bottom: 1px solid rgba(17, 24, 39, 0.12);
-    background: rgba(255, 250, 245, 0.78);
+    border-bottom: 1px solid var(--header-border);
+    background: var(--header-bg);
     backdrop-filter: blur(18px);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
   }
 
   .studio-theme .site-footer {
-    border-top: 1px solid rgba(17, 24, 39, 0.12);
+    border-top: 1px solid var(--header-border);
   }
 
   .studio-theme .brand-mark {
@@ -109,13 +148,18 @@ const navItems = [
   }
 
   .studio-theme .site-nav a {
-    color: #374151;
+    color: var(--text-secondary);
   }
 
   .studio-theme .site-nav a:hover,
   .studio-theme .site-nav a:focus-visible {
     background: rgba(17, 24, 39, 0.08);
-    color: #111827;
+    color: var(--text-color);
+  }
+
+  :global(.dark-theme) .studio-theme .site-nav a:hover,
+  :global(.dark-theme) .studio-theme .site-nav a:focus-visible {
+    background: rgba(255, 255, 255, 0.08);
   }
 
   .footer-links {
@@ -130,43 +174,54 @@ const navItems = [
   .header-note,
   .studio-theme .supporting,
   .studio-theme .site-footer {
-    color: #374151;
+    color: var(--text-secondary);
   }
 
   .studio-theme .eyebrow {
-    color: #2563eb;
+    color: var(--accent-color);
   }
 
   .studio-theme .lead {
-    color: #1f2937;
+    color: var(--text-secondary);
   }
 
   .studio-theme .button-primary {
-    border-color: #111827;
-    background: #111827;
-    color: #ffffff;
+    border-color: var(--text-color);
+    background: var(--text-color);
+    color: var(--card-bg);
   }
 
   .studio-theme .button-secondary {
-    background: rgba(255, 255, 255, 0.72);
-    color: #111827;
+    background: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--card-border);
   }
 
   .studio-theme .card {
-    border: 1px solid rgba(17, 24, 39, 0.12);
-    background: rgba(255, 255, 255, 0.68);
-    box-shadow: 0 1.5rem 5rem rgba(15, 23, 42, 0.08);
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    box-shadow: var(--card-shadow);
+    transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .studio-theme .card:hover {
+    border-color: var(--card-hover-border);
+    box-shadow: var(--card-hover-shadow);
+    transform: var(--card-hover-transform);
   }
 
   .studio-theme .hero-panel,
   .studio-theme .callout,
   .studio-theme .timeline li {
-    border: 1px solid rgba(17, 24, 39, 0.12);
-    background: rgba(255, 255, 255, 0.62);
-    box-shadow: 0 1.5rem 5rem rgba(15, 23, 42, 0.08);
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    box-shadow: var(--card-shadow);
+    transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
   }
 
   .studio-theme .status-pill {
-    color: #2563eb;
+    color: var(--badge-color);
+    background: var(--badge-bg);
+    border-color: transparent;
   }
 </style>
