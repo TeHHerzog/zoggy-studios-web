@@ -1,0 +1,223 @@
+---
+import data from "../data/dark-fantasy-data.json";
+const { nodes, request_examples, response_examples } = data.architecture;
+---
+<div class="arch-section">
+  <div class="security-banner">
+    <span class="shield-icon" aria-hidden="true">🛡️</span>
+    <span class="security-quote">"The client requests. The server decides."</span>
+  </div>
+  
+  <div class="diagram-container">
+    {nodes.map((node, index) => (
+      <>
+        <div class="diagram-node card">
+          <div class="node-num">{index + 1}</div>
+          <h3>{node.label}</h3>
+          <p class="node-summary">{node.summary}</p>
+          <div class="node-caption">
+            {index === 0 && "The client makes the game feel immediate, but never declares valuable outcomes."}
+            {index === 1 && "Typed gameplay messages connect the visual client to the authoritative simulation."}
+            {index === 2 && "The server owns the world and validates every action that changes valuable state."}
+            {index === 3 && "Durable progress survives reconnects, crashes, and server restarts."}
+          </div>
+        </div>
+        
+        {index < 3 && (
+          <div class="diagram-connector">
+            <span class="arrow-visual" aria-hidden="true">➔</span>
+            {index === 0 && (
+              <div class="flow-labels">
+                <span class="flow-title">Requests</span>
+                <ul class="flow-list">
+                  {request_examples.slice(0, 4).map(ex => <li>{ex}</li>)}
+                </ul>
+              </div>
+            )}
+            {index === 1 && (
+              <div class="flow-labels">
+                <span class="flow-title">Snapshots</span>
+                <ul class="flow-list">
+                  {response_examples.slice(0, 4).map(ex => <li>{ex}</li>)}
+                </ul>
+              </div>
+            )}
+            {index === 2 && (
+              <div class="flow-labels">
+                <span class="flow-title">Persist</span>
+                <span class="flow-sub">SQL Trans</span>
+              </div>
+            )}
+          </div>
+        )}
+      </>
+    ))}
+  </div>
+  
+  <div class="linear-text-equivalent sr-only">
+    <h4>System Architecture Text Equivalent</h4>
+    <p>The system runs in a four-stage authoritative pipeline:</p>
+    <ol>
+      <li><strong>Godot 4.7 Client:</strong> Handles input, rendering, and prediction. It makes requests but does not calculate outcomes.</li>
+      <li><strong>WebSocket &amp; Protobuf Protocol:</strong> Sends client requests (Move, Ability, Item Actions) and receives server snapshots (Combat Results, Spawns, Reconciliation).</li>
+      <li><strong>Authoritative Go Server:</strong> Owns and validates combat, movement legality, loot, and progression.</li>
+      <li><strong>Postgres:</strong> Durably persists account and character progression data.</li>
+    </ol>
+  </div>
+</div>
+
+<style>
+  .arch-section {
+    display: grid;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .security-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: rgba(220, 38, 38, 0.08);
+    border: 1px solid rgba(220, 38, 38, 0.2);
+    border-radius: var(--radius-sm);
+    padding: 0.85rem;
+    text-align: center;
+  }
+
+  .security-quote {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 1.05rem;
+    color: #ef4444;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .diagram-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+
+  @media (min-width: 1024px) {
+    .diagram-container {
+      grid-template-columns: 1.2fr 120px 1.2fr 120px 1.2fr 120px 1.2fr;
+      align-items: center;
+    }
+  }
+
+  .diagram-node {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    padding: 1.25rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-card);
+    height: 100%;
+    position: relative;
+    box-shadow: var(--card-shadow);
+  }
+
+  .node-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background: var(--accent-color);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 900;
+  }
+
+  .diagram-node h3 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 900;
+  }
+
+  .node-summary {
+    font-size: 0.85rem;
+    line-height: 1.45;
+    margin: 0;
+    color: var(--text-secondary);
+    flex-grow: 1;
+  }
+
+  .node-caption {
+    font-size: 0.75rem;
+    line-height: 1.35;
+    color: var(--text-muted);
+    border-top: 1px solid var(--card-border);
+    padding-top: 0.65rem;
+    margin-top: 0.4rem;
+    font-style: italic;
+  }
+
+  .diagram-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+
+  .arrow-visual {
+    font-size: 1.4rem;
+    color: var(--text-muted);
+    transform: rotate(90deg);
+  }
+
+  @media (min-width: 1024px) {
+    .arrow-visual {
+      transform: rotate(0deg);
+    }
+  }
+
+  .flow-labels {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .flow-title {
+    font-size: 0.7rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-color);
+  }
+
+  .flow-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    line-height: 1.3;
+  }
+
+  .flow-sub {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>

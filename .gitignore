@@ -16,3 +16,7 @@ pnpm-debug.log*
 
 .codegraph/
 .playwright-mcp/
+
+# Handover staging folder
+handover/*
+!handover/README.md

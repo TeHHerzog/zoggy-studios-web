@@ -1,0 +1,453 @@
+{
+  "schema_version": "1.0.0-proposed",
+  "game": {
+    "title": "Dark Fantasy MMO",
+    "studio": "Zoggy Studios",
+    "status": "active_development",
+    "source_repository": "TeHHerzog/dark-fantasy-mmo",
+    "source_commit": "d9d7c490073942e4b91b04e054767cf409639a0f",
+    "tagline": "An authoritative online world of ancient ruin, dangerous discovery, and long-term identity.",
+    "level_cap": 99,
+    "creation_total": 64,
+    "normal_creation_cap": 18,
+    "knight_strength_creation_cap": 20,
+    "max_permanent_stat": 40
+  },
+  "stat_order": [
+    "STR",
+    "DEX",
+    "CON",
+    "INT",
+    "WIS",
+    "CHA",
+    "LUK"
+  ],
+  "stats": [
+    {
+      "code": "STR",
+      "name": "Strength",
+      "summary": "Melee power, physical force, equipment requirements, and carrying capacity.",
+      "public_formula_notes": [
+        "Carry Weight = 100 + STR × 5 + CON × 3"
+      ]
+    },
+    {
+      "code": "DEX",
+      "name": "Dexterity",
+      "summary": "Accuracy, evasion, ranged performance, and action timing.",
+      "public_formula_notes": []
+    },
+    {
+      "code": "CON",
+      "name": "Constitution",
+      "summary": "Health, physical defense, recovery, and endurance.",
+      "public_formula_notes": [
+        "Max HP baseline = 80 + CON × 5",
+        "HP Regeneration = 1 + CON / 5",
+        "Physical Defense = CON / 3"
+      ]
+    },
+    {
+      "code": "INT",
+      "name": "Intelligence",
+      "summary": "Offensive magic, elemental power, arcane requirements, and part of mana recovery.",
+      "public_formula_notes": []
+    },
+    {
+      "code": "WIS",
+      "name": "Wisdom",
+      "summary": "Mana, spiritual control, magical defense, support potential, and resistance.",
+      "public_formula_notes": [
+        "Max MP baseline = 40 + WIS × 3",
+        "MP Regeneration = 2 + (WIS + INT) / 6"
+      ]
+    },
+    {
+      "code": "CHA",
+      "name": "Charisma",
+      "summary": "Leadership, command, companion control, group influence, and selected economic effects.",
+      "public_formula_notes": [
+        "Party Buff Factor = 1.0 + CHA × 0.01",
+        "NPC Price Factor = max(0.5, 1.0 - CHA × 0.005)"
+      ]
+    },
+    {
+      "code": "LUK",
+      "name": "Luck",
+      "summary": "Bounded influence over critical events, exceptional outcomes, loot, and rarity.",
+      "public_formula_notes": [
+        "Critical Rate Bonus = LUK × 0.002",
+        "Critical Damage Multiplier = 1.5 + LUK × 0.01",
+        "Drop Rate Bonus = LUK × 0.005",
+        "Magic Find Bonus = LUK × 0.003"
+      ]
+    }
+  ],
+  "classes": [
+    {
+      "code": "prince",
+      "public_name": "Royal",
+      "presentation_names": [
+        "Prince",
+        "Princess"
+      ],
+      "role": "Leadership, command, flexible martial support, social influence, and companion control.",
+      "foundation": {
+        "STR": 10,
+        "DEX": 8,
+        "CON": 9,
+        "INT": 6,
+        "WIS": 8,
+        "CHA": 11,
+        "LUK": 4
+      },
+      "free_points": 8,
+      "hp_growth": {
+        "min": 3,
+        "max": 6
+      },
+      "mp_growth": {
+        "min": 1,
+        "max": 3
+      },
+      "companion_cap": 8,
+      "control_bonus": 1,
+      "public_visible": true
+    },
+    {
+      "code": "knight",
+      "public_name": "Knight",
+      "presentation_names": [
+        "Knight"
+      ],
+      "role": "Melee power, physical resilience, heavy equipment, and dependable frontline pressure.",
+      "foundation": {
+        "STR": 16,
+        "DEX": 10,
+        "CON": 14,
+        "INT": 4,
+        "WIS": 6,
+        "CHA": 4,
+        "LUK": 6
+      },
+      "free_points": 4,
+      "hp_growth": {
+        "min": 4,
+        "max": 7
+      },
+      "mp_growth": {
+        "min": 1,
+        "max": 2
+      },
+      "companion_cap": 3,
+      "control_bonus": 0,
+      "public_visible": true
+    },
+    {
+      "code": "elf",
+      "public_name": "Elf",
+      "presentation_names": [
+        "Elf"
+      ],
+      "role": "Precision, ranged handling, evasion, mobility, wilderness identity, and hybrid flexibility.",
+      "foundation": {
+        "STR": 12,
+        "DEX": 14,
+        "CON": 6,
+        "INT": 5,
+        "WIS": 8,
+        "CHA": 4,
+        "LUK": 5
+      },
+      "free_points": 10,
+      "hp_growth": {
+        "min": 2,
+        "max": 5
+      },
+      "mp_growth": {
+        "min": 2,
+        "max": 4
+      },
+      "companion_cap": 5,
+      "control_bonus": 0,
+      "public_visible": true
+    },
+    {
+      "code": "mage",
+      "public_name": "Mage",
+      "presentation_names": [
+        "Mage"
+      ],
+      "role": "Offensive magic, arcane knowledge, resource management, and high-impact spell use.",
+      "foundation": {
+        "STR": 4,
+        "DEX": 6,
+        "CON": 5,
+        "INT": 14,
+        "WIS": 14,
+        "CHA": 8,
+        "LUK": 3
+      },
+      "free_points": 10,
+      "hp_growth": {
+        "min": 1,
+        "max": 3
+      },
+      "mp_growth": {
+        "min": 3,
+        "max": 6
+      },
+      "companion_cap": 8,
+      "control_bonus": 0,
+      "public_visible": true
+    },
+    {
+      "code": "priest",
+      "public_name": "Priest",
+      "presentation_names": [
+        "Priest"
+      ],
+      "role": "Healing, warding, purification, spiritual control, and durable support.",
+      "foundation": {
+        "STR": 10,
+        "DEX": 4,
+        "CON": 10,
+        "INT": 8,
+        "WIS": 14,
+        "CHA": 6,
+        "LUK": 4
+      },
+      "free_points": 8,
+      "hp_growth": {
+        "min": 2,
+        "max": 5
+      },
+      "mp_growth": {
+        "min": 3,
+        "max": 6
+      },
+      "companion_cap": 4,
+      "control_bonus": 0,
+      "public_visible": true
+    }
+  ],
+  "professions": [
+    {
+      "code": "hunting",
+      "name": "Hunting",
+      "max_level": 50,
+      "xp_per_action": 15
+    },
+    {
+      "code": "foraging",
+      "name": "Foraging",
+      "max_level": 50,
+      "xp_per_action": 10
+    },
+    {
+      "code": "fishing",
+      "name": "Fishing",
+      "max_level": 50,
+      "xp_per_action": 12
+    },
+    {
+      "code": "mining",
+      "name": "Mining",
+      "max_level": 50,
+      "xp_per_action": 14
+    },
+    {
+      "code": "woodcutting",
+      "name": "Woodcutting",
+      "max_level": 50,
+      "xp_per_action": 10
+    }
+  ],
+  "architecture": {
+    "nodes": [
+      {
+        "id": "godot_client",
+        "label": "Godot 4.7 Client",
+        "summary": "Input, rendering, animation, UI, audio, VFX, prediction, and interpolation."
+      },
+      {
+        "id": "protocol",
+        "label": "WebSocket + Protobuf",
+        "summary": "Typed gameplay messages, sequencing, ticks, compatibility, snapshots, and acknowledgements."
+      },
+      {
+        "id": "go_server",
+        "label": "Authoritative Go Server",
+        "summary": "Movement, combat, AI, inventory, loot, progression, trade, quests, zones, and valuable RNG."
+      },
+      {
+        "id": "postgres",
+        "label": "Postgres",
+        "summary": "Durable accounts, characters, inventory, progression, quests, pledges, mail, and events."
+      }
+    ],
+    "request_examples": [
+      "Move Intent",
+      "Ability Request",
+      "Target Selection",
+      "Item Action",
+      "Trade Confirmation",
+      "Dialogue Choice"
+    ],
+    "response_examples": [
+      "Authoritative Snapshot",
+      "Combat Result",
+      "Spawn/Despawn",
+      "Inventory Update",
+      "Quest Progress",
+      "Reconciliation"
+    ]
+  },
+  "feature_statuses": [
+    {
+      "name": "Character Creation",
+      "status": "integrated"
+    },
+    {
+      "name": "Seven Attributes",
+      "status": "integrated"
+    },
+    {
+      "name": "Movement",
+      "status": "integrated"
+    },
+    {
+      "name": "Combat",
+      "status": "integrated"
+    },
+    {
+      "name": "Abilities and Casting",
+      "status": "integrated"
+    },
+    {
+      "name": "Status Effects",
+      "status": "foundation_integrated"
+    },
+    {
+      "name": "Inventory",
+      "status": "integrated"
+    },
+    {
+      "name": "Equipment",
+      "status": "integrated"
+    },
+    {
+      "name": "Loot",
+      "status": "integrated"
+    },
+    {
+      "name": "Monster AI",
+      "status": "integrated"
+    },
+    {
+      "name": "Complete Encounters",
+      "status": "foundation"
+    },
+    {
+      "name": "Quests",
+      "status": "integrated"
+    },
+    {
+      "name": "Achievements",
+      "status": "foundation_integrated"
+    },
+    {
+      "name": "NPC Dialogue",
+      "status": "integrated"
+    },
+    {
+      "name": "Shops",
+      "status": "integrated"
+    },
+    {
+      "name": "Zones",
+      "status": "integrated"
+    },
+    {
+      "name": "Terrain Production",
+      "status": "foundation_integrated"
+    },
+    {
+      "name": "Chat",
+      "status": "integrated"
+    },
+    {
+      "name": "Party",
+      "status": "integrated"
+    },
+    {
+      "name": "Pledges",
+      "status": "foundation_integrated"
+    },
+    {
+      "name": "Pledge War",
+      "status": "foundation"
+    },
+    {
+      "name": "Castle Siege",
+      "status": "planned"
+    },
+    {
+      "name": "Mail",
+      "status": "foundation_integrated"
+    },
+    {
+      "name": "Direct Trade",
+      "status": "foundation_integrated"
+    },
+    {
+      "name": "Crafting",
+      "status": "foundation_integrated"
+    },
+    {
+      "name": "Professions",
+      "status": "foundation"
+    },
+    {
+      "name": "Enchantment",
+      "status": "foundation"
+    },
+    {
+      "name": "Teleport and Bookmarks",
+      "status": "foundation_integrated"
+    },
+    {
+      "name": "Companions and Summons",
+      "status": "foundation"
+    },
+    {
+      "name": "PvP and Alignment",
+      "status": "foundation"
+    },
+    {
+      "name": "Mounts",
+      "status": "planned_deferred"
+    },
+    {
+      "name": "Housing",
+      "status": "deferred"
+    },
+    {
+      "name": "Weather and Ecology",
+      "status": "deferred"
+    },
+    {
+      "name": "Large Dynamic Events",
+      "status": "deferred"
+    }
+  ],
+  "ui_rules": {
+    "stat_bar_max": 20,
+    "mana_is_base_stat": false,
+    "show_mana_as_derived_resource": true,
+    "terminal_is_simulated": true,
+    "public_site_must_not_call_admin_api": true,
+    "public_site_must_not_expose_port_9090": true,
+    "use_status_badges": true
+  }
+}

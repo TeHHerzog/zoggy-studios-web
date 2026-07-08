@@ -1,0 +1,63 @@
+---
+interface Props {
+  status: string;
+}
+
+const { status } = Astro.props;
+
+let label = status;
+let color = "var(--text-muted)";
+let bg = "rgba(255, 255, 255, 0.02)";
+
+switch (status) {
+  case "integrated":
+    label = "Integrated";
+    color = "#10b981"; // Healing / success green
+    bg = "rgba(16, 185, 129, 0.08)";
+    break;
+  case "foundation_integrated":
+    label = "Foundation / Integrated";
+    color = "#06b6d4"; // Cyan
+    bg = "rgba(6, 182, 212, 0.08)";
+    break;
+  case "foundation":
+    label = "Foundation";
+    color = "#f59e0b"; // Gold / relic
+    bg = "rgba(245, 158, 11, 0.08)";
+    break;
+  case "planned":
+    label = "Planned";
+    color = "#a855f7"; // Purple
+    bg = "rgba(168, 85, 247, 0.08)";
+    break;
+  case "planned_deferred":
+    label = "Planned / Deferred";
+    color = "#6b7280"; // Muted grey
+    bg = "rgba(107, 114, 128, 0.08)";
+    break;
+  case "deferred":
+    label = "Deferred";
+    color = "#4b5563"; // Dark grey
+    bg = "rgba(75, 85, 99, 0.08)";
+    break;
+}
+---
+<span class="status-badge" style={`border-color: ${color}; color: ${color}; background-color: ${bg};`}>
+  {label}
+</span>
+
+<style>
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 999px;
+    padding: 0.25rem 0.65rem;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    line-height: 1;
+  }
+</style>

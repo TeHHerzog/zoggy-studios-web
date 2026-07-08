@@ -1,12 +1,19 @@
 ---
 import { gameName, gameStatus, studioName } from "@zoggy/branding";
 import StudioLayout from "../../layouts/StudioLayout.astro";
+import ClassSelector from "../../components/ClassSelector.astro";
+import NetworkDiagram from "../../components/NetworkDiagram.astro";
+import StatusBadge from "../../components/StatusBadge.astro";
+import data from "../../data/dark-fantasy-data.json";
 
 const title = `${gameName} | ${studioName}`;
 const description = `${gameName} is an old-school-inspired dark fantasy MMORPG in ${gameStatus.toLowerCase()} development.`;
+
+const { stats, professions, feature_statuses, game } = data;
 ---
 
 <StudioLayout title={title} description={description}>
+  <!-- Hero Section -->
   <section class="mmo-hero" aria-labelledby="mmo-title">
     <div class="mmo-hero-inner">
       <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -14,138 +21,340 @@ const description = `${gameName} is an old-school-inspired dark fantasy MMORPG i
         <span aria-hidden="true">/</span>
         <span class="current">Dark Fantasy MMO</span>
       </nav>
-      <p class="eyebrow">{gameStatus} development</p>
+      <p class="eyebrow">{studioName} &bull; Online RPG in Active Development</p>
       <h1 id="mmo-title">{gameName}</h1>
-      <p class="lead">An old-school-inspired dark fantasy MMORPG focused on dangerous exploration, meaningful character development, deeply authored creatures, and a persistent server-controlled world.</p>
+      <p class="lead">{game.tagline}</p>
+      
+      <div class="hero-actions">
+        <a href="#class-section" class="button button-primary">Explore Classes</a>
+        <a href="#systems-section" class="button button-secondary">Systems Matrix</a>
+        <a href="/gallery/" class="button button-secondary">Forbidden Codex</a>
+      </div>
+
+      <div class="status-pills-row" aria-label="Project Status Specifications">
+        <span class="tag-pill">Godot 4.7 Client</span>
+        <span class="tag-pill">Authoritative Go Server</span>
+        <span class="tag-pill">Protobuf over WS</span>
+        <span class="tag-pill">Postgres Persistence</span>
+        <span class="tag-pill">Elevated 3D Presentation</span>
+        <span class="tag-pill">Level Cap {game.level_cap}</span>
+      </div>
     </div>
   </section>
 
-  <section class="section" aria-label="What is being built">
+  <!-- One-Sentence Vision -->
+  <section class="section vision-section" aria-label="Project Vision">
+    <div class="section-inner">
+      <blockquote class="vision-quote">
+        "Build an old-school-inspired dark fantasy MMORPG with deliberate progression, dangerous exploration, server-authoritative combat, hidden discoveries, and modern elevated three-quarter presentation, preserving the social texture of classic online worlds without preserving their most arbitrary frustrations."
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Long Public Description & Pillars -->
+  <section class="section" aria-labelledby="pillars-title">
+    <div class="section-inner text-stack">
+      <div class="section-heading">
+        <h2 id="pillars-title">Core Development Pillars</h2>
+        <p>The structural philosophy directing client, server, and content pipelines.</p>
+      </div>
+
+      <div class="wide-grid pillars-grid">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🗺️</div>
+          <h3>Exploration</h3>
+          <p>Dangerous regions built around readable landmarks, hidden paths, layers, and traversals. Attentive players learn creature habitats and rare conditions.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">⚔️</div>
+          <h3>Combat Authority</h3>
+          <p>Real-time combat with server-resolved hit outcomes. The client handles responsive movement prediction, while the server validates inputs.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">📈</div>
+          <h3>Progression</h3>
+          <p>Characters grow through level upgrades (cap 99), stat distributions, equipment, quests, achievements, and player identities.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">📖</div>
+          <h3>Story</h3>
+          <p>Atmospheric lore embedded in environments, occult symbols, and item descriptions. Public logs, extensions, and hidden truths remain distinct.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">✨</div>
+          <h3>Discovery</h3>
+          <p>Rare encounters and events depending on server-owned triggers (time, factions, character history). Secrets reward observation.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Class Viewer -->
+  <section class="section alt-section" id="class-section" aria-labelledby="class-title">
     <div class="section-inner">
       <div class="section-heading">
-        <h2>What is being built</h2>
-        <p>A full-stack multiplayer project from client to server to content pipeline.</p>
+        <h2 id="class-title">Five Class Foundations</h2>
+        <p>Inspect the starting parameters and roles defined in the game server's character creation files.</p>
       </div>
-      <div class="wide-grid">
-        <article class="card">
-          <h3>Client</h3>
-          <p>Godot 4.7 game client with multiplayer architecture, character creation, combat, abilities, inventory, and world rendering.</p>
-        </article>
-        <article class="card">
-          <h3>Server</h3>
-          <p>Authoritative Golang game server with WebSocket communication, Protobuf messaging, and persistent database storage.</p>
-        </article>
-        <article class="card">
-          <h3>Administration</h3>
-          <p>Web-based content management tools for monsters, items, quests, and world data.</p>
-        </article>
-        <article class="card">
-          <h3>World pipeline</h3>
-          <p>Terrain authoring, zone data, and content pipelines that feed both client and server from one source.</p>
-        </article>
-      </div>
+
+      <ClassSelector />
     </div>
   </section>
 
-  <section class="section" aria-label="Current development focus">
+  <!-- Attribute Tooltips & Formulas -->
+  <section class="section" aria-labelledby="attr-title">
     <div class="section-inner">
       <div class="section-heading">
-        <h2>Current development focus</h2>
+        <h2 id="attr-title">The Seven Core Attributes</h2>
+        <p>Base values representing physical, mental, and social limits, resolved authority-side.</p>
       </div>
-      <div class="status-grid">
-        <article class="status-item">
-          <span class="status-dot"></span>
-          <div>
-            <h3>Server lifecycle</h3>
-            <p>Observability, startup ordering, and graceful shutdown</p>
-          </div>
-        </article>
-        <article class="status-item">
-          <span class="status-dot"></span>
-          <div>
-            <h3>Login and character flow</h3>
-            <p>Authentication, character creation, and world entry</p>
-          </div>
-        </article>
-        <article class="status-item">
-          <span class="status-dot"></span>
-          <div>
-            <h3>Stat allocation</h3>
-            <p>Seven core stats defining class identity</p>
-          </div>
-        </article>
-        <article class="status-item">
-          <span class="status-dot"></span>
-          <div>
-            <h3>Content tooling</h3>
-            <p>Administration UI for monsters, items, and relationships</p>
-          </div>
-        </article>
-        <article class="status-item">
-          <span class="status-dot"></span>
-          <div>
-            <h3>Playable world slice</h3>
-            <p>First zone with movement, monsters, and interaction</p>
-          </div>
-        </article>
-        <article class="status-item">
-          <span class="status-dot"></span>
-          <div>
-            <h3>Content integration</h3>
-            <p>Monster and item data feeding server systems</p>
-          </div>
-        </article>
+
+      <div class="wide-grid attr-grid">
+        {stats.map(st => (
+          <article class="card attr-card">
+            <h3>{st.name} <span class="attr-abbr">{st.code}</span></h3>
+            <p class="attr-desc">{st.summary}</p>
+            {st.public_formula_notes.length > 0 && (
+              <div class="formula-details">
+                <span class="formula-label">Server Calculations:</span>
+                <ul>
+                  {st.public_formula_notes.map(note => <li><code>{note}</code></li>)}
+                </ul>
+              </div>
+            )}
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="section pillars-section" aria-label="Game pillars">
+  <!-- Architecture -->
+  <section class="section alt-section" aria-labelledby="arch-title">
     <div class="section-inner">
       <div class="section-heading">
-        <h2>Game pillars</h2>
-        <p>The design foundations that shape every system.</p>
+        <h2 id="arch-title">Network Architecture</h2>
+        <p>Responsive presentation, authoritative outcomes, and durable progression.</p>
       </div>
-      <div class="pillar-grid">
-        <article class="pillar-card">
-          <span class="pillar-icon" aria-hidden="true">&#9670;</span>
-          <h3>Old-school progression</h3>
-          <p>Leveling, stats, classes, and equipment that respect traditional role-playing depth.</p>
+
+      <NetworkDiagram />
+    </div>
+  </section>
+
+  <!-- World & Terrain -->
+  <section class="section" aria-labelledby="world-title">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2 id="world-title">An Old-School View of a Modern 3D World</h2>
+        <p>Prioritizing isometric battlefield readability over tight cinematic cameras.</p>
+      </div>
+
+      <div class="text-block">
+        <p>The game utilizes an elevated three-quarter camera perspective. This composition evokes the layout of classic MMOs while driving dynamic terrain, lighting, modular meshes, and environment props. The world maps are divided into large regional zones and internal sectors, avoiding continuous artificial loading screens.</p>
+        
+        <details class="tech-accordion card">
+          <summary>Technical Coordinate Translations (Click to Inspect)</summary>
+          <div class="accordion-content">
+            <ul>
+              <li><strong>1 Logical Tile</strong> = 1,000 server units</li>
+              <li><strong>1 Godot Unit</strong> = 500 server units</li>
+              <li><strong>1 Visual Tile</strong> = 2.0 Godot units</li>
+              <li><strong>Player Collision Radius</strong> = 200 server units</li>
+              <li><strong>Area of Interest (AOI) Cell</strong> = 32 &times; 32 logical tiles</li>
+              <li><strong>Entity Origin Anchor</strong> = Feet level</li>
+              <li><strong>Floating Origin Threshold</strong> = 2,000 Godot units</li>
+            </ul>
+          </div>
+        </details>
+
+        <div class="workflow-grid">
+          <div class="workflow-card">
+            <h4>Terrain Workflow</h4>
+            <p>Groundmaker authors R16 terrain and server walkability data. The client renders using Terrain3D with GroundGrid fallback, while Go server processes validate collision from separate data files, never client-side resources.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Systems Matrix -->
+  <section class="section alt-section" id="systems-section" aria-labelledby="sys-title">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2 id="sys-title">Systems Maturity Matrix</h2>
+        <p>An honest layout of features integrated, in foundation stages, or planned for the future.</p>
+      </div>
+
+      <div class="matrix-controls">
+        <button class="filter-btn active" data-filter="all">All Systems</button>
+        <button class="filter-btn" data-filter="integrated">Integrated</button>
+        <button class="filter-btn" data-filter="foundation">Foundations</button>
+        <button class="filter-btn" data-filter="planned">Planned</button>
+        <button class="filter-btn" data-filter="deferred">Deferred</button>
+      </div>
+
+      <div class="systems-grid" id="sys-grid">
+        {feature_statuses.map(sys => {
+          let category = "planned";
+          if (sys.status.includes("integrated")) category = "integrated";
+          else if (sys.status.includes("foundation")) category = "foundation";
+          else if (sys.status.includes("deferred")) category = "deferred";
+          
+          return (
+            <div class="system-item card" data-status={category}>
+              <h4>{sys.name}</h4>
+              <StatusBadge status={sys.status} />
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pledges Section -->
+  <section class="section" aria-labelledby="pledges-title">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2 id="pledges-title">Build More Than a Party. Build a Pledge.</h2>
+        <p>Persistent guild organizations with structured ranks, shared contributions, and community goals.</p>
+      </div>
+
+      <div class="pledge-container text-block">
+        <p>Pledges are permanent player guilds built around leadership, organization, and conflict. The Royal class holds a mechanical relationship to companion count and guild setup, but is not mandatory for all social actions.</p>
+        
+        <div class="ranks-box">
+          <h4>Pledge Rank Hierarchy</h4>
+          <ol class="ranks-list">
+            <li><strong>Leader:</strong> Full administrative controls and setup.</li>
+            <li><strong>Officer:</strong> Invites, kicks, and notices management.</li>
+            <li><strong>Veteran:</strong> Long-term members with rank highlights.</li>
+            <li><strong>Member:</strong> Default status and contribution perks.</li>
+            <li><strong>Initiate:</strong> Trial members subject to review.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trading & Professions -->
+  <section class="section alt-section" aria-labelledby="trade-title">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2 id="trade-title">Crafting, Economy, &amp; Professions</h2>
+        <p>Data-driven resources and trades verified transactionally by the Go server.</p>
+      </div>
+
+      <div class="economy-grid">
+        <div class="card">
+          <h3>Secure Direct Trade</h3>
+          <p>Direct trades require both players to confirm the exchange. The server locks offered items and validates capacity, preventing client-side unilateral manipulation.</p>
+        </div>
+        <div class="card">
+          <h3>Living Crafting</h3>
+          <p>Crafting converts materials into server-validated outputs. Recipes connect monsters, foraging, quests, and localized region triggers.</p>
+        </div>
+      </div>
+
+      <div class="professions-table-box text-block">
+        <h4>Base Professions</h4>
+        <table class="professions-table">
+          <thead>
+            <tr>
+              <th>Profession</th>
+              <th>Description</th>
+              <th>Max Level</th>
+              <th>XP Per Harvest</th>
+            </tr>
+          </thead>
+          <tbody>
+            {professions.map(prof => (
+              <tr>
+                <td><strong>{prof.name}</strong></td>
+                <td>
+                  {prof.code === "hunting" && "Track and harvest creatures for materials and bonus loot."}
+                  {prof.code === "foraging" && "Gather herbs, plants, fungi, and natural resources."}
+                  {prof.code === "fishing" && "Catch fish and occasional treasures from suitable waters."}
+                  {prof.code === "mining" && "Extract ores, gems, and minerals."}
+                  {prof.code === "woodcutting" && "Gather lumber, resins, and forest materials."}
+                </td>
+                <td>{prof.max_level}</td>
+                <td>{prof.xp_per_action} XP</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <span class="gauge-disclaimer">* Profession XP curves are evaluated at: <code>XP Required = level &times; 100</code>.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Monster compendium CTA -->
+  <section class="section" aria-labelledby="compendium-title">
+    <div class="section-inner text-center">
+      <h2 id="compendium-title">Enter the Forbidden Codex</h2>
+      <p style="max-width: 40rem; margin: 0 auto 1.5rem; line-height: 1.6;">Browse approved creatures, combat statistics, habitat details, drop tables, and occult lore recovered directly from the game's monster databases.</p>
+      <a href="/gallery/" class="button button-primary">View Compendium</a>
+    </div>
+  </section>
+
+  <!-- Milestone Roadmap -->
+  <section class="section alt-section" aria-labelledby="road-title">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2 id="road-title">Development Roadmap</h2>
+        <p>Phased outcomes representing verified player experiences, not theoretical promises.</p>
+      </div>
+
+      <div class="wide-grid roadmap-grid">
+        <article class="card">
+          <span class="road-step">M1</span>
+          <h3>Complete Playable Slice</h3>
+          <p>Login, character selection, entering a zone, movement prediction, fight cycle, XP/loot drops, and successful reconnect persistence.</p>
         </article>
-        <article class="pillar-card">
-          <span class="pillar-icon" aria-hidden="true">&#9670;</span>
-          <h3>Server-authoritative</h3>
-          <p>The Go server owns all gameplay decisions. The client is a view into a trusted world.</p>
+        <article class="card">
+          <span class="road-step">M2</span>
+          <h3>Class &amp; Progression</h3>
+          <p>All five class foundations, basic combat skills, early leveling, equipment modifiers, and death/respawn loops.</p>
         </article>
-        <article class="pillar-card">
-          <span class="pillar-icon" aria-hidden="true">&#9670;</span>
-          <h3>Dark fantasy world</h3>
-          <p>A ruined, mythic tone with cosmic and corrupted elements, balanced with readability.</p>
+        <article class="card">
+          <span class="road-step">M3</span>
+          <h3>Social Adventure</h3>
+          <p>Party creation, shared range-based XP, chat channels, direct trading sessions, mail exchanges, and pledge organizations.</p>
         </article>
-        <article class="pillar-card">
-          <span class="pillar-icon" aria-hidden="true">&#9670;</span>
-          <h3>Class identity</h3>
-          <p>Knight, Elf, Mage, and Prince with distinct stat priorities and ability trees.</p>
+        <article class="card">
+          <span class="road-step">M4</span>
+          <h3>Living World Loops</h3>
+          <p>Multiple maps, NPC dialogue scripts, merchant shops, gathering nodes, recipes crafting, and compendium unlocks.</p>
         </article>
-        <article class="pillar-card">
-          <span class="pillar-icon" aria-hidden="true">&#9670;</span>
-          <h3>Monster ecology</h3>
-          <p>Hundreds of creatures with structured data connecting lore, combat, loot, and AI.</p>
-        </article>
-        <article class="pillar-card">
-          <span class="pillar-icon" aria-hidden="true">&#9670;</span>
-          <h3>Data-driven content</h3>
-          <p>Monsters, items, zones, and quests defined in structured data, not hardcoded logic.</p>
+        <article class="card">
+          <span class="road-step">M5</span>
+          <h3>Conflict &amp; Territory</h3>
+          <p>PvP alignment flagging, pledge wars lifecycle, secure merchant trades, and territorial prototype layouts.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="section" aria-label="Technical stack">
+  <!-- Development Evidence -->
+  <section class="section" aria-labelledby="evidence-title">
     <div class="section-inner">
       <div class="callout" style="text-align: center">
-        <h2>Technical stack</h2>
-        <p>Godot 4.7 client &middot; Go WebSocket server &middot; Protobuf messaging &middot; Persistent database &middot; Web admin layer &middot; Structured content pipelines &middot; AI-assisted solo development</p>
-        <p class="supporting">Architecture and infrastructure details remain private during development.</p>
+        <h2 id="evidence-title">Built in Public, Grounded in Real Systems</h2>
+        <p>The client, Go server, Protobuf protocol, Postgres schemas, and compendium feed from the same codebase.</p>
+        <p class="supporting" style="font-family: var(--font-mono); font-size: 0.8rem; margin-top: 1rem;">
+          Source Commit: <code>{game.source_commit.slice(0, 8)}</code> &bull; Version: <code>{game.status}</code> &bull; Schema: <code>{data.schema_version}</code>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section alt-section" style="text-align: center; border-bottom: none;">
+    <div class="section-inner">
+      <h2>Follow Development</h2>
+      <p style="margin-bottom: 2rem; color: var(--text-secondary);">Join our developer mail updates or apply to participate in early pre-alpha testing.</p>
+      <div class="hero-actions" style="justify-content: center;">
+        <a href="/contact/" class="button button-primary">Apply for Testing</a>
+        <a href="https://github.com/TeHHerzog" class="button button-secondary">GitHub Profile</a>
       </div>
     </div>
   </section>
@@ -154,141 +363,414 @@ const description = `${gameName} is an old-school-inspired dark fantasy MMORPG i
 <style>
   .mmo-hero {
     background:
-      radial-gradient(circle at 18% 22%, rgba(139, 92, 246, 0.35), transparent 24rem),
-      radial-gradient(circle at 82% 18%, rgba(244, 63, 94, 0.2), transparent 22rem),
-      radial-gradient(circle at 55% 88%, rgba(20, 184, 166, 0.18), transparent 20rem),
-      linear-gradient(145deg, #12070d 0%, #1b0f2e 42%, #051015 100%);
+      radial-gradient(circle at 18% 22%, rgba(139, 92, 246, 0.3), transparent 26rem),
+      radial-gradient(circle at 82% 18%, rgba(244, 63, 94, 0.15), transparent 24rem),
+      radial-gradient(circle at 50% 80%, rgba(245, 158, 11, 0.08), transparent 22rem),
+      linear-gradient(145deg, #090609 0%, #150d1e 52%, #02070a 100%);
     color: #f8fafc;
-    min-height: min(640px, 72svh);
+    min-height: min(600px, 68svh);
     display: grid;
     align-items: center;
-    padding: clamp(3rem, 9vw, 7rem) var(--space-page);
+    padding: clamp(3rem, 9vw, 6rem) var(--space-page);
     position: relative;
-  }
-
-  .mmo-hero::before {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-    background-size: 54px 54px;
-    content: "";
-    pointer-events: none;
-    mask-image: linear-gradient(to bottom, black, transparent 78%);
   }
 
   .mmo-hero-inner {
     width: min(100%, 72rem);
     margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
-
-  .mmo-hero .eyebrow {
-    color: #67e8f9;
-    text-shadow: 0 0 1.2rem rgba(103, 232, 249, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .mmo-hero h1 {
     color: #fff7ed;
-    text-shadow: 0 0 2.5rem rgba(217, 70, 239, 0.3);
-    max-width: 10ch;
+    text-shadow: 0 0 2.5rem rgba(139, 92, 246, 0.25);
+    margin: 0;
   }
 
   .mmo-hero .lead {
-    color: #fde68a;
-    max-width: 38rem;
+    color: #cbd5e1;
+    max-width: 44rem;
+    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+    line-height: 1.4;
+    margin: 0 0 1rem;
   }
 
-  .mmo-hero .card {
-    background: rgba(15, 23, 42, 0.82);
-    border: 1px solid rgba(251, 191, 36, 0.2);
-    box-shadow: inset 0 0 0 1px rgba(103, 232, 249, 0.06), 0 1.5rem 5rem rgba(0, 0, 0, 0.28);
-  }
-
-  .status-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
-    gap: 1rem;
-  }
-
-  .status-item {
+  .hero-actions {
     display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem;
-    border-radius: var(--radius-card);
-    border: 1px solid rgba(17, 24, 39, 0.12);
-    background: rgba(255, 255, 255, 0.62);
-    box-shadow: 0 1.5rem 5rem rgba(15, 23, 42, 0.08);
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
   }
 
-  .status-item h3 {
-    margin: 0 0 0.25rem;
+  .status-pills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 1.5rem;
+  }
+
+  .tag-pill {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-sm);
+    padding: 0.3rem 0.75rem;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    font-weight: 700;
+  }
+
+  .vision-section {
+    padding: clamp(3rem, 8vw, 5rem) var(--space-page);
+    text-align: center;
+  }
+
+  .vision-quote {
     font-family: var(--font-display);
-    font-size: 1.05rem;
+    font-size: clamp(1.2rem, 3.5vw, 2rem);
     font-weight: 900;
+    line-height: 1.4;
+    color: var(--text-color);
+    max-width: 58rem;
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
+    border: none;
+    font-style: italic;
   }
 
-  .status-item p {
-    margin: 0;
-    font-size: 0.92rem;
-    color: #374151;
-  }
-
-  .status-dot {
-    width: 0.65rem;
-    height: 0.65rem;
-    border-radius: 50%;
-    background: #2563eb;
-    margin-top: 0.4rem;
-    flex-shrink: 0;
-  }
-
-  .pillars-section {
-    background:
-      radial-gradient(circle at 18% 22%, rgba(56, 189, 248, 0.12), transparent 24rem),
-      radial-gradient(circle at 82% 78%, rgba(250, 204, 21, 0.08), transparent 22rem);
-  }
-
-  .pillar-grid {
+  .pillars-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
     gap: 1.25rem;
   }
 
-  .pillar-card {
-    border-radius: var(--radius-card);
-    padding: clamp(1.2rem, 3vw, 1.6rem);
-    border: 1px solid rgba(17, 24, 39, 0.12);
-    background: rgba(255, 255, 255, 0.68);
-    box-shadow: 0 1.5rem 5rem rgba(15, 23, 42, 0.08);
+  .card-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
   }
 
-  .pillar-card h3 {
-    margin: 0 0 0.5rem;
+  .attr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+    gap: 1.5rem;
+  }
+
+  .attr-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    justify-content: space-between;
+  }
+
+  .attr-abbr {
+    color: var(--accent-color);
+    font-weight: 800;
+    font-size: 0.9rem;
+    margin-left: 0.35rem;
+  }
+
+  .attr-desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  .formula-details {
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-sm);
+    padding: 0.65rem 0.85rem;
+  }
+
+  :global(.dark-theme) .formula-details {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .formula-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .formula-details ul {
+    margin: 0;
+    padding-left: 1rem;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+  }
+
+  .formula-details li {
+    margin-bottom: 0.15rem;
+  }
+
+  .tech-accordion {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.25rem;
+    background: var(--card-bg);
+  }
+
+  .tech-accordion summary {
     font-family: var(--font-display);
     font-weight: 900;
-  }
-
-  .pillar-card p {
-    margin: 0;
     font-size: 0.95rem;
-    line-height: 1.5;
-    color: #374151;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
-  .pillar-icon {
-    display: inline-flex;
-    align-items: center;
+  .accordion-content {
+    margin-top: 1rem;
+    border-top: 1px solid var(--card-border);
+    padding-top: 0.75rem;
+  }
+
+  .accordion-content ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .accordion-content ul {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .workflow-grid {
+    margin-top: 1.5rem;
+  }
+
+  .workflow-card {
+    background: rgba(0, 0, 0, 0.01);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-sm);
+    padding: 1.25rem;
+  }
+
+  :global(.dark-theme) .workflow-card {
+    background: rgba(255, 255, 255, 0.01);
+  }
+
+  .workflow-card h4 {
+    margin: 0 0 0.5rem;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 900;
+    color: var(--accent-color);
+  }
+
+  .workflow-card p {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+  }
+
+  /* Matrix Section */
+  .matrix-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     justify-content: center;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 0.5rem;
-    background: #111827;
-    color: #38bdf8;
-    font-size: 0.85rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .filter-btn {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    color: var(--text-color);
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 180ms ease, color 180ms ease;
+  }
+
+  .filter-btn:hover {
+    border-color: var(--card-hover-border);
+  }
+
+  .filter-btn.active {
+    background: var(--accent-color);
+    color: var(--skip-text);
+    border-color: var(--accent-color);
+  }
+
+  .systems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+    gap: 1rem;
+  }
+
+  .system-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 1rem;
+    transition: opacity 250ms ease, transform 250ms ease;
+  }
+
+  .system-item h4 {
+    margin: 0;
+    font-size: 0.92rem;
+    font-weight: 900;
+    line-height: 1.35;
+  }
+
+  .ranks-box {
+    margin-top: 1.5rem;
+    background: rgba(0, 0, 0, 0.01);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-sm);
+    padding: 1.25rem;
+  }
+
+  :global(.dark-theme) .ranks-box {
+    background: rgba(255, 255, 255, 0.01);
+  }
+
+  .ranks-box h4 {
+    margin: 0 0 0.75rem;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 900;
+    color: var(--accent-color);
+  }
+
+  .ranks-list {
+    margin: 0;
+    padding-left: 1.2rem;
+    display: grid;
+    gap: 0.4rem;
+    font-size: 0.88rem;
+  }
+
+  .economy-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .economy-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .professions-table-box {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-card);
+    padding: clamp(1rem, 3vw, 1.5rem);
+    margin-top: 2rem;
+    overflow-x: auto;
+  }
+
+  .professions-table-box h4 {
+    margin: 0 0 1rem;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 900;
+    color: var(--accent-color);
+  }
+
+  .professions-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    text-align: left;
+  }
+
+  .professions-table th, .professions-table td {
+    padding: 0.65rem 0.75rem;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .professions-table th {
+    font-weight: 900;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+
+  .gauge-disclaimer {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 0.5rem;
+    display: block;
+  }
+
+  /* Roadmap Section */
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    gap: 1.25rem;
+  }
+
+  .road-step {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 0.25rem;
+    display: block;
+    line-height: 1;
+  }
+
+  .text-center {
+    text-align: center;
   }
 </style>
+
+<script>
+  // Systems Grid Filtering Logic
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const systemItems = document.querySelectorAll('.system-item');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active states
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      systemItems.forEach(item => {
+        const itemStatus = item.getAttribute('data-status');
+        
+        if (filterValue === 'all' || itemStatus === filterValue) {
+          (item as HTMLElement).style.display = 'flex';
+          setTimeout(() => {
+            (item as HTMLElement).style.opacity = '1';
+            (item as HTMLElement).style.transform = 'scale(1)';
+          }, 10);
+        } else {
+          (item as HTMLElement).style.opacity = '0';
+          (item as HTMLElement).style.transform = 'scale(0.96)';
+          setTimeout(() => {
+            (item as HTMLElement).style.display = 'none';
+          }, 250);
+        }
+      });
+    });
+  });
+</script>

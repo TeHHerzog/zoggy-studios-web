@@ -4,6 +4,23 @@ import StudioLayout from "../../layouts/StudioLayout.astro";
 
 const title = `Development Supervisor | ${studioName}`;
 const description = `A Go-based internal development tool for building, launching, monitoring, and troubleshooting the MMO server.`;
+
+const mockLogs = [
+  "[control-suite] launch requested by developer",
+  "[supervisor] validating local development configuration...",
+  "[database] checking database health... Postgres at localhost:5432 is READY",
+  "[content] loading and validating public content bundles...",
+  "[content] content verification complete: 526 monsters, 321 items, 15 zones, 128 quests",
+  "[build] compiling authoritative Go server (target: windows/amd64)...",
+  "[build] Go build complete. Binary size: 14.8 MB (elapsed: 1.45s)",
+  "[network] testing Protobuf contract version compatibility... COMPATIBLE",
+  "[server] launching gameplay WebSocket service on 127.0.0.1:8080...",
+  "[admin] local management service listening on :9090",
+  "[world] zone registry loaded: 15 active map sectors initialized",
+  "[world] spawn manager loaded: 1,024 entity anchors registered",
+  "[supervisor] process health checks: ALL PASSED",
+  "[supervisor] local development stack is now ACTIVE & healthy"
+];
 ---
 
 <StudioLayout title={title} description={description}>
@@ -20,70 +37,140 @@ const description = `A Go-based internal development tool for building, launchin
     </div>
   </section>
 
-  <section class="section" aria-label="Problem">
+  <section class="section" aria-label="Problem and Purpose">
     <div class="section-inner">
-      <div class="section-heading" style="max-width: 100%; text-align: center">
+      <div class="section-heading" style="text-align: center; max-width: 100%;">
         <h2>Born from a practical problem</h2>
-        <p style="max-width: 48rem; margin: 0 auto">Launching several development services without enough visibility into build failures, startup ordering, connection problems, or hanging processes. The Control Suite became the answer.</p>
+        <p style="max-width: 48rem; margin: 0 auto; line-height: 1.6;">Launching several local developer processes without enough visibility into build failures, startup order, connection ports, or hanging tasks. The Control Suite was built to solve this, streamlining daily tasks for solo and small teams.</p>
       </div>
     </div>
   </section>
 
-  <section class="section" aria-label="Architecture">
-    <div class="section-inner">
-      <div class="arch-callout">
-        <div class="arch-flow">
-          <span class="arch-node">Control Suite</span>
-          <span class="arch-arrow" aria-hidden="true">&rarr;</span>
-          <span class="arch-node">Supervisor</span>
-          <span class="arch-arrow" aria-hidden="true">&rarr;</span>
-          <span class="arch-node">Game Server</span>
-        </div>
-        <p>A three-layer architecture: the dashboard frontend communicates with a supervisor process that manages game server instances, monitors their health, and reports status changes.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" aria-label="Features">
+  <!-- Simulated terminal monitor -->
+  <section class="section" style="padding-top: 0;" aria-labelledby="terminal-heading">
     <div class="section-inner">
       <div class="section-heading">
-        <h2>Key features</h2>
+        <h2 id="terminal-heading">Simulated Runtime Preview</h2>
+        <p>A representation of the live process console and health telemetry displayed in the supervisor's browser dashboard.</p>
       </div>
-      <div class="wide-grid">
-        <article class="card feature-card">
-          <span class="feature-icon" aria-hidden="true">&#9776;</span>
-          <h3>Live console output</h3>
-          <p>Real-time server process output streamed to the dashboard.</p>
-        </article>
-        <article class="card feature-card">
-          <span class="feature-icon" aria-hidden="true">&#9673;</span>
-          <h3>Build tracking</h3>
-          <p>Build and launch stage visibility from source to running service.</p>
-        </article>
-        <article class="card feature-card">
-          <span class="feature-icon" aria-hidden="true">&#9733;</span>
-          <h3>Health monitoring</h3>
-          <p>Process health states, restart behavior, and crash recovery.</p>
-        </article>
-        <article class="card feature-card">
-          <span class="feature-icon" aria-hidden="true">&#9881;</span>
-          <h3>Connection status</h3>
-          <p>Server connection monitoring with error and warning panels.</p>
-        </article>
+
+      <div class="terminal-grid">
+        <!-- Terminal Simulator -->
+        <div class="terminal-container">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot close"></span>
+              <span class="dot min"></span>
+              <span class="dot max"></span>
+            </div>
+            <div class="terminal-title">u80057117@supervisor: ~/dark-fantasy-mmo</div>
+          </div>
+          <div class="terminal-body" id="term-body" role="log" aria-live="polite">
+            <!-- Simulated logs will append here -->
+            <noscript>
+              {mockLogs.map(log => <div class="term-line">{log}</div>)}
+            </noscript>
+          </div>
+          <details class="static-transcript-details">
+            <summary>View Static Text Transcript (Accessibility)</summary>
+            <pre class="static-transcript">{mockLogs.join("\n")}</pre>
+          </details>
+        </div>
+
+        <!-- Telemetry Gauges -->
+        <div class="telemetry-panel card">
+          <h3>Local Environment Health</h3>
+          <div class="telemetry-states">
+            <div class="tel-state">
+              <span class="state-indicator healthy"></span>
+              <div class="state-info">
+                <strong>Game Server</strong>
+                <span>Active (WS :8080)</span>
+              </div>
+            </div>
+            <div class="tel-state">
+              <span class="state-indicator healthy"></span>
+              <div class="state-info">
+                <strong>Admin Service</strong>
+                <span>Listening (:9090)</span>
+              </div>
+            </div>
+            <div class="tel-state">
+              <span class="state-indicator healthy"></span>
+              <div class="state-info">
+                <strong>Postgres</strong>
+                <span>Ready (port 5432)</span>
+              </div>
+            </div>
+            <div class="tel-state">
+              <span class="state-indicator healthy"></span>
+              <div class="state-info">
+                <strong>Content Bundle</strong>
+                <span>Valid (v1.0.0-proposed)</span>
+              </div>
+            </div>
+            <div class="tel-state">
+              <span class="state-indicator healthy"></span>
+              <div class="state-info">
+                <strong>Godot Client</strong>
+                <span>Waiting for connect</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bar-gauges">
+            <div class="bar-gauge">
+              <div class="gauge-header">
+                <span>Mock CPU Load</span>
+                <span id="cpu-val">1.2%</span>
+              </div>
+              <div class="gauge-bar-outer">
+                <div class="gauge-bar-inner" id="cpu-bar" style="width: 1.2%;"></div>
+              </div>
+            </div>
+            <div class="bar-gauge">
+              <div class="gauge-header">
+                <span>Mock RAM Usage</span>
+                <span id="ram-val">42.4 MB</span>
+              </div>
+              <div class="gauge-bar-outer">
+                <div class="gauge-bar-inner" id="ram-bar" style="width: 21.2%;"></div>
+              </div>
+            </div>
+            <span class="gauge-disclaimer">* Resource metrics are mock estimates representable of local development footprint.</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section" aria-label="Why it matters">
-    <div class="section-inner wide-grid">
-      <article class="card text-stack">
-        <h2>Why it matters</h2>
-        <p>This project demonstrates that Zoggy Studios is not merely brainstorming a game. The studio creates supporting technology around its projects: practical tools that solve real engineering problems.</p>
-      </article>
-      <article class="card text-stack">
-        <h2>Built with</h2>
-        <p>Go, process management, WebSocket streaming, structured logging. Designed for the development environment with potential server-administration applications later.</p>
-      </article>
+  <!-- Three-Layer Architecture diagram -->
+  <section class="section" aria-labelledby="arch-title">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2 id="arch-title">Three-Layer Architecture</h2>
+        <p>How the tool suite isolates controls, orchestrations, and game services.</p>
+      </div>
+
+      <div class="wide-grid arch-grid">
+        <article class="card arch-layer">
+          <span class="layer-num">1</span>
+          <h3>Control Suite</h3>
+          <p>The visual entry point. Starts and stops the development workspace, displays global progress, checks environment ports, and launches browser admin utilities once services are online.</p>
+        </article>
+
+        <article class="card arch-layer">
+          <span class="layer-num">2</span>
+          <h3>Supervisor Service</h3>
+          <p>A background Go process that compiles and launches project services, hooks stderr/stdout to custom streams, triggers automatic restarts, and exposes a local WebSocket/JSON status API.</p>
+        </article>
+
+        <article class="card arch-layer">
+          <span class="layer-num">3</span>
+          <h3>Game stack &amp; databases</h3>
+          <p>The target services being monitored. Includes the authoritative Go WebSocket server, Postgres container, custom zone-authoring assets pipelines, and localized client packages.</p>
+        </article>
+      </div>
     </div>
   </section>
 </StudioLayout>
@@ -91,8 +178,8 @@ const description = `A Go-based internal development tool for building, launchin
 <style>
   .sup-hero {
     background:
-      radial-gradient(circle at 12% 18%, rgba(56, 189, 248, 0.3), transparent 22rem),
-      radial-gradient(circle at 88% 22%, rgba(52, 211, 153, 0.2), transparent 20rem),
+      radial-gradient(circle at 12% 18%, rgba(56, 189, 248, 0.25), transparent 22rem),
+      radial-gradient(circle at 88% 22%, rgba(52, 211, 153, 0.15), transparent 20rem),
       linear-gradient(160deg, #0f172a 0%, #1e293b 52%, #020617 100%);
     color: #f8fafc;
     min-height: min(520px, 60svh);
@@ -112,71 +199,363 @@ const description = `A Go-based internal development tool for building, launchin
 
   .sup-hero h1 {
     color: #f8fafc;
-    text-shadow: 0 0 2rem rgba(56, 189, 248, 0.25);
+    text-shadow: 0 0 2rem rgba(56, 189, 248, 0.2);
   }
 
   .sup-lead {
     max-width: 46rem;
     margin: clamp(1.25rem, 3vw, 2rem) 0 0;
     font-size: clamp(1.15rem, 2.5vw, 1.6rem);
-    line-height: 1.3;
+    line-height: 1.35;
     color: #cbd5e1;
   }
 
-  .arch-callout {
-    border-radius: var(--radius-card);
-    padding: clamp(1.5rem, 4vw, 2.5rem);
-    border: 1px solid rgba(17, 24, 39, 0.12);
-    background: rgba(255, 255, 255, 0.62);
-    text-align: center;
+  .terminal-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: start;
   }
 
-  .arch-flow {
+  @media (min-width: 1024px) {
+    .terminal-grid {
+      grid-template-columns: 1.3fr 0.7fr;
+    }
+  }
+
+  .terminal-container {
+    background: #09090b;
+    border: 1px solid #1c1c1f;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .terminal-header {
+    background: #121214;
+    padding: 0.75rem 1rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    border-bottom: 1px solid #1c1c1f;
+  }
+
+  .terminal-dots {
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  .dot {
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .dot.close { background: #ef4444; }
+  .dot.min { background: #eab308; }
+  .dot.max { background: #22c55e; }
+
+  .terminal-title {
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: #71717a;
+    padding-right: 2rem;
+  }
+
+  .terminal-body {
+    padding: 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: #a1a1aa;
+    height: 20rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .term-line {
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+
+  .static-transcript-details {
+    padding: 0.75rem 1.25rem;
+    border-top: 1px solid #1c1c1f;
+    font-size: 0.8rem;
+    color: #71717a;
+  }
+
+  .static-transcript-details summary {
+    cursor: pointer;
+    font-weight: 800;
+  }
+
+  .static-transcript {
+    margin-top: 0.5rem;
+    background: #050507;
+    border: 1px solid #121214;
+    border-radius: var(--radius-sm);
+    padding: 0.75rem;
+    color: #a1a1aa;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  .telemetry-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    height: 100%;
+  }
+
+  .telemetry-panel h3 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 900;
+  }
+
+  .telemetry-states {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .tel-state {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    font-family: var(--font-mono);
-    font-size: 1.1rem;
-  }
-
-  .arch-node {
-    display: inline-flex;
-    padding: 0.5rem 1rem;
+    gap: 0.75rem;
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid var(--card-border);
     border-radius: var(--radius-sm);
-    background: #111827;
-    color: #38bdf8;
-    font-weight: 700;
+    padding: 0.65rem 0.85rem;
   }
 
-  .arch-arrow {
-    color: #64748b;
-    font-size: 1.4rem;
+  :global(.dark-theme) .tel-state {
+    background: rgba(255, 255, 255, 0.02);
   }
 
-  .feature-card {
-    text-align: center;
+  .state-indicator {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    flex-shrink: 0;
   }
 
-  .feature-card h3 {
-    margin-top: 0.75rem;
+  .state-indicator.healthy {
+    background: #10b981;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
   }
 
-  .feature-card p {
-    color: #374151;
+  .state-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
   }
 
-  .feature-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 0.75rem;
-    background: #111827;
-    color: #38bdf8;
-    font-size: 1rem;
+  .state-info strong {
+    font-size: 0.88rem;
+    font-weight: 900;
+  }
+
+  .state-info span {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  .bar-gauges {
+    display: grid;
+    gap: 0.85rem;
+    border-top: 1px solid var(--card-border);
+    padding-top: 1rem;
+    margin-top: 0.25rem;
+  }
+
+  .bar-gauge {
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .gauge-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--text-secondary);
+  }
+
+  .gauge-bar-outer {
+    height: 0.5rem;
+    background: rgba(0, 0, 0, 0.08);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  :global(.dark-theme) .gauge-bar-outer {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .gauge-bar-inner {
+    height: 100%;
+    background: #10b981;
+    border-radius: 999px;
+    width: 0%;
+    transition: width 0.3s ease;
+  }
+
+  .gauge-disclaimer {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    font-style: italic;
+    line-height: 1.3;
+  }
+
+  .arch-layer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    position: relative;
+    padding-top: 2rem;
+  }
+
+  .layer-num {
+    position: absolute;
+    top: 0.75rem;
+    right: 1.25rem;
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--card-border);
+    font-family: var(--font-display);
   }
 </style>
+
+<script define:vars={{ mockLogs }}>
+  // Simulated Terminal Simulator
+  const termBody = document.getElementById('term-body');
+  const cpuVal = document.getElementById('cpu-val');
+  const cpuBar = document.getElementById('cpu-bar');
+  const ramVal = document.getElementById('ram-val');
+  const ramBar = document.getElementById('ram-bar');
+
+  let logIndex = 0;
+  let logInterval = null;
+  let gaugeInterval = null;
+  let isObserverPaused = false;
+
+  // Check prefers-reduced-motion
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function addLogLine() {
+    if (prefersReducedMotion) {
+      // If user prefers reduced motion, print all logs immediately and exit
+      if (termBody) {
+        termBody.innerHTML = '';
+        mockLogs.forEach(log => {
+          const div = document.createElement('div');
+          div.className = 'term-line';
+          div.textContent = log;
+          termBody.appendChild(div);
+        });
+        termBody.scrollTop = termBody.scrollHeight;
+      }
+      return;
+    }
+
+    if (logIndex >= mockLogs.length) {
+      // Loop with clear & restart
+      logIndex = 0;
+      if (termBody) termBody.innerHTML = '';
+    }
+
+    if (termBody) {
+      const line = document.createElement('div');
+      line.className = 'term-line';
+      line.textContent = mockLogs[logIndex];
+      termBody.appendChild(line);
+      termBody.scrollTop = termBody.scrollHeight;
+      logIndex++;
+    }
+  }
+
+  function updateMockGauges() {
+    if (prefersReducedMotion) {
+      if (cpuVal) cpuVal.textContent = '1.5%';
+      if (cpuBar) cpuBar.style.width = '1.5%';
+      if (ramVal) ramVal.textContent = '44.2 MB';
+      if (ramBar) ramBar.style.width = '22.1%';
+      return;
+    }
+
+    const cpu = (1.0 + Math.random() * 3.5).toFixed(1);
+    const ram = (42.0 + Math.random() * 6.0).toFixed(1);
+    const ramPct = ((parseFloat(ram) / 200.0) * 100).toFixed(1); // 200MB scale
+
+    if (cpuVal) cpuVal.textContent = `${cpu}%`;
+    if (cpuBar) cpuBar.style.width = `${cpu}%`;
+    if (ramVal) ramVal.textContent = `${ram} MB`;
+    if (ramBar) ramBar.style.width = `${ramPct}%`;
+  }
+
+  function startIntervals() {
+    if (prefersReducedMotion) {
+      addLogLine();
+      updateMockGauges();
+      return;
+    }
+
+    if (!logInterval) {
+      logInterval = setInterval(addLogLine, 1200);
+    }
+    if (!gaugeInterval) {
+      gaugeInterval = setInterval(updateMockGauges, 2000);
+    }
+  }
+
+  function stopIntervals() {
+    if (logInterval) {
+      clearInterval(logInterval);
+      logInterval = null;
+    }
+    if (gaugeInterval) {
+      clearInterval(gaugeInterval);
+      gaugeInterval = null;
+    }
+  }
+
+  // Intersection Observer to pause when off-screen
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !isObserverPaused) {
+        startIntervals();
+      } else {
+        stopIntervals();
+      }
+    });
+  }, { threshold: 0.1 });
+
+  const target = document.getElementById('term-body');
+  if (target) {
+    observer.observe(target);
+  }
+
+  // Tab visibility changes
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      isObserverPaused = true;
+      stopIntervals();
+    } else {
+      isObserverPaused = false;
+      if (target && document.hasFocus()) {
+        startIntervals();
+      }
+    }
+  });
+</script>
