@@ -4,6 +4,7 @@ const { classes, stats } = data;
 ---
 
 <div class="class-selector-component">
+  <!-- Class tabs selector -->
   <div class="class-tabs" role="tablist" aria-label="Dark Fantasy MMO Classes">
     {classes.map((cls, idx) => (
       <button 
@@ -27,6 +28,7 @@ const { classes, stats } = data;
     </div>
 
     <div class="class-detail-grid">
+      <!-- Column 1: Lore and details -->
       <div class="class-lore-pane text-stack">
         <h2 id="active-class-name">{classes[0].public_name}</h2>
         <p class="eyebrow" style="color: var(--accent-color); font-weight: 800; font-size: 0.85rem; margin-top: -0.50rem;" id="active-class-presentation">
@@ -77,6 +79,23 @@ const { classes, stats } = data;
         </div>
       </div>
 
+      <!-- Column 2: Character Image Panel -->
+      <div class="class-image-pane">
+        <div class="character-preview-box">
+          <img 
+            id="class-character-img" 
+            src="/images/classes/royal_male_pose.jpg" 
+            alt="Royal Prince Model Render"
+            class="character-img"
+          />
+          <div class="gender-selector">
+            <button class="gender-btn active" data-gender="male" aria-label="Show Male Character Model">Male</button>
+            <button class="gender-btn" data-gender="female" aria-label="Show Female Character Model">Female</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 3: Stats Panel -->
       <div class="class-stats-pane">
         <h3 class="pane-title">Class Foundation Attributes</h3>
         <div class="attribute-bars-list">
@@ -150,10 +169,16 @@ const { classes, stats } = data;
     padding: clamp(1rem, 3vw, 2rem);
   }
 
-  @media (min-width: 820px) {
+  @media (min-width: 768px) {
     .class-detail-grid {
-      grid-template-columns: 1fr 1.1fr;
-      gap: 3rem;
+      grid-template-columns: 1.1fr 1fr;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .class-detail-grid {
+      grid-template-columns: 1fr 1.1fr 1fr;
+      gap: 2rem;
     }
   }
 
@@ -251,6 +276,69 @@ const { classes, stats } = data;
     margin-top: 0.25rem;
   }
 
+  /* Character Image Pane */
+  .class-image-pane {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .character-preview-box {
+    position: relative;
+    border-radius: var(--radius-card);
+    border: 1px solid var(--card-border);
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 320px;
+    height: 420px;
+  }
+
+  .character-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: opacity 0.2s ease;
+  }
+
+  .gender-selector {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.25rem;
+    border-radius: 999px;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+  }
+
+  .gender-btn {
+    background: transparent;
+    border: none;
+    color: #a0a0a0;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 180ms ease, color 180ms ease;
+  }
+
+  .gender-btn.active {
+    background: var(--accent-color);
+    color: var(--skip-text);
+  }
+
   .attribute-bars-list {
     display: grid;
     gap: 1.15rem;
@@ -293,7 +381,7 @@ const { classes, stats } = data;
   }
 
   /* Accessibility focus ring */
-  .class-tab-btn:focus-visible {
+  .class-tab-btn:focus-visible, .gender-btn:focus-visible {
     outline: none;
     box-shadow: 0 0 0 3px var(--accent-color);
   }
@@ -313,6 +401,7 @@ const { classes, stats } = data;
 
 <script>
   const tabButtons = document.querySelectorAll('.class-tab-btn');
+  const genderButtons = document.querySelectorAll('.gender-btn');
   const announcer = document.getElementById('class-sr-announcer');
 
   const activeName = document.getElementById('active-class-name');
@@ -326,7 +415,28 @@ const { classes, stats } = data;
   
   const sumFoundation = document.getElementById('sum-foundation');
   const sumFree = document.getElementById('sum-free');
+  const classImg = document.getElementById('class-character-img') as HTMLImageElement | null;
 
+  let activeClassCode = 'prince';
+  let activeGender = 'male';
+
+  function updateCharacterImage() {
+    if (classImg) {
+      let classPrefix = activeClassCode;
+      if (activeClassCode === 'prince') {
+        classPrefix = 'royal';
+      }
+      classImg.style.opacity = '0.3';
+      
+      setTimeout(() => {
+        classImg.src = `/images/classes/${classPrefix}_${activeGender}_pose.jpg`;
+        classImg.alt = `${activeClassCode} ${activeGender} model render`;
+        classImg.style.opacity = '1';
+      }, 100);
+    }
+  }
+
+  // Handle class tabs click
   tabButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       // Remove active states
@@ -345,6 +455,8 @@ const { classes, stats } = data;
         console.error(e);
         return;
       }
+
+      activeClassCode = data.code;
 
       // Update text
       if (activeName) activeName.textContent = data.public_name;
@@ -383,10 +495,24 @@ const { classes, stats } = data;
       if (sumFoundation) sumFoundation.textContent = foundationSum.toString();
       if (sumFree) sumFree.textContent = data.free_points.toString();
 
+      // Update character illustration
+      updateCharacterImage();
+
       // Screen reader announcements
       if (announcer) {
         announcer.textContent = `Showing ${data.public_name} class attributes and foundations.`;
       }
+    });
+  });
+
+  // Handle gender tabs click
+  genderButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      genderButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      activeGender = btn.getAttribute('data-gender') || 'male';
+      updateCharacterImage();
     });
   });
 </script>
