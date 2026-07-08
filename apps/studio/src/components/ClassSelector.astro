@@ -79,18 +79,34 @@ const { classes, stats } = data;
         </div>
       </div>
 
-      <!-- Column 2: Character Image Panel -->
+      <!-- Column 2: Character Image Gallery Panel -->
       <div class="class-image-pane">
         <div class="character-preview-box">
           <img 
             id="class-character-img" 
-            src="/images/classes/royal_male_pose.jpg" 
-            alt="Royal Prince Model Render"
+            src="/images/classes/royal_male_portrait.jpg" 
+            alt="Royal Prince Portrait Render"
             class="character-img"
           />
+        </div>
+        
+        <div class="preview-controls">
+          <!-- Gender selection -->
           <div class="gender-selector">
-            <button class="gender-btn active" data-gender="male" aria-label="Show Male Character Model">Male</button>
-            <button class="gender-btn" data-gender="female" aria-label="Show Female Character Model">Female</button>
+            <button class="gender-btn active" data-gender="male" aria-label="Show Male Character Models">Male</button>
+            <button class="gender-btn" data-gender="female" aria-label="Show Female Character Models">Female</button>
+          </div>
+          
+          <!-- View selector thumbnails -->
+          <div class="view-thumbnails" role="group" aria-label="Select Character View">
+            <button class="thumb-btn active" data-view="portrait" aria-label="Switch to close-up portrait view">
+              <img id="thumb-img-portrait" src="/images/classes/royal_male_portrait.jpg" alt="Portrait view thumbnail" />
+              <span>Portrait</span>
+            </button>
+            <button class="thumb-btn" data-view="pose" aria-label="Switch to full-body pose view">
+              <img id="thumb-img-pose" src="/images/classes/royal_male_pose.jpg" alt="Full body view thumbnail" />
+              <span>Full Body</span>
+            </button>
           </div>
         </div>
       </div>
@@ -177,7 +193,7 @@ const { classes, stats } = data;
 
   @media (min-width: 1200px) {
     .class-detail-grid {
-      grid-template-columns: 1fr 1.1fr 1fr;
+      grid-template-columns: 1.1fr 1fr 1.1fr;
       gap: 2rem;
     }
   }
@@ -276,12 +292,12 @@ const { classes, stats } = data;
     margin-top: 0.25rem;
   }
 
-  /* Character Image Pane */
+  /* Character Image Gallery Pane */
   .class-image-pane {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 1.25rem;
   }
 
   .character-preview-box {
@@ -290,13 +306,13 @@ const { classes, stats } = data;
     border: 1px solid var(--card-border);
     overflow: hidden;
     background: rgba(0, 0, 0, 0.4);
-    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8);
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8);
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 100%;
-    max-width: 320px;
-    height: 420px;
+    max-width: 290px;
+    height: 380px;
   }
 
   .character-img {
@@ -307,28 +323,37 @@ const { classes, stats } = data;
     transition: opacity 0.2s ease;
   }
 
-  .gender-selector {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
+  .preview-controls {
     display: flex;
-    gap: 0.5rem;
-    background: rgba(0, 0, 0, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 0.25rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+    width: 100%;
+    max-width: 290px;
+  }
+
+  .gender-selector {
+    display: flex;
+    gap: 0.35rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--card-border);
+    padding: 0.2rem;
     border-radius: 999px;
-    z-index: 2;
-    backdrop-filter: blur(10px);
+    width: 100%;
+  }
+
+  :global(.dark-theme) .gender-selector {
+    background: rgba(255, 255, 255, 0.02);
   }
 
   .gender-btn {
+    flex: 1;
     background: transparent;
     border: none;
-    color: #a0a0a0;
+    color: var(--text-secondary);
     font-size: 0.75rem;
     font-weight: 800;
-    padding: 0.35rem 0.85rem;
+    padding: 0.35rem 0.75rem;
     border-radius: 999px;
     cursor: pointer;
     transition: background 180ms ease, color 180ms ease;
@@ -337,6 +362,57 @@ const { classes, stats } = data;
   .gender-btn.active {
     background: var(--accent-color);
     color: var(--skip-text);
+  }
+
+  .view-thumbnails {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .thumb-btn {
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-sm);
+    padding: 0.35rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+  }
+
+  :global(.dark-theme) .thumb-btn {
+    background: rgba(255, 255, 255, 0.01);
+  }
+
+  .thumb-btn:hover {
+    border-color: var(--card-hover-border);
+    transform: translateY(-2px);
+  }
+
+  .thumb-btn.active {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.15);
+  }
+
+  .thumb-btn img {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 4px;
+    object-fit: cover;
+    object-position: center top;
+    background: #000;
+    flex-shrink: 0;
+  }
+
+  .thumb-btn span {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-color);
   }
 
   .attribute-bars-list {
@@ -381,7 +457,7 @@ const { classes, stats } = data;
   }
 
   /* Accessibility focus ring */
-  .class-tab-btn:focus-visible, .gender-btn:focus-visible {
+  .class-tab-btn:focus-visible, .gender-btn:focus-visible, .thumb-btn:focus-visible {
     outline: none;
     box-shadow: 0 0 0 3px var(--accent-color);
   }
@@ -402,6 +478,7 @@ const { classes, stats } = data;
 <script>
   const tabButtons = document.querySelectorAll('.class-tab-btn');
   const genderButtons = document.querySelectorAll('.gender-btn');
+  const thumbButtons = document.querySelectorAll('.thumb-btn');
   const announcer = document.getElementById('class-sr-announcer');
 
   const activeName = document.getElementById('active-class-name');
@@ -415,22 +492,37 @@ const { classes, stats } = data;
   
   const sumFoundation = document.getElementById('sum-foundation');
   const sumFree = document.getElementById('sum-free');
+  
   const classImg = document.getElementById('class-character-img') as HTMLImageElement | null;
+  const thumbImgPortrait = document.getElementById('thumb-img-portrait') as HTMLImageElement | null;
+  const thumbImgPose = document.getElementById('thumb-img-pose') as HTMLImageElement | null;
 
   let activeClassCode = 'prince';
   let activeGender = 'male';
+  let activeView = 'portrait';
 
-  function updateCharacterImage() {
+  function updateCharacterDisplay() {
+    let classPrefix = activeClassCode;
+    if (activeClassCode === 'prince') {
+      classPrefix = 'royal';
+    }
+
+    // 1. Update thumbnail preview images
+    if (thumbImgPortrait) {
+      thumbImgPortrait.src = `/images/classes/${classPrefix}_${activeGender}_portrait.jpg`;
+      thumbImgPortrait.alt = `${activeClassCode} ${activeGender} portrait thumbnail`;
+    }
+    if (thumbImgPose) {
+      thumbImgPose.src = `/images/classes/${classPrefix}_${activeGender}_pose.jpg`;
+      thumbImgPose.alt = `${activeClassCode} ${activeGender} pose thumbnail`;
+    }
+
+    // 2. Update large preview image with cross-fade
     if (classImg) {
-      let classPrefix = activeClassCode;
-      if (activeClassCode === 'prince') {
-        classPrefix = 'royal';
-      }
       classImg.style.opacity = '0.3';
-      
       setTimeout(() => {
-        classImg.src = `/images/classes/${classPrefix}_${activeGender}_pose.jpg`;
-        classImg.alt = `${activeClassCode} ${activeGender} model render`;
+        classImg.src = `/images/classes/${classPrefix}_${activeGender}_${activeView}.jpg`;
+        classImg.alt = `${activeClassCode} ${activeGender} ${activeView} render`;
         classImg.style.opacity = '1';
       }, 100);
     }
@@ -495,8 +587,8 @@ const { classes, stats } = data;
       if (sumFoundation) sumFoundation.textContent = foundationSum.toString();
       if (sumFree) sumFree.textContent = data.free_points.toString();
 
-      // Update character illustration
-      updateCharacterImage();
+      // Update character display
+      updateCharacterDisplay();
 
       // Screen reader announcements
       if (announcer) {
@@ -512,7 +604,18 @@ const { classes, stats } = data;
       btn.classList.add('active');
 
       activeGender = btn.getAttribute('data-gender') || 'male';
-      updateCharacterImage();
+      updateCharacterDisplay();
+    });
+  });
+
+  // Handle view thumbnail clicks
+  thumbButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      thumbButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      activeView = btn.getAttribute('data-view') || 'portrait';
+      updateCharacterDisplay();
     });
   });
 </script>
