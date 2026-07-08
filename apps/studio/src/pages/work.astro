@@ -6,75 +6,183 @@ const title = `Work | ${studioName}`;
 const description = `Websites, apps, and projects built for clients and collaborators by ${studioName}.`;
 ---
 <StudioLayout title={title} description={description}>
-  <section class="section" aria-labelledby="work-title">
+  <section class="section" style="padding-bottom: 2rem;" aria-labelledby="work-title">
     <div class="page-content text-stack">
       <p class="eyebrow">Client work</p>
       <h1 id="work-title" class="page-title">Websites and projects built for others.</h1>
-      <p class="page-intro">Zoggy Studios also takes on external web development, design, and technical projects. Each project here was built for a client, collaborator, or commission. This section is new and will grow as work is delivered.</p>
+      <p class="page-intro">Zoggy Studios takes on external web development, design, and technical projects. Each project here was built for a client, collaborator, or commission.</p>
+      
+      <div class="filter-nav" aria-label="Work categories">
+        <button class="filter-btn active" data-filter="all">All Work</button>
+        <button class="filter-btn" data-filter="delivered">Delivered Work</button>
+        <button class="filter-btn" data-filter="services">Services Offered</button>
+      </div>
     </div>
   </section>
 
-  <section class="section" aria-label="Available services">
+  <section class="section" style="padding-top: 0;" aria-label="Portfolio and Services">
     <div class="section-inner">
-      <div class="section-heading">
-        <h2>Services offered</h2>
-        <p>Clean, honest, solo-delivered work. No agency overhead, no sales pipeline, just straightforward building.</p>
-      </div>
-      <div class="wide-grid">
-        <article class="card">
+      <div class="wide-grid work-grid">
+        <!-- Services Offered -->
+        <article class="card project-card" data-category="services">
+          <span class="status-pill">Service</span>
           <h3>Websites</h3>
           <p>Static sites, landing pages, portfolios, marketing pages, and content sites built with modern tooling. Fast, responsive, accessible by default.</p>
         </article>
-        <article class="card">
+        
+        <article class="card project-card" data-category="services">
+          <span class="status-pill">Service</span>
           <h3>Web applications</h3>
           <p>Custom tools, dashboards, internal systems, and interactive web apps. From concept to deployment.</p>
         </article>
-        <article class="card">
+        
+        <article class="card project-card" data-category="services">
+          <span class="status-pill">Service</span>
           <h3>Technical consulting</h3>
           <p>Architecture review, project setup, CI/CD pipelines, AI agent workflows, and development process advice for solo developers and small teams.</p>
         </article>
-      </div>
-    </div>
-  </section>
 
-  <section class="section" aria-label="Project portfolio">
-    <div class="section-inner">
-      <div class="section-heading">
-        <h2>Delivered work</h2>
-        <p>Projects completed for clients, collaborators, and commissions.</p>
-      </div>
-
-      <div class="wide-grid">
-        <article class="card project-card">
-          <span class="status-pill">Live</span>
+        <!-- Delivered Work -->
+        <article class="card project-card" data-category="delivered">
+          <span class="status-pill"><span class="pulse-dot"></span>Live</span>
           <h3>games.herzogit.com</h3>
-          <p>Zoggy Studios public website. Astro static site with 18 pages, responsive design, custom SVG brand assets, social metadata, Google Fonts, and IONOS SFTP deployment pipeline. Built for myself, serves as a template for client projects.</p>
+          <p>Zoggy Studios public website. Astro static site with 19 pages, responsive design, custom SVG brand assets, social metadata, Google Fonts, and IONOS SFTP deployment pipeline. Built for myself, serves as a template for client projects.</p>
         </article>
-        <article class="card project-card">
-          <span class="status-pill">In development</span>
+        
+        <article class="card project-card" data-category="delivered">
+          <span class="status-pill"><span class="pulse-dot"></span>In development</span>
           <h3>CrazyTank</h3>
           <p>A magical fish tank management game built with Godot. Contributed development, design feedback, and AI-assisted workflows alongside my brother (NabExp). Playable on itch.io in Early Access.</p>
-          <a class="button button-secondary" href="/crazytank/">Game page</a>
-          <a class="button button-secondary" href="https://nabexp.itch.io/crazytank">Play on itch.io</a>
+          <div class="actions" style="margin-top: auto; padding-top: 1rem;">
+            <a class="button button-secondary" href="/crazytank/">Game page</a>
+            <a class="button button-secondary" href="https://nabexp.itch.io/crazytank">Play on itch.io</a>
+          </div>
         </article>
-        <article class="card project-card">
+        
+        <article class="card project-card" data-category="delivered">
           <span class="status-pill">Available</span>
           <h3>Your project here</h3>
           <p>Ready for the next client or collaborator project. Contact via the studio email to start a conversation.</p>
+          <div class="actions" style="margin-top: auto; padding-top: 1rem;">
+            <a class="button button-primary" href="/contact/">Get in touch</a>
+          </div>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" aria-label="Contact">
-    <div class="section-inner">
-      <div class="callout text-stack" style="text-align: center">
-        <h2>Interested in working together?</h2>
-        <p style="max-width: 32rem; margin: 0 auto">Websites, tools, experiments, or technical projects. Reach out and describe what you need built.</p>
-        <div class="actions" style="justify-content: center">
-          <a class="button button-primary" href="/contact/">Get in touch</a>
-        </div>
       </div>
     </div>
   </section>
 </StudioLayout>
+
+<style>
+  .filter-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1.5rem;
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 1.25rem;
+  }
+
+  .filter-btn {
+    border-radius: 999px;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    color: var(--text-color);
+    padding: 0.5rem 1.1rem;
+    font-size: 0.88rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .filter-btn:hover {
+    border-color: var(--card-hover-border);
+    transform: scale(1.03);
+  }
+
+  .filter-btn.active {
+    background: var(--accent-color);
+    color: var(--skip-text);
+    border-color: var(--accent-color);
+  }
+
+  .project-card {
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    transform: scale(1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .project-card.hidden-anim {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  .project-card.hidden-display {
+    display: none !important;
+  }
+
+  .pulse-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    box-shadow: 0 0 8px var(--status-glow);
+    margin-right: 6px;
+    animation: pulse-badge 1.8s infinite ease-in-out;
+  }
+
+  @keyframes pulse-badge {
+    0% {
+      transform: scale(0.85);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+      box-shadow: 0 0 12px var(--status-glow);
+    }
+    100% {
+      transform: scale(0.85);
+      opacity: 0.5;
+    }
+  }
+</style>
+
+<script>
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      projectCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        const matches = filterValue === 'all' || category === filterValue;
+
+        if (matches) {
+          card.classList.remove('hidden-display');
+          // Force layout reflow
+          void (card as HTMLElement).offsetWidth;
+          card.classList.remove('hidden-anim');
+        } else {
+          card.classList.add('hidden-anim');
+          
+          const onTransitionEnd = (e: Event) => {
+            if (e.target === card && card.classList.contains('hidden-anim')) {
+              card.classList.add('hidden-display');
+              card.removeEventListener('transitionend', onTransitionEnd);
+            }
+          };
+          card.addEventListener('transitionend', onTransitionEnd);
+        }
+      });
+    });
+  });
+</script>
